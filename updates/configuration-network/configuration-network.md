@@ -2,6 +2,8 @@
 
 Message sent with the network wide configuration values including shutdown hours and evergreen video settings
 
+## Key/Value Glossary
+
 ## Ideal Path
 ### What GSTV Sends to Invenco
 ```javascript
