@@ -6,9 +6,9 @@ Messages sent with the site-specific configuration values including hours, speci
 
 ## Key/Value Glossary
 ### Field from GSTV Messages
-- **guid**
-- **updatedOn**
-- **configuration**
+- **guid** - TBD
+- **updatedOn** - TBD
+- **configuration** - TBD
   - **siteId** - Invenco identifier for the site.
   - **hours** - Object containing operating hours per day for the site. There will be seven objects - one for each day of the week.
     - **Day of the Week Abreviation** - Array containing multiple openAt and closeAt for the site.
@@ -21,11 +21,11 @@ Messages sent with the site-specific configuration values including hours, speci
     - **level** - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
 
 ### Additional Fields in Invenco Responses
-- **notificationType**
-- **notificationTimestamp**
-- **status**
-- **id**
-- **additionalInformation**
+- **notificationType** - TBD
+- **notificationTimestamp** - TBD
+- **status** - TBD
+- **id** - TBD
+- **additionalInformation** - TBD
 
 ## Ideal Path
 ### What GSTV Sends to Invenco
@@ -128,6 +128,8 @@ Messages sent with the site-specific configuration values including hours, speci
 ```
 
 ## Error Path
+If any part of a message causes an error the entire update will be rejected.
+
 ### What Invenco Sends if the Site Configuration Update Notification is Malformed or is Unable to be Parsed
 Follows [Default Configuration Error Handling](#default-configuration-error-handling)
 
@@ -143,34 +145,23 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 }
 ```
 
+### Specific Examples
 #### What Invenco Sends if the Volume Level in the Site Configuration Update Notification is not Formatted Correctly
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+If the volume level is not a number between 0 and 100 follow [Default Configuration Error Handling](#default-configuration-error-handling)
+
+Return above structure with this specific value for additional information.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_SITE_MALFORMED_DATA",
-  "siteId": String,
-  "status": "failure",
   "additionalInformation": "Volume Level Incorrectly Formatted"
-}
 ```
 
 #### What Invenco Sends if the Start Time for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+If the Start Time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling)
+
+Return above structure with this specific value for additional information.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_SITE_MALFORMED_DATA",
-  "siteId": String,
-  "status": "failure",
   "additionalInformation": "Volume Start Time Incorrectly Formatted"
-}
 ```
 
 ### What Invenco Sends if the Site Configuration Update Notification Contains Unexpected Values
