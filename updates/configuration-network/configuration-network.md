@@ -2,45 +2,85 @@
 
 Message sent with the network wide configuration values including shutdown hours and evergreen video settings
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Network Configuration Updates](#network-configuration-updates)
+	- [Key/Value Glossary](#keyvalue-glossary)
+	- [Ideal Path](#ideal-path)
+		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
+		- [What Invenco Sends to GSTV on a Successful Download](#what-invenco-sends-to-gstv-on-a-successful-download)
+		- [What Invenco Sends to GSTV once Network Configuration Updates have been Applied](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-applied)
+	- [Error Path](#error-path)
+		- [What Invenco Sends if the Network Configuration Update Can Not Be Parsed](#what-invenco-sends-if-the-network-configuration-update-can-not-be-parsed)
+		- [What Invenco Sends if the Shutdown Hours are Missing from the Network Configuration Update](#what-invenco-sends-if-the-shutdown-hours-are-missing-from-the-network-configuration-update)
+		- [What Invenco Sends if the Filename in a Node is Missing from the Network Configuration Update](#what-invenco-sends-if-the-filename-in-a-node-is-missing-from-the-network-configuration-update)
+		- [What Invenco Sends if the expiryHours Key is Missing from the Network Configuration Update](#what-invenco-sends-if-the-expiryhours-key-is-missing-from-the-network-configuration-update)
+
+<!-- /TOC -->
+
 ## Key/Value Glossary
+- **shutdownHours** -
+- **evergreen** -
+- **filename** -
+- **expiryHours** -
+- **swapFilename** -
 
 ## Ideal Path
 ### What GSTV Sends to Invenco
 ```javascript
 {
-   "shutdownHours":120,
-   "evergreen":[
-      {
-         "filename":"CNN04028_HLNSAT.mp4",
-         "expiryHours":25,
-         "swapFilename":"CNN04031_HLNSWAP.mp4"
-      },
-      {
-         "filename":"CNN04029_HLNSUN.mp4",
-         "expiryHours":25,
-         "swapFilename":"CNN04031_HLNSWAP.mp4"
-      },
-      {
-         "filename":"CNN04104_HLNWEEKDAY.mp4",
-         "expiryHours":25,
-         "swapFilename":"CNN04031_HLNSWAP.mp4"
-      },
-      {
-         "filename":"GSTV.BO__.gstvbos.mp4",
-         "expiryHours":25,
-         "swapFilename":""
-      }
+  "shutdownHours": Number,
+  "evergreen":[
+    {
+      "filename": String,
+      "expiryHours": Number,
+      "swapFilename": String
+    },
+    {
+      "filename": String,
+      "expiryHours": Number,
+      "swapFilename": String
+    },
+    {
+      "filename": String,
+      "expiryHours": Number,
+      "swapFilename": String
+    },
+    {
+      "filename": String,
+      "expiryHours": Number,
+      "swapFilename": String
+    },
+    {
+      "filename": String,
+      "expiryHours": Number,
+      "swapFilename": String
+    }
    ]
 }
 ```
 
-### What Invenco Sends to GSTV on Success
+### What Invenco Sends to GSTV on a Successful Download
 ```javascript
 {
-  "id": String,  // invenco generated per notification
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_NETWORK_DOWNLOADED",
   "siteId": String,
-  "notificationType": String, // one of the defined notifications
-  "status": "success"
+  "status": "success",
+}
+```
+
+### What Invenco Sends to GSTV once Network Configuration Updates have been Applied
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_NETWORK_APPLIED",
+  "siteId": String,
+  "status": "success",
 }
 ```
 

@@ -2,6 +2,8 @@
 
 Messages sent with the site-specific configuration values including hours, specifying the blankout video file, and volume settings.
 
+
+
 ## Key/Value Glossary
 - **blankoutVideo** - Filename including file extension.
 - **closeAt** - Time that players should stop playing
@@ -16,7 +18,6 @@ Messages sent with the site-specific configuration values including hours, speci
 ## Ideal Path
 ### What GSTV Sends to Invenco
 ```javascript
-
 {
   "guid": String,
   "updatedOn": String,
@@ -116,12 +117,7 @@ Messages sent with the site-specific configuration values including hours, speci
 
 ## Error Path
 ### What Invenco Sends if the Site Configuration Update Notification is Malformed or is Unable to be Parsed
-1. Send a notification message to GSTV alerting that an error has occured.
-1. If a previous configuration exists
-  1. Continue to operate using previous configuration until next update
-1. If no previous configuration exists
-  1. @scott_horton Use generic configuration until next update
-1. GSTV sends another notification update message.
+Follows [Default Configuration Error Handling](#default-configuration-error-handling)
 
 ```javascript
 {
@@ -136,6 +132,7 @@ Messages sent with the site-specific configuration values including hours, speci
 ```
 
 #### What Invenco Sends if the Volume Level in the Site Configuration Update Notification is not Formatted Correctly
+Follows [Default Configuration Error Handling](#default-configuration-error-handling)
 
 ```javascript
 {
