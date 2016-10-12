@@ -15,6 +15,11 @@ Message sent with the network wide configuration values including shutdown hours
 		- [What Invenco Sends if the Shutdown Hours are Missing from the Network Configuration Update](#what-invenco-sends-if-the-shutdown-hours-are-missing-from-the-network-configuration-update)
 		- [What Invenco Sends if the Filename in a Node is Missing from the Network Configuration Update](#what-invenco-sends-if-the-filename-in-a-node-is-missing-from-the-network-configuration-update)
 		- [What Invenco Sends if the expiryHours Key is Missing from the Network Configuration Update](#what-invenco-sends-if-the-expiryhours-key-is-missing-from-the-network-configuration-update)
+	- [Standard Operating Procedure](#standard-operating-procedure)
+		- [Applying Configuration Updates](#applying-configuration-updates)
+		- [Error Handling](#error-handling)
+			- [Default Error Handling](#default-error-handling)
+			- [Default Configuration Error Handling](#default-configuration-error-handling)
 
 <!-- /TOC -->
 
@@ -142,3 +147,19 @@ Message sent with the network wide configuration values including shutdown hours
   "additionalInformation": "expiryhours missing in config"
 }
 ```
+
+## Standard Operating Procedure
+### Applying Configuration Updates
+
+### Error Handling
+#### Default Error Handling
+1. Send a notification message to GSTV alerting that an error has occured.
+1. GSTV sends another notification update message.
+
+#### Default Configuration Error Handling
+1. Send a notification message to GSTV alerting that an error has occured.
+1. If a previous configuration exists
+  1. Continue to operate using previous configuration until next update
+1. If no previous configuration exists
+  1. @scott_horton Use generic configuration until next update
+1. GSTV sends another notification update message.
