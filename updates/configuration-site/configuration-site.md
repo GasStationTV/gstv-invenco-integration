@@ -12,12 +12,12 @@ Messages sent with the site-specific configuration values including hours, speci
   - **siteId** - Invenco identifier for the site.
   - **hours** - Object containing operating hours per day for the site. There will be seven objects - one for each day of the week.
     - **Day of the Week Abreviation** - Array containing multiple openAt and closeAt for the site.
-      - **openAt** - Time the site opens represented in HH:MM local time to the site location.
-      - **closeAt** - Time the site closes represented in HH:MM local time to the site location. Times after 24:00 indicates a closing time on the next day. For example, 26:00 should be interpreted as closing at 2:00AM the following day.
+      - **openAt** - Time the site opens represented in HHMM local time to the site location.
+      - **closeAt** - Time the site closes represented in HHMM local time to the site location. Times after 2400 indicates a closing time on the next day. For example, 2600 should be interpreted as closing at 2:00AM the following day.
       - **duration** - Length in milliseconds the site is open.
   - **blankoutvideo** - Video file - including file extension - to play continuously when the site is closed.
   - **volume** - Array of volume level settings.
-    - **startTime** - The time represented in HH:MM local time that the volume setting will take effect.
+    - **startTime** - The time represented in HHMM local time that the volume setting will take effect.
     - **level** - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
 
 ### Additional Fields in Invenco Responses
@@ -147,7 +147,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 
 #### Specific Examples
 ##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly
-If the openAt or closeAt time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+If the openAt or closeAt time is not formatted at HHMM follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
 
@@ -165,7 +165,7 @@ Return above structure with this specific value for additionalInformation.
 ```
 
 ##### What Invenco Sends if the starTime for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
-If the startTime is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+If the startTime is not formatted at HHMM follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
 
