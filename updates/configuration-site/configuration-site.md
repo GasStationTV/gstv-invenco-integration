@@ -146,7 +146,16 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 ```
 
 #### Specific Examples
-##### What Invenco Sends if the Volume Level in the Site Configuration Update Notification is not Formatted Correctly
+##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly
+If the openAt or closeAt time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Volume Start Time Incorrectly Formatted"
+```
+
+##### What Invenco Sends if the level for a Volume Object in the Site Configuration Update Notification is not Formatted Correctly
 If the volume level is not a number between 0 and 100 follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
@@ -155,8 +164,8 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Volume Level Incorrectly Formatted"
 ```
 
-##### What Invenco Sends if the Start Time for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
-If the Start Time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+##### What Invenco Sends if the starTime for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
+If the startTime is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
 
@@ -180,7 +189,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 ```
 
 #### Specific Example
-##### What Invenco Sends if the Site Identifier in the Site Configuration Update Notification Does Not Exist
+##### What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist
 Follow [Default Error Handling](#default-error-handling).
 
 Return above structure with this specific value for additionalInformation.
@@ -252,5 +261,5 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 1. If a previous configuration exists
   1. Continue to operate using previous configuration until next update
 1. If no previous configuration exists
-  1. @scott_horton Use generic configuration until next update
+  1. Use generic configuration until next update
 1. GSTV sends another notification update message.
