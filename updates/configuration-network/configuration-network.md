@@ -24,44 +24,56 @@ Message sent with the network wide configuration values including shutdown hours
 <!-- /TOC -->
 
 ## Key/Value Glossary
-- **shutdownHours** -
-- **evergreen** -
-- **filename** -
-- **expiryHours** -
-- **swapFilename** -
+### Field from GSTV Messages
+- **guid** - TBD
+- **updatedOn** - TBD
+- **configuration** - TBD
+		- **shutdownHours** - Number of hours a site should continue to play without connectivity. If site goes beyond this number of hours without connectivity, playback should halt at the site.
+		- **evergreen** - Configuration to control swapping video files when updates to specific files are not received.
+			- **filename** - Filename - including file extension - of video to control.
+			- **expiryHours** - The number of hours a video can play before expiring and being swapped out or removed from playback. The timing starts from the time the site receives the video file.
+			- **swapFilename** - Filename - including file extension - of video file to play if the expiryHours value has been exceeded. If blank, no video should play in the loop during the spot.
+
+### Additional Fields in Invenco Responses
 
 ## Ideal Path
 ### What GSTV Sends to Invenco
 ```javascript
 {
-  "shutdownHours": Number,
-  "evergreen":[
+  "guid": String,
+  "updatedOn": String,
+  "configuration": [
     {
-      "filename": String,
-      "expiryHours": Number,
-      "swapFilename": String
-    },
-    {
-      "filename": String,
-      "expiryHours": Number,
-      "swapFilename": String
-    },
-    {
-      "filename": String,
-      "expiryHours": Number,
-      "swapFilename": String
-    },
-    {
-      "filename": String,
-      "expiryHours": Number,
-      "swapFilename": String
-    },
-    {
-      "filename": String,
-      "expiryHours": Number,
-      "swapFilename": String
-    }
-   ]
+		  "shutdownHours": Number,
+		  "evergreen":[
+		    {
+		      "filename": String,
+		      "expiryHours": Number,
+		      "swapFilename": String
+		    },
+		    {
+		      "filename": String,
+		      "expiryHours": Number,
+		      "swapFilename": String
+		    },
+		    {
+		      "filename": String,
+		      "expiryHours": Number,
+		      "swapFilename": String
+		    },
+		    {
+		      "filename": String,
+		      "expiryHours": Number,
+		      "swapFilename": String
+		    },
+		    {
+		      "filename": String,
+		      "expiryHours": Number,
+		      "swapFilename": String
+		    }
+		   ]
+		}
+	]
 }
 ```
 
