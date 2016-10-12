@@ -79,11 +79,11 @@ Messages sent with the site-specific configuration values including hours, speci
       "volume":[
         {
           "startTime": String,
-          "level": String
+          "level": Number
         },
         {
           "startTime": String,
-          "level": String
+          "level": Number
         }
       ]
     }
