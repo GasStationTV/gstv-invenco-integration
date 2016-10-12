@@ -145,20 +145,20 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 }
 ```
 
-### Specific Examples
-#### What Invenco Sends if the Volume Level in the Site Configuration Update Notification is not Formatted Correctly
-If the volume level is not a number between 0 and 100 follow [Default Configuration Error Handling](#default-configuration-error-handling)
+#### Specific Examples
+##### What Invenco Sends if the Volume Level in the Site Configuration Update Notification is not Formatted Correctly
+If the volume level is not a number between 0 and 100 follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
-Return above structure with this specific value for additional information.
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
   "additionalInformation": "Volume Level Incorrectly Formatted"
 ```
 
-#### What Invenco Sends if the Start Time for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
-If the Start Time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling)
+##### What Invenco Sends if the Start Time for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
+If the Start Time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
-Return above structure with this specific value for additional information.
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
   "additionalInformation": "Volume Start Time Incorrectly Formatted"
@@ -179,53 +179,38 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 }
 ```
 
-#### What Invenco Sends if the Site Identifier in the Site Configuration Update Notification Does Not Exist
-Follows [Default Error Handling](#default-error-handling)
+#### Specific Example
+##### What Invenco Sends if the Site Identifier in the Site Configuration Update Notification Does Not Exist
+Follow [Default Error Handling](#default-error-handling).
+
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_SITE_UNEXPECTED_VALUE",
-  "siteId": String,
-  "status": "failure",
   "additionalInformation": "Site identifier does not exist"
-}
 ```
 
-#### What Invenco Sends if the Open At in the Site Configuration Update Notification Are Later than the Close At
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+##### What Invenco Sends if the Open At in the Site Configuration Update Notification Are Later than the Close At
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationType": "CONFIGURATION_SITE_UNEXPECTED_VALUE",
-  "notificationTimestamp": String
-  "siteId": String,
-  "status": "failure",
   "additionalInformation": "" // TBD
-}
 ```
 
-#### What Invenco Sends if the Duration Calculations in the Site Configuration Update Notification Are Incorrect
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+##### What Invenco Sends if the Duration Calculations in the Site Configuration Update Notification Are Incorrect
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationType": "CONFIGURATION_SITE_UNEXPECTED_VALUE",
-  "notificationTimestamp": String
-  "siteId": String,
-  "status": "failure",
   "additionalInformation": "" // TBD
-}
 ```
 
 ### What Invenco Sends if the Site Configuration Update Notification is Missing Values
 Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+
+The additionalInformation field will contain a comma separated list of the keys without values.
 
 ```javascript
 {
