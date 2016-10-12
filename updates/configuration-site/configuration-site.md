@@ -199,7 +199,7 @@ Follow [Default Error Handling](#default-error-handling).
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Site identifier does not exist"
+  "additionalInformation": "Site Identifier Does Not Exist"
 ```
 
 ##### What Invenco Sends if the Open At in the Site Configuration Update Notification Are Later than the Close At
