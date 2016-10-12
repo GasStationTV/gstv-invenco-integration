@@ -152,7 +152,11 @@ If the openAt or closeAt time is not formatted at HHMM follow [Default Configura
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Volume Start Time Incorrectly Formatted"
+  "additionalInformation": "Open At Time Incorrectly Formatted"
+```
+
+```javascript
+  "additionalInformation": "Close At Time Incorrectly Formatted"
 ```
 
 ##### What Invenco Sends if the level for a Volume Object in the Site Configuration Update Notification is not Formatted Correctly
