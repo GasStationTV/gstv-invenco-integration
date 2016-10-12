@@ -1,0 +1,7 @@
+{
+  "id": String,  // invenco generated per notification
+  "filename":  "W_WSL14893_WASHINGTONLOTTERY2016.avi",
+  "notificationType": String, // one of the defined notifications
+  "status": "success",
+  "additionalInformation": String
+}
