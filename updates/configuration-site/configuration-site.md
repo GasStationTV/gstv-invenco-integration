@@ -129,7 +129,7 @@ Messages sent with the site-specific configuration values including hours, speci
 If any part of a message causes an error the entire update will be rejected.
 
 ### What Invenco Sends if the Site Configuration Update Notification is Malformed or is Unable to be Parsed
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+Follows [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
@@ -190,7 +190,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 }
 ```
 
-#### Specific Example
+#### Specific Examples
 ##### What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist
 Follow [Default Error Handling](#default-error-handling).
 
@@ -219,7 +219,7 @@ Return above structure with this specific value for additionalInformation.
 ```
 
 ### What Invenco Sends if the Site Configuration Update Notification is Missing Values
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 The additionalInformation field will contain a comma separated list of the keys without values.
 
@@ -236,7 +236,7 @@ The additionalInformation field will contain a comma separated list of the keys 
 ```
 
 ### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
