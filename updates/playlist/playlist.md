@@ -49,9 +49,9 @@
         - **start** - _required_ - Date the video should begin playing. The format will be `year-month-day`.
         - **end** - _required_ - Date the video should end displaying. The format will be `year-month-day`.
         - **tiNumber** - This value is internal to GSTV. This value needs to be passed back to GSTV on the ProofofPlayPacket.
-        - **dayparts** - An array that specifies specifc times of the day that a video should play. If no daypart is present, the video should play without regard to time.
-          - **start** - _if daypart array exists this is required_ - Local site time (24 hour time) in which the asset should start playing if daypart is present. The format will be 'hours:mins'.
-          - **end** - _if daypart array exists this is required_ - Local site time (24 hour time) in which the asset should stop playing if daypart is present. The format will be 'hours:mins'.
+        - **dayparts** - An array that specifies specific times of the day that a video should play. If no daypart is present, the video should play without regard to time.
+          - **start** - _if daypart array exists this is required_ - Local site time (24 hour time) in which the asset should start playing if daypart is present. The format will be 'HH:MM'.
+          - **end** - _if daypart array exists this is required_ - Local site time (24 hour time) in which the asset should stop playing if daypart is present. The format will be 'HH:MM'.
 
 ### Additional Fields in Invenco Responses
 - **notificationType** - A String indicating the step in the update process to which this notification refers.
@@ -60,7 +60,7 @@
     - MEDIA_CHECK
     - PLAYLIST_PUSH_TO_PLAYERS
     - PLAYLIST_ACCEPTED_BY_PLAYERS
-- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds`. 24 hour time will be used.
+- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
 - **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
     - success
@@ -364,8 +364,6 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "segmentIds": [String]
 }
 ```
-
-
 
 ### Error Handling
 #### Playlist Error Handling

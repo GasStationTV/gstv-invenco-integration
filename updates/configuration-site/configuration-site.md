@@ -10,8 +10,8 @@ Messages sent with the site-specific configuration values including hours, speci
   - **siteId** - _required_ - Invenco identifier for the site.
   - **hours** - _required_ - Object containing operating hours per day for the site. There will be seven objects - one for each day of the week.
     - **Day of the Week Abreviation** - Array containing multiple openAt and closeAt for the site.
-      - **openAt** - _if day of the week array exists this is required_ - Time the site opens represented in HHMM local time to the site location.
-      - **closeAt** - _if day of the week array exists this is required_ - Time the site closes represented in HHMM local time to the site location. Times after 2400 indicates a closing time on the next day. For example, 2600 should be interpreted as closing at 2:00AM the following day.
+      - **openAt** - _if day of the week array exists this is required_ - Time the site opens represented as HH:MM local time to the site location using 24 hour time.
+      - **closeAt** - _if day of the week array exists this is required_ - Time the site closes represented as HH:MM local time to the site location using 24 hour time. Times after 24:00 indicates a closing time on the next day. For example, 26:00 should be interpreted as closing at 2:00 AM the following day.
       - **duration** - Length in milliseconds the site is open.
   - **blankoutvideo** - Video file - including file extension - to play continuously when the site is closed.
   - **volume** - Array of volume level settings.
