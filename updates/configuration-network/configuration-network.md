@@ -96,7 +96,7 @@ Message sent with the network wide configuration values including shutdown hours
           "expiryHours": Number,
           "swapFilename": String
         }
-       ]
+      ]
     }
   ]
 }
