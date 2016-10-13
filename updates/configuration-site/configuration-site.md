@@ -145,7 +145,7 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-### What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Players
+### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Players
 ```javascript
 {
   "guid": String,
@@ -213,7 +213,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Blankout Video Filename Missing Extension"
+  "additionalInformation": "Blankout Video Filename Missing Extension - {filename}"
 ```
 
 ##### What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist
