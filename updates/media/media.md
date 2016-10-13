@@ -109,48 +109,50 @@ A message is sent when a file has been added to a playlist or a current file in 
 ```
 
 ## Error Path
-### What Invenco Sends if the File is Not Found in S3
-Follow [Media Error Handling](#media-error-handling).
+
+##### What Invenco Sends if the GUID or updatedOn in the Media Update Notification Does Not Exist
+Follow [Default Error Handling](#default-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "GUID is Missing"
+```
+
+```javascript
+  "additionalInformation": "Updated On is Missing"
+```
+
+### What Invenco Sends if they are Unable to Push Media Updates to a Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
+  "guid": String,
   "id": String,
-  "filename": String,
   "notificationTimestamp": String
-  "notificationType": "", // TBD
+  "notificationType": "MEDIA_PUSH_TO_PLAYERS",
+  "siteId": String,
   "status": "failure",
-  "additionalInformation": String
+  "additionalInformation": ""
 }
 ```
 
-### What Invenco Sends if the MD5 Does Not Match After Download
-Follow [Media Error Handling](#media-error-handling).
+### What Invenco Sends if a Media Updates are Rejected by the Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
+  "guid": String,
   "id": String,
-  "filename": String,
   "notificationTimestamp": String
-  "notificationType": "", // TBD
+  "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
+  "siteId": String,
   "status": "failure",
-  "additionalInformation": String
+  "additionalInformation": ""
 }
 ```
 
-### What Invenco Sends if the File Download Does Not Complete
-1. Invenco should retry downloading the file three times.
-1. If the download is still unsuccessful follow [Media Error Handling](#media-error-handling).
-
-```javascript
-{
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "", // TBD
-  "status": "failure",
-  "additionalInformation": String
-}
-```
 
 ## Standard Operating Procedure
 ### Applying Configuration Updates

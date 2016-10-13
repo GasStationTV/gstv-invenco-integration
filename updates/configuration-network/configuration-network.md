@@ -108,7 +108,7 @@ Message sent with the network wide configuration values including shutdown hours
   "id": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
-  "status": "success",
+  "status": "success"
 }
 ```
 
@@ -119,7 +119,8 @@ Message sent with the network wide configuration values including shutdown hours
   "id": String,
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
-  "status": "success",
+  "siteId": String,
+  "status": "success"
 }
 ```
 
@@ -130,7 +131,8 @@ Message sent with the network wide configuration values including shutdown hours
   "id": String,
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
-  "status": "success",
+  "siteId": String,
+  "status": "success"
 }
 ```
 
@@ -201,6 +203,7 @@ Return above structure with this specific value for additionalInformation.
   "id": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
+  "siteId": String,
   "status": "failure",
   "additionalInformation": "Video File is Missing - {filename}"
 }
@@ -219,6 +222,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "id": String,
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
+  "siteId": String,
   "status": "failure",
   "additionalInformation": ""
 }
@@ -233,6 +237,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "id": String,
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "siteId": String,
   "status": "failure",
   "additionalInformation": ""
 }
