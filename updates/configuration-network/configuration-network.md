@@ -305,8 +305,8 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 
 #### Default Configuration Error Handling
 1. Send a notification message to GSTV alerting that an error has occurred.
-1. If a previous configuration exists
-  1. Continue to operate using previous configuration until next update
-1. If no previous configuration exists
-  1. Use default initialization configuration until next update
+1. If a previous configuration exists.
+  1. Continue to operate using previous configuration until next update.
+1. If no previous configuration exists.
+  1. Use default initialization configuration until next update.
 1. GSTV sends another notification update message.
