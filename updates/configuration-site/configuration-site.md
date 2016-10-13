@@ -130,7 +130,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
   "siteId": String,
-  "status": "success",
+  "status": "success"
 }
 ```
 
@@ -142,7 +142,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
   "siteId": String,
-  "status": "success",
+  "status": "success"
 }
 ```
 
@@ -154,7 +154,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
   "siteId": String,
-  "status": "success",
+  "status": "success"
 }
 ```
 
