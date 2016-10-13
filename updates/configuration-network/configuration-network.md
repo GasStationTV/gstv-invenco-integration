@@ -5,32 +5,21 @@ Message sent with the network wide configuration values including shutdown hours
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Network Configuration Updates](#network-configuration-updates)
-	- [Key/Value Glossary](#keyvalue-glossary)
-		- [Fields from GSTV Messages](#fields-from-gstv-messages)
-		- [Additional Fields in Invenco Responses](#additional-fields-in-invenco-responses)
-	- [Ideal Path](#ideal-path)
-		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
-		- [What Invenco Sends to GSTV once Network Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-validated)
-		- [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-at-the-site)
-		- [What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Players](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-pushed-to-the-players)
-		- [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Players](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-players)
-	- [Error Path](#error-path)
-		- [What Invenco Sends if the Network Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-network-configuration-update-notification-has-validation-errors)
-			- [Specific Examples](#specific-examples)
-				- [What Invenco Sends if the shutdownHours or expiryHours for any File in the Network Configuration Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-shutdownhours-or-expiryhours-for-any-file-in-the-network-configuration-update-notification-is-not-formatted-correctly)
-				- [What Invenco Sends if the filename or swapFilename in the Site Configuration Update Notification does not Contain a File Extension](#what-invenco-sends-if-the-filename-or-swapfilename-in-the-site-configuration-update-notification-does-not-contain-a-file-extension)
-				- [What Invenco Sends if the GUID or updatedOn in the Network Configuration Update Notification Does Not Exist](#what-invenco-sends-if-the-guid-or-updatedon-in-the-network-configuration-update-notification-does-not-exist)
-				- [What Invenco Sends if the level for a Volume Object in the Network Configuration Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-level-for-a-volume-object-in-the-network-configuration-update-notification-is-not-formatted-correctly)
-				- [What Invenco Sends if the startTime for a Volume Level in the Network Configuration Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-starttime-for-a-volume-level-in-the-network-configuration-update-notification-is-not-formatted-correctly)
-				- [What Invenco Sends if the blankoutVideo in the Network Configuration Update Notification does not Contain a File Extension](#what-invenco-sends-if-the-blankoutvideo-in-the-network-configuration-update-notification-does-not-contain-a-file-extension)
-		- [What Invenco Sends if the File or Swap File in the Network Configuration Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-file-or-swap-file-in-the-network-configuration-update-notification-is-not-in-the-invenco-library)
-		- [What Invenco Sends if they are Unable to Push Network Configuration Update Notification to Player](#what-invenco-sends-if-they-are-unable-to-push-network-configuration-update-notification-to-player)
-		- [What Invenco Sends if a Network Configuration Update Notification is Rejected by the Player](#what-invenco-sends-if-a-network-configuration-update-notification-is-rejected-by-the-player)
-	- [Standard Operating Procedure](#standard-operating-procedure)
-		- [Applying Configuration Updates](#applying-configuration-updates)
-		- [Error Handling](#error-handling)
-			- [Default Error Handling](#default-error-handling)
-			- [Default Configuration Error Handling](#default-configuration-error-handling)
+  - [Key/Value Glossary](#keyvalue-glossary)
+  - [Ideal Path](#ideal-path)
+    - [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
+    - [What Invenco Sends to GSTV on a Successful Download](#what-invenco-sends-to-gstv-on-a-successful-download)
+    - [What Invenco Sends to GSTV once Network Configuration Updates have been Applied](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-applied)
+  - [Error Path](#error-path)
+    - [What Invenco Sends if the Network Configuration Update Can Not Be Parsed](#what-invenco-sends-if-the-network-configuration-update-can-not-be-parsed)
+    - [What Invenco Sends if the Shutdown Hours are Missing from the Network Configuration Update](#what-invenco-sends-if-the-shutdown-hours-are-missing-from-the-network-configuration-update)
+    - [What Invenco Sends if the Filename in a Node is Missing from the Network Configuration Update](#what-invenco-sends-if-the-filename-in-a-node-is-missing-from-the-network-configuration-update)
+    - [What Invenco Sends if the expiryHours Key is Missing from the Network Configuration Update](#what-invenco-sends-if-the-expiryhours-key-is-missing-from-the-network-configuration-update)
+  - [Standard Operating Procedure](#standard-operating-procedure)
+    - [Applying Configuration Updates](#applying-configuration-updates)
+    - [Error Handling](#error-handling)
+      - [Default Error Handling](#default-error-handling)
+      - [Default Configuration Error Handling](#default-configuration-error-handling)
 
 <!-- /TOC -->
 
@@ -54,8 +43,8 @@ Message sent with the network wide configuration values including shutdown hours
   - Values
     - CONFIGURATION_VALIDATION
     - MEDIA_CHECK
-    - CONFIGURATION_PUSH_TO_PLAYERS
-    - CONFIGURATION_ACCEPTED_BY_PLAYERS
+    - CONFIGURATION_PUSH_TO_SITE
+    - CONFIGURATION_ACCEPTED_BY_SITE
 - **notificationTimestamp** - A UTC date and time that indicates when this update was created. This can be used to ensure updates are applied in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
 - **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
@@ -124,6 +113,18 @@ Message sent with the network wide configuration values including shutdown hours
 }
 ```
 
+### What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Site
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
+  "siteId": String,
+  "status": "success"
+}
+```
+
 ### What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified at the Site
 ```javascript
 {
@@ -136,25 +137,13 @@ Message sent with the network wide configuration values including shutdown hours
 }
 ```
 
-### What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Players
+### What Invenco Sends to GSTV once Network Configuration Updates have been Accepted by the Site
 ```javascript
 {
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
-  "siteId": String,
-  "status": "success"
-}
-```
-
-### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Players
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "success"
 }
@@ -217,55 +206,10 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-##### What Invenco Sends if the level for a Volume Object in the Network Configuration Update Notification is not Formatted Correctly
-If the volume level is not a number between 0 and 100 follow [Default Configuration Error Handling](#default-configuration-error-handling).
+### What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Library
+Follow [Default Site Missing File Error Handling](#default-site-missing-file-error-handling).
 
-Return above structure with this specific value for additionalInformation.
-
-```javascript
-  "additionalInformation": "Volume Level Incorrectly Formatted"
-```
-
-##### What Invenco Sends if the startTime for a Volume Level in the Network Configuration Update Notification is not Formatted Correctly
-If the startTime is not formatted at HHMM follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
-
-```javascript
-  "additionalInformation": "Volume Start Time Incorrectly Formatted"
-```
-
-##### What Invenco Sends if the blankoutVideo in the Network Configuration Update Notification does not Contain a File Extension
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
-
-```javascript
-  "additionalInformation": "Blankout Video Filename Missing Extension - {filename}"
-```
-
-### What Invenco Sends if the File or Swap File in the Network Configuration Update Notification is not in the Invenco Library
-1. Invenco should retry downloading the file three times.
-1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": "Video File is Missing - {filename}"
-}
-```
-
-```javascript
-  "additionalInformation": "Swap Video File is Missing - {filename}"
-```
-
-### What Invenco Sends if they are Unable to Push Network Configuration Update Notification to Player
+### What Invenco Sends if they are Unable to Push Network Configuration Update Notification to Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -273,14 +217,14 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
+  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
 }
 ```
 
-### What Invenco Sends if a Network Configuration Update Notification is Rejected by the Player
+### What Invenco Sends if a Network Configuration Update Notification is Rejected by the Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -288,7 +232,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
@@ -297,6 +241,30 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 
 ## Standard Operating Procedure
 ### Applying Configuration Updates
+1. Poll for network configuration update notification.
+1. Validate network configuration update notification.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-validated).**
+  - **If failure**
+      - **Follow [What Invenco Sends if the Network Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-network-configuration-update-notification-has-validation-errors).**
+1. Send network configuration to site.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-pushed-to-the-site).**
+  - **If failure**
+    - **Follow [What Invenco Sends if they are Unable to Push Network Configuration Update Notification to Site](#what-invenco-sends-if-they-are-unable-to-push-network-configuration-update-notification-to-site).**
+1. Verify media files associated with network configuration are present at site.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-at-the-site).**
+  - **If failure**
+    - **Follow [What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Library](#what-invenco-sends-if-the-swap-files-in-the-network-configuration-update-notification-are-not-in-the-invenco-library).**
+1. Apply network configurations to site.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-accepted-by-the-site).**
+  - **If failure**
+    - **Follow [What Invenco Sends if a Network Configuration Update Notification is Rejected by the Site](#what-invenco-sends-if-a-network-configuration-update-notification-is-rejected-by-the-site).**
+
+
+
 
 ### Error Handling
 #### Default Error Handling
@@ -305,8 +273,8 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 
 #### Default Configuration Error Handling
 1. Send a notification message to GSTV alerting that an error has occurred.
-1. If a previous configuration exists.
-  1. Continue to operate using previous configuration until next update.
-1. If no previous configuration exists.
-  1. Use default initialization configuration until next update.
+1. If a previous configuration exists
+  1. Continue to operate using previous configuration until next update
+1. If no previous configuration exists
+  1. Use default initialization configuration until next update
 1. GSTV sends another notification update message.
