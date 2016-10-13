@@ -3,18 +3,20 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Playlist Updates](#playlist-updates)
-  - [Key/Value Glossary](#keyvalue-glossary)
-    - [Field from GSTV Messages](#field-from-gstv-messages)
-  - [Ideal Path](#ideal-path)
-    - [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
-    - [What Invenco Sends to GSTV on a Successful Download](#what-invenco-sends-to-gstv-on-a-successful-download)
-    - [What Invenco Sends to GSTV once Playlist Updates have been Applied at a Site](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-applied-at-a-site)
-  - [Error Path](#error-path)
-    - [What Invenco Sends If Playlist can't be parsed](#what-invenco-sends-if-playlist-cant-be-parsed)
-    - [What Invenco Sends If Site in Playlist does not exist](#what-invenco-sends-if-site-in-playlist-does-not-exist)
-    - [What Invenco Sends If Media File in Playlist Does Not Exist in Invenco Library](#what-invenco-sends-if-media-file-in-playlist-does-not-exist-in-invenco-library)
-    - [Error Handling](#error-handling)
-      - [Playlist Error Handling](#playlist-error-handling)
+	- [Key/Value Glossary](#keyvalue-glossary)
+		- [Field from GSTV Messages](#field-from-gstv-messages)
+		- [Additional Fields in Invenco Responses](#additional-fields-in-invenco-responses)
+	- [Ideal Path](#ideal-path)
+		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
+		- [What Invenco Sends to GSTV once Playlist Updates have been Validated](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-validated)
+		- [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-at-the-site)
+		- [What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pushed-to-the-players)
+		- [What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pushed-to-the-players)
+	- [Error Path](#error-path)
+		- [What Invenco Sends if the Playlist Update Notification has Validation Errors](#what-invenco-sends-if-the-playlist-update-notification-has-validation-errors)
+			- [Specific Examples](#specific-examples)
+				- [What Invenco Sends if the updatedOn, filename Extension, date, loopNumber, start or end in the Playlist Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-updatedon-filename-extension-date-loopnumber-start-or-end-in-the-playlist-update-notification-is-not-formatted-correctly)
+				- [What Invenco Sends if the guid, updatedOn, playlist, siteId, schedules, segmentId, date, loop, loopNumber, asset, assetId, filename, type, start, end, or tiNumber in the Playlist Updated Notification is Missing](#what-invenco-sends-if-the-guid-updatedon-playlist-siteid-schedules-segmentid-date-loop-loopnumber-asset-assetid-filename-type-start-end-or-tinumber-in-the-playlist-updated-notification-is-missing)
 
 <!-- /TOC -->
 
