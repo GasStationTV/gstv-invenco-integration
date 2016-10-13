@@ -41,10 +41,10 @@
         - **filename** - Filename of the video to be played.
         - **type** - The type of video.
 	      	- Values
-						- Advertising
-						- Programming
-						- BrandedMessaging
-						- RPA
+						- advertising
+						- programming
+						- brandedMessaging
+						- rpa
         - **start** - Date in which the video should begin displaying.
         - **end** - Date in which the video should end displaying.
         - **tiNumber** - The insertion order number that the asset was purchased as part of. This value needs to be passed back to GSTV on the ProofofPlayPacket.
