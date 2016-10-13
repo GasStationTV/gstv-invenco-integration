@@ -160,7 +160,7 @@ Messages sent with the site-specific configuration values including hours, speci
 ## Error Path
 If any part of a message causes an error the entire update will be rejected.
 
-### What Invenco Sends if the Site Configuration Update Notification is Malformed or is Unable to be Parsed
+### What Invenco Sends if the Site Configuration Update Notification has Validation Errors
 Follows [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -168,7 +168,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_SITE_MALFORMED_DATA",
+  "notificationType": "CONFIGURATION_VALIDATION",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
