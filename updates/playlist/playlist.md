@@ -608,6 +608,41 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 ```
 
 ### Error Handling
+1. Poll for playlist update notification.
+1. Validate playlist update notification.
+  - **If success**
+    - Follow
+  - **If failure**
+    - Follow
+1. Send playlist to site
+  - **If success**
+    - Follow
+  - **If failure**
+    - Follow
+1. Commence video playback
+  - If a banner is present in the playlist
+    - If the current date is within the dates defined by the start and end dates
+      - If the site has the asset
+        - Display during fueling lifecycle defined by type
+      - If the site does not have the asset
+        - Do not display
+    - If the current date is outside the dates defined by the start and end dates
+      - Do not display
+  - Using schedule date
+    - If schedule date is current date
+      - Play loops in order
+        - If a media file is not present at the site skip it during playback and continue
+        - If a daypart is present for an asset
+          - If the current time is within the times defined by the start and end times
+            - If the site has the asset
+              - Play the asset
+            - If the sites does not have the asset
+              - Do not play the asset
+          - If the current time is outside the times defined by the start and end times
+            - Do not play the asset
+    - If schedule date is not current date
+      - Do not play assets defined in that schedule object
+
 #### Playlist Error Handling
 1. Send a notification message to GSTV alerting that an error has occurred.
 1. Playback does not stop.
