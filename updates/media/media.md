@@ -35,7 +35,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 {
   "filename": String,
   "checksum": String,
-  "fileUpdatedOn": "18:41"
+  "fileUpdatedOn": String
 }
 ```
 
@@ -45,7 +45,7 @@ A message is sent when a file has been added to a playlist or a current file in 
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": String,
+  "notificationType": "", // TBD
   "status": "success",
   "additionalInformation": String
 }
@@ -60,7 +60,7 @@ Follow [Media Error Handling](#media-error-handling).
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": String,
+  "notificationType": "", // TBD
   "status": "failure",
   "additionalInformation": String
 }
@@ -74,7 +74,7 @@ Follow [Media Error Handling](#media-error-handling).
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": String,
+  "notificationType": "", // TBD
   "status": "failure",
   "additionalInformation": String
 }
@@ -89,7 +89,7 @@ Follow [Media Error Handling](#media-error-handling).
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": String,
+  "notificationType": "", // TBD
   "status": "failure",
   "additionalInformation": String
 }

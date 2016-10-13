@@ -266,7 +266,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": String,
+  "notificationType": "", // TBD
   "siteId": String,
   "status": "failure",
   "additionalInformation": "Blankout Video File Missing"
