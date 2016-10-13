@@ -36,6 +36,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 {
   "id": String,
   "filename": String,
+	"notificationTimestamp": String
   "notificationType": String,
   "status": "success",
   "additionalInformation": String
@@ -44,32 +45,28 @@ A message is sent when a file has been added to a playlist or a current file in 
 
 ## Error Path
 ### What Invenco Sends if the File is Not Found in S3
-1. A notification packet is sent to GSTV signifying an error has occurred.
-1. Playback at the site is unaffected.
-1. The file that was supposed to play is skipped.
-1. GSTV will send another media update notification.
+Follow [Media Error Handling](#media-error-handling).
 
 ```javascript
 {
-  "id": String,  // invenco generated per notification
+  "id": String,
   "filename": String,
-  "notificationType": String, // one of the defined notifications
+	"notificationTimestamp": String
+  "notificationType": String,
   "status": "failure",
   "additionalInformation": String
 }
 ```
 
 ### What Invenco Sends if the MD5 Does Not Match After Download
-1. A notification packet is sent to GSTV signifying an error has occurred.
-1. Playback at the site is unaffected.
-1. The file that was supposed to play is skipped.
-1. GSTV will send another media update notification.
+Follow [Media Error Handling](#media-error-handling).
 
 ```javascript
 {
-  "id": String,  // invenco generated per notification
+  "id": String,
   "filename": String,
-  "notificationType": String, // one of the defined notifications
+	"notificationTimestamp": String
+  "notificationType": String,
   "status": "failure",
   "additionalInformation": String
 }
@@ -77,16 +74,25 @@ A message is sent when a file has been added to a playlist or a current file in 
 
 ### What Invenco Sends if the File Download Does Not Complete
 1. Invenco should retry downloading the file three times.
-1. If the download is still unsucessful, a notification packet is sent to GSTV signifying an error has occurred.
-1. Playback at the site is unaffected.
-1. The file that was supposed to play is skipped during playback.
-1. GSTV will send another media change notification.
+1. If the download is still unsuccessful follow [Media Error Handling](#media-error-handling).
+
 ```javascript
 {
-  "id": String, // invenco generated per notification
+  "id": String,
   "filename": String,
-  "notificationType": String, // one of the defined notifications
+	"notificationTimestamp": String
+  "notificationType": String,
   "status": "failure",
   "additionalInformation": String
 }
 ```
+
+## Standard Operating Procedure
+### Applying Configuration Updates
+
+### Error Handling
+#### Media Error Handling
+1. Send a notification message to GSTV alerting that an error has occured.
+1. Playback does not stop.
+1. The affected file is skipped during playback.
+1. GSTV sends another notification update message.
