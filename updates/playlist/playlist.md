@@ -139,7 +139,7 @@
                 "type": String,
                 "start": String,
                 "end": String,
-                "ioNumber": Number,
+                "tiNumber": String,
                 "dayparts": []
               },
               {
