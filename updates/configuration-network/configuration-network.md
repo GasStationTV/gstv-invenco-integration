@@ -24,7 +24,7 @@ Message sent with the network wide configuration values including shutdown hours
 <!-- /TOC -->
 
 ## Key/Value Glossary
-### Field from GSTV Messages
+### Fields from GSTV Messages
 - **guid** - TBD
 - **updatedOn** - TBD
 - **configuration** - TBD
@@ -35,6 +35,11 @@ Message sent with the network wide configuration values including shutdown hours
 			- **swapFilename** - Filename - including file extension - of video file to play if the expiryHours value has been exceeded. If blank, no video should play in the loop during the spot.
 
 ### Additional Fields in Invenco Responses
+- **notificationType** - TBD
+- **notificationTimestamp** - TBD
+- **status** - TBD
+- **id** - TBD
+- **additionalInformation** - TBD
 
 ## Ideal Path
 ### What GSTV Sends to Invenco

@@ -16,10 +16,18 @@ A message is sent when a file has been added to a playlist or a current file in 
 <!-- /TOC -->
 
 ## Key/Value Glossary
-### Field from GSTV Messages
+### Fields from GSTV Messages
 - **filename** - Filename - including file extension - of video to control.
 - **checksum** - MD5 checksum for the video asset. This value should be used to ensure the correct and full video asset is being downloaded by Invenco.
 - **fileUpdatedOn** - UTC datetime when the video asset was updated.
+
+
+### Additional Fields in Invenco Responses
+- **notificationType** - TBD
+- **notificationTimestamp** - TBD
+- **status** - TBD
+- **id** - TBD
+- **additionalInformation** - TBD
 
 ## Ideal Path
 ### What GSTV Sends to Invenco
@@ -36,7 +44,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 {
   "id": String,
   "filename": String,
-	"notificationTimestamp": String
+  "notificationTimestamp": String
   "notificationType": String,
   "status": "success",
   "additionalInformation": String
@@ -51,7 +59,7 @@ Follow [Media Error Handling](#media-error-handling).
 {
   "id": String,
   "filename": String,
-	"notificationTimestamp": String
+  "notificationTimestamp": String
   "notificationType": String,
   "status": "failure",
   "additionalInformation": String
@@ -65,7 +73,7 @@ Follow [Media Error Handling](#media-error-handling).
 {
   "id": String,
   "filename": String,
-	"notificationTimestamp": String
+  "notificationTimestamp": String
   "notificationType": String,
   "status": "failure",
   "additionalInformation": String
@@ -80,7 +88,7 @@ Follow [Media Error Handling](#media-error-handling).
 {
   "id": String,
   "filename": String,
-	"notificationTimestamp": String
+  "notificationTimestamp": String
   "notificationType": String,
   "status": "failure",
   "additionalInformation": String

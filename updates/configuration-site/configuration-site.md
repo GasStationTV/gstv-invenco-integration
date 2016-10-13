@@ -3,7 +3,7 @@
 Messages sent with the site-specific configuration values including hours, specifying the blankout video file, and volume settings.
 
 ## Key/Value Glossary
-### Field from GSTV Messages
+### Fields from GSTV Messages
 - **guid** - TBD
 - **updatedOn** - TBD
 - **configuration** - TBD
