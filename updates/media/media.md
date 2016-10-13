@@ -208,6 +208,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_PUSH_TO_PLAYERS",
   "siteId": String,
@@ -223,8 +224,23 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+### What Invenco Sends if a Player Fails to Report POP
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "filename": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_POP_FAILED",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
