@@ -290,49 +290,41 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 
 #### Specific Examples
 ##### What Invenco Sends if the updatedOn, filename Extension, date, loopNumber, start or end in the Playlist Update Notification is not Formatted Correctly
-If the updatedOn is not formatted as `YYYY-MM-DD HH:MM:SS:MS` follow [Default Configuration Error Handling](#default-configuration-error-handling).
+For any of these examples follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
+
+If the updatedOn is not formatted as `YYYY-MM-DD HH:MM:SS:MS`.
 
 ```javascript
   "additionalInformation": "Updated On is Incorrectly Formatted"
 ```
 
-If the banner filename is missing an extension follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
+If the banner filename is missing an extension.
 
 ```javascript
   "additionalInformation": "Banner Filename Missing Extension - {filename}"
 ```
 
-If the date for a schedule is not formatted as YYYY-MM-DD follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
+If the date for a schedule is not formatted as YYYY-MM-DD.
 
 ```javascript
   "additionalInformation": "Schedule Date is Incorrectly Formatted"
 ```
 
-If loopNumber is not a number follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
+If loopNumber is not a number.
 
 ```javascript
   "additionalInformation": "Loop Number is Incorrectly Formatted"
 ```
 
-If an asset filename is missing an extension follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
+If an asset filename is missing an extension.
 
 ```javascript
   "additionalInformation": "Asset Filename Missing Extension - {filename}"
 ```
 
-If the start or end date is not formatted at YYYY-MM-DD follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
+If the start or end date is not formatted at YYYY-MM-DD.
 
 ```javascript
   "additionalInformation": "Start Date is Incorrectly Formatted for {filename}"
@@ -342,9 +334,7 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "End Date is Incorrectly Formatted for {filename}"
 ```
 
-If the start or end time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
+If the start or end time is not formatted at HH:MM.
 
 ```javascript
   "additionalInformation": "Start Time is Incorrectly Formatted for {filename}"
