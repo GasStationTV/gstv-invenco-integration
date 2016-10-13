@@ -248,7 +248,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 ```
 
 ## Standard Operating Procedure
-### Applying Media Updates Updates
+### Applying Media Updates
 
 ### Error Handling
 #### Media Error Handling
