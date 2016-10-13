@@ -24,6 +24,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 ### Additional Fields in Invenco Responses
 - **notificationType** - A string indicating the step in the update process to which this notification refers.
   - Values
+    - MEDIA_VALIDATION
     - MEDIA_DOWNLOAD
     - MEDIA_CHECKSUM_VALIDATION
     - MEDIA_TRANSCODED
@@ -46,6 +47,17 @@ A message is sent when a file has been added to a playlist or a current file in 
   "updatedOn": String
   "filename": String,
   "checksum": String,
+}
+```
+
+### What Invenco Sends to GSTV once Media Updates have been Validated
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_VALIDATION",
+  "status": "success",
 }
 ```
 
@@ -90,6 +102,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_PUSH_TO_PLAYERS",
   "siteId": String,
@@ -102,14 +115,33 @@ A message is sent when a file has been added to a playlist or a current file in 
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
+  "siteId": String,
   "status": "success",
 }
 ```
 
 ## Error Path
+If any part of a message causes an error the entire update will be rejected.
 
+### What Invenco Sends if the Media Update Notification has Validation Errors
+Follows [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "filename": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_VALIDATION",
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+#### Specific Examples
 ##### What Invenco Sends if the GUID or updatedOn in the Media Update Notification Does Not Exist
 Follow [Default Error Handling](#default-error-handling).
 
@@ -121,6 +153,52 @@ Return above structure with this specific value for additionalInformation.
 
 ```javascript
   "additionalInformation": "Updated On is Missing"
+```
+
+### What Invenco Sends if the Video File in the Media Update can not be Downloaded
+1. Invenco should retry downloading the file three times.
+1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "filename": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_DOWNLOAD",
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+### What Invenco Sends if the Provided MD5 Checksum does not Match the Calculated MD5 Checksum for the Media File
+Follows [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "filename": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_CHECKSUM_VALIDATION",
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+### What Invenco Sends if the Media File is Unable to be Transcoded
+Follows [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "filename": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_TRANSCODED",
+  "status": "failure",
+  "additionalInformation": ""
+}
 ```
 
 ### What Invenco Sends if they are Unable to Push Media Updates to a Player
@@ -152,7 +230,6 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "additionalInformation": ""
 }
 ```
-
 
 ## Standard Operating Procedure
 ### Applying Configuration Updates
