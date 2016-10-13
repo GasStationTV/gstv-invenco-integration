@@ -121,7 +121,19 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-### What Invenco Sends to GSTV once Media Files Associated with the Site Configuration Updates have been Verified at the Site
+### What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
+  "siteId": String,
+  "status": "success"
+}
+```
+
+### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Site
 ```javascript
 {
   "guid": String,
@@ -134,19 +146,7 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-### What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Players
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
-  "siteId": String,
-  "status": "success"
-}
-```
-
-### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Players
+### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Site
 ```javascript
 {
   "guid": String,
@@ -178,7 +178,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 
 #### Specific Examples
 ##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly
-If the openAt or closeAt time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+If the openAt or closeAt time is not formatted at HHMM follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
 
@@ -249,23 +249,9 @@ Return above structure with this specific value for additionalInformation.
 ```
 
 ### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library
-1. Invenco should retry downloading the file three times.
-1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling).
+Follow [Default Site Missing File Error Handling](#default-site-missing-error-handling).
 
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": "Blankout Video File is Missing - {filename}"
-}
-```
-
-### What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Player
+### What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -280,7 +266,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
-### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Player
+### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -297,7 +283,23 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 
 ## Standard Operating Procedure
 ### Applying Configuration Updates
-
+1. Poll for site configuration update notification.
+1. Validate site configuration update notification.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-validated).**
+  - **If failure**
+      - **Follow [What Invenco Sends if the Site Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-site-configuration-update-notification-has-validation-errors).**
+1. Send site configuration to site.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pushed-to-the-site).**
+  - **If failure**
+    - **Follow [What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Site](#what-invenco-sends-if-they-are-unable-to-push-site-configuration-update-notification-to-site).**
+1. Verify blankout video associated with site configuration is present at site.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Site](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-site ).**
+  - **If failure**
+    - **Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).**
+ 
 ### Error Handling
 #### Default Error Handling
 1. Send a notification message to GSTV alerting that an error has occurred.
