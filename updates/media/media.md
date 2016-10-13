@@ -91,7 +91,7 @@ A message is sent when a file has been added to a playlist or a current file in 
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
+  "notificationType": "MEDIA_PUSH_TO_PLAYERS",
   "siteId": String,
   "status": "success",
 }
@@ -103,7 +103,7 @@ A message is sent when a file has been added to a playlist or a current file in 
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
   "status": "success",
 }
 ```
