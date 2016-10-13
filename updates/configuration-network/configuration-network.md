@@ -62,6 +62,14 @@ Message sent with the network wide configuration values including shutdown hours
   "configuration": [
     {
       "shutdownHours": Number,
+      "blankoutvideo": String,
+      "volume": [
+        {
+          "startTime": String,
+          "level": Number
+        }
+      ],
+      
       "evergreen":[
         {
           "filename": String,
