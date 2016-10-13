@@ -39,7 +39,8 @@
       - **assets** - Node to specify the details of each asset to be played within the loop.
         - **assetId** - Number assigned to the media asset by GSTV. This number should be included in the ProofofPlay packet coming from Invenco to GSTV.
         - **filename** - Filename of the video to be played.
-        - **type** - The type of video. Values:  "Advertising", "Programming", "BrandedMessaging", and "RPA"
+        - **type** - The type of video. 
+	      - **Values**:  "Advertising", "Programming", "BrandedMessaging", and "RPA"
         - **start** - Date in which the video should begin displaying.
         - **end** - Date in which the video should end displaying.
         - **ioNumber** - The insertion order number that the asset was purchased as part of. This value needs to be passed back to GSTV on the ProofofPlayPacket.
