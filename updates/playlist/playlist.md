@@ -25,13 +25,13 @@
 - **playlist** - _required_ - Detailed settings for playlist.
   - **siteId** - _required_ - The Invenco name of the site.
   - **banners** - An array containing the information about playing banner static images. If this information is not present, no banners should be displayed.
-      - **filename** - _If banners array exists this is required_ - Filename, including file extension, of the image to be displayed.
-      - **start** - Date the banner image should begin displaying. The format will be `year-month-day`.
-      - **end** - Date the banner image should end displaying. The format will be `year-month-day`.
-      - **type** -  Specifies in which part of the fueling transaction the image should display.
-        - Values
-          - prefueling
-          - postfueling
+    - **filename** - _If banners array exists this is required_ - Filename, including file extension, of the image to be displayed.
+    - **start** - Date the banner image should begin displaying. The format will be `year-month-day`.
+    - **end** - Date the banner image should end displaying. The format will be `year-month-day`.
+    - **type** -  Specifies in which part of the fueling transaction the image should display.
+      - Values
+        - prefueling
+        - postfueling
   - **schedules** - _required_ - Contains the playlist details broken up by date.
     - **segmentId** - _required_ - A unique identifier provided by GSTV for each date of the playlist. We will expect this in notifications related to this date of the playlist.
     - **date** - _required_ - A String that specifies the date the playlist is active.  The format will be `year-month-day`.
