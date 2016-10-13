@@ -182,3 +182,50 @@
 ```
 
 ## Error Path
+### What Invenco Sends If Playlist can't be parsed
+Follow [Playlist Error Handling](#playlist-error-handling).
+
+```javascript
+{
+  "id": String,  // invenco generated per notification
+  "siteId": "FSD002",
+  "guid": String,  // echo this value from the playlist if playlist change
+  "notificationType": String, // one of the defined notifications
+  "status": "failure"
+  "additionalInformation": "Playlist can't be parsed"
+}
+```
+### What Invenco Sends If Site in Playlist does not exist
+Follow [Playlist Error Handling](#playlist-error-handling).
+
+```javascript
+{
+  "id": String,  // invenco generated per notification
+  "siteId": "FSD002",
+  "guid": String,  // echo this value from the playlist if playlist change
+  "notificationType": String, // one of the defined notifications
+  "status": "failure"
+  "additionalInformation": "Site does not exist"
+}
+```
+### What Invenco Sends If Media File in Playlist Does Not Exist in Invenco "Library"
+1. Invenco should retry downloading the file three times.
+1. If the download is still unsuccessful follow [Playlist Error Handling](#playlist-error-handling).
+
+```javascript
+{
+  "id": String,  // invenco generated per notification
+  "siteId": "FSD002",
+  "guid": String,  // echo this value from the playlist if playlist change
+  "filename":"BAN0123_BANNER.mp4",
+  "notificationType": String, // one of the defined notifications
+  "status": "failure"
+  "additionalInformation": "File not found in Invenco Library"
+}
+```
+
+### Error Handling
+#### Playlist Error Handling
+1. Send a notification message to GSTV alerting that an error has occured.
+1. Playback does not stop.
+1. GSTV sends another notification update message.
