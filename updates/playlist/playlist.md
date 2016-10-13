@@ -50,8 +50,8 @@
         - **end** - _required_ - Date the video should end displaying. The format will be `year-month-day`.
         - **tiNumber** - This value is internal to GSTV. This value needs to be passed back to GSTV on the ProofofPlayPacket.
         - **dayparts** - An array that specifies specifc times of the day that a video should play. If no daypart is present, the video should play without regard to time.
-          - **start** - _If daypart array exists this is required_ - Local site time (24 hour time) in which the asset should start playing if daypart is present. The format will be 'hours:mins'.
-          - **end** - _If daypart array exists this is required_ - Local site time (24 hour time) in which the asset should stop playing if daypart is present. The format will be 'hours:mins'.
+          - **start** - _if daypart array exists this is required_ - Local site time (24 hour time) in which the asset should start playing if daypart is present. The format will be 'hours:mins'.
+          - **end** - _if daypart array exists this is required_ - Local site time (24 hour time) in which the asset should stop playing if daypart is present. The format will be 'hours:mins'.
 
 ### Additional Fields in Invenco Responses
 - **notificationType** - A String indicating the step in the update process to which this notification refers.
