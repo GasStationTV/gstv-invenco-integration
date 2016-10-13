@@ -1,5 +1,17 @@
 # POP Messages - Proof of Play
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Proof of PLay Updates](#proofofplay-updates)
+	- [Key/Value Glossary](#keyvalue-glossary)
+		- [Field from Invenco Messages](#field-from-invenco-messages)
+	- [Ideal Path](#ideal-path)
+		- [What Invenco Sends to GSTV](#what-invenco-sends-to-gstv)
+	- [Error Path](#error-path)
+		- [What Invenco Sends if Post to GSTV Fails](#what-invenco-sends-if-post-to-gstv-fails)
+
+<!-- /TOC -->
+
 
 ## Key/Value Glossary
 ### Field from Invenco Messages
