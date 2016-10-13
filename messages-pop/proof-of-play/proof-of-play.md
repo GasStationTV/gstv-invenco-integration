@@ -28,7 +28,6 @@
 ## Ideal Path
 ### What Invenco Sends to GSTV
 ```javascript
-
 {
   "filename": String,
   "assetId": String,  
