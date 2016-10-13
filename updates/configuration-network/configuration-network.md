@@ -34,9 +34,9 @@ Message sent with the network wide configuration values including shutdown hours
       - **expiryHours** - _required_ - The number of hours a video can play before expiring and being swapped out or removed from playback. The timing starts from the time the site receives the video file.
       - **swapFilename** - Filename - including file extension - of video file to play if the expiryHours value has been exceeded. If blank, no video should play in the loop during the spot.
   - **blankoutvideo** - Video file - including file extension - to play continuously when a Site is closed.
-    - **volume** - Array of volume level settings.
-      - **startTime** - _if volume array exists this is required_ - The time represented in HH:MM local time that the volume setting will take effect.
-      - **level** - _if volume array exists this is required_ - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
+  - **volume** - Array of volume level settings.
+    - **startTime** - _if volume array exists this is required_ - The time represented in HH:MM local time that the volume setting will take effect.
+    - **level** - _if volume array exists this is required_ - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
       
 ### Additional Fields in Invenco Responses
 - **notificationType** - A string indicating the step in the update process to which this notification refers.
