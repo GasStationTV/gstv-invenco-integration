@@ -71,11 +71,12 @@
 ### What GSTV Sends to Invenco
 ```javascript
 {
- "updatedOn": String, // UTC datetime
- "playlist": [
-   {
-    "site": String,
-    "banners": [
+  "guid": String,
+  "updatedOn": String,
+  "playlist": [
+    {
+    	"site": String,
+    	"banners": [
       {
         "filename": String,
         "start": String,
@@ -215,25 +216,49 @@
 }
 ```
 
-### What Invenco Sends to GSTV on a Successful Download
+### What Invenco Sends to GSTV once Playlist Updates have been Validated
 ```javascript
 {
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "", // TBD
+  "notificationType": "PLAYLIST_VALIDATION",
   "siteId": String,
   "status": "success",
 }
 ```
 
-### What Invenco Sends to GSTV once Playlist Updates have been Applied at a Site
+### What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site
 ```javascript
 {
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "", // TBD
+  "notificationType": "MEDIA_CHECK",
+  "siteId": String,
+  "status": "success",
+}
+```
+
+### What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "PLAYLIST_PUSH_TO_PLAYERS",
+  "siteId": String,
+  "status": "success",
+}
+```
+
+### What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "PLAYLIST_ACCEPTED_BY_PLAYERS",
   "siteId": String,
   "status": "success",
 }

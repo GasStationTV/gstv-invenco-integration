@@ -1,3 +1,0 @@
-# Updates
-
-## Standard Operating Procedures
