@@ -17,6 +17,9 @@
 			- [Specific Examples](#specific-examples)
 				- [What Invenco Sends if the updatedOn, filename Extension, date, loopNumber, start or end in the Playlist Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-updatedon-filename-extension-date-loopnumber-start-or-end-in-the-playlist-update-notification-is-not-formatted-correctly)
 				- [What Invenco Sends if the guid, updatedOn, playlist, siteId, schedules, segmentId, date, loop, loopNumber, asset, assetId, filename, type, start, end, or tiNumber in the Playlist Updated Notification is Missing](#what-invenco-sends-if-the-guid-updatedon-playlist-siteid-schedules-segmentid-date-loop-loopnumber-asset-assetid-filename-type-start-end-or-tinumber-in-the-playlist-updated-notification-is-missing)
+				- [What Invenco Sends if there is a Banner and a Start Date for an Banner Object in the Playlist Update Notification Is After the End Date](#what-invenco-sends-if-there-is-a-banner-and-a-start-date-for-an-banner-object-in-the-playlist-update-notification-is-after-the-end-date)
+				- [What Invenco Sends if the Start Date for an Asset in the Playlist Update Notification Is After the End Date](#what-invenco-sends-if-the-start-date-for-an-asset-in-the-playlist-update-notification-is-after-the-end-date)
+				- [What Invenco Sends if there is a Daypart and a Start Time for a Daypart Object in the Playlist Update Notification Is After the End Time](#what-invenco-sends-if-there-is-a-daypart-and-a-start-time-for-a-daypart-object-in-the-playlist-update-notification-is-after-the-end-time)
 				- [What Invenco Sends if the Banner type in the Site Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-banner-type-in-the-site-playlist-update-notification-does-not-exist)
 				- [What Invenco Sends if the Asset type in the Site Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-asset-type-in-the-site-playlist-update-notification-does-not-exist)
 				- [What Invenco Sends if the siteId in the Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-siteid-in-the-playlist-update-notification-does-not-exist)
@@ -499,6 +502,33 @@ If a daypart array exists and any object in that array is missing the start or  
 
 ```javascript
   "additionalInformation": "Asset Missing Daypart Information"
+```
+
+##### What Invenco Sends if there is a Banner and a Start Date for an Banner Object in the Playlist Update Notification Is After the End Date
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Start Date is After End Date for Banner - {filename}"
+```
+
+##### What Invenco Sends if the Start Date for an Asset in the Playlist Update Notification Is After the End Date
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Start Date is After End Date for {filename}"
+```
+
+##### What Invenco Sends if there is a Daypart and a Start Time for a Daypart Object in the Playlist Update Notification Is After the End Time
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Daypart Start Time is After End Time for {filename}"
 ```
 
 ##### What Invenco Sends if the Banner type in the Site Playlist Update Notification Does Not Exist
