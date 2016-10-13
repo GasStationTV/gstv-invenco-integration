@@ -13,8 +13,8 @@ Messages sent with the site-specific configuration values including hours, speci
       - **openAt** - _if day of the week array exists this is required_ - Time the site opens represented as HH:MM local time to the site location using 24 hour time.
       - **closeAt** - _if day of the week array exists this is required_ - Time the site closes represented as HH:MM local time to the site location using 24 hour time. Times after 24:00 indicates a closing time on the next day. For example, 26:00 should be interpreted as closing at 2:00 AM the following day.
       - **duration** - Length in milliseconds the site is open.
-  - **blankoutvideo** - Video file - including file extension - to play continuously when the site is closed.
-  - **volume** - Array of volume level settings.
+  - **blankoutvideo** - Video file - including file extension - to play continuously when the site is closed. This will override the value configured for the network.
+  - **volume** - Array of volume level settings. These will override the values configured for the network.
     - **startTime** - _if volume array exists this is required_ - The time represented in HHMM local time that the volume setting will take effect.
     - **level** - _if volume array exists this is required_ - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
 
