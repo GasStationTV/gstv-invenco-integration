@@ -1,0 +1,128 @@
+{
+  "guid": "21EC2020-3AEA-4069-A2DD-08002B30309D",
+  "updatedOn": "2016-10-13 18:49:34.589",
+  "configuration": [
+    {
+      "shutdownHours": 120,
+      "blankoutvideo": "blank_video.mp4",
+      "volume": [
+        {
+          "startTime": "07:30",
+          "level": 50
+        }
+      ],
+      "evergreen":[
+        {
+          "filename": "CNN04028_HLNSAT.mp4",
+          "expiryHours": 25,
+          "swapFilename": "CNN04031_HLNSWAP.mp4"
+        },
+        {
+          "filename": "CNN04029_HLNSUN.mp4",
+          "expiryHours": 25,
+          "swapFilename": "CNN04031_HLNSWAP.mp4"
+        },
+        {
+          "filename": "CNN04104_HLNWEEKDAY.mp4",
+          "expiryHours": 25,
+          "swapFilename": "CNN04031_HLNSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.BO__.gstvbos.mp4",
+          "expiryHours": 25,
+          "swapFilename": ""
+        },
+        {
+          "filename": "GSTV.DT__.gstvdtw",
+          "expiryHours": 15,
+          "swapFilename": "GTV12953_BUMPERCONNECT_GREEN.mp4"
+        },
+        {
+          "filename": "GSTV.DT__.gstvdtw.mp4",
+          "expiryHours": 15,
+          "swapFilename": "GTV12953_BUMPERCONNECT_GREEN.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.BLB03827_FINANCIALNEWS.mp4",
+          "expiryHours": 17,
+          "swapFilename": "BLB03828_BLOOMSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.CNN04028_HLNSAT.mp4",
+          "expiryHours": 25,
+          "swapFilename": "CNN04031_HLNSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.CNN04029_HLNSUN.mp4",
+          "expiryHours": 25,
+          "swapFilename": "CNN04031_HLNSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.CNN04030_SHOWBIZ.mp4",
+          "expiryHours": 37,
+          "swapFilename": "CNN04032_SHOWBIZSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.CNN04104_HLNWEEKDAY.mp4",
+          "expiryHours": 25,
+          "swapFilename": "CNN04031_HLNSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.ESN04791_GSTVESPN.mp4",
+          "expiryHours": 25,
+          "swapFilename": "ESN04853_GSTVESPNSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.HD_BLB03827_FINANCIALNEWS.mp4",
+          "expiryHours": 17,
+          "swapFilename": "HD_BLB03828_BLOOMSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.HD_ESN04791_GSTVESPN.mp4",
+          "expiryHours": 25,
+          "swapFilename": "HD_ESN04853_GSTVESPNSWAP.mp4"
+        },
+        {
+          "filename": "GSTV.NATL.HD_ESN13797_DEPORTESFUTBOLFORD052015.mp4",
+          "expiryHours": 75,
+          "swapFilename": ""
+        },
+        {
+          "filename": "GSTV.NATL.HD_ESN13824_ESPNHISPANICSOCCER.mp4",
+          "expiryHours": 75,
+          "swapFilename": "HD_ESN04853_GSTVESPNSWAP.mp4"
+        },
+        {
+          "filename": "gstvbos.mp4",
+          "expiryHours": 25,
+          "swapFilename": "HD_GTV12953_BUMPERCONNECT_GREEN.mp4"
+        },
+        {
+          "filename": "gstvdtw.mp4",
+          "expiryHours": 15,
+          "swapFilename": "GTV12953_BUMPERCONNECT_GREEN.mp4"
+        },
+        {
+          "filename": "HD_ESN13797_DEPORTESFUTBOLFORD052015.mp4",
+          "expiryHours": 75,
+          "swapFilename": "HD_ESN04853_GSTVESPNSWAP.mp4"
+        },
+        {
+          "filename": "HD_ESN13824_ESPNHISPANICSOCCER.mp4",
+          "expiryHours": 75,
+          "swapFilename": "HD_ESN04853_GSTVESPNSWAP.mp4"
+        },
+        {
+          "filename": "HD_gstvben.mp4",
+          "expiryHours": 15,
+          "swapFilename": "HD_GTV12953_BUMPERCONNECT_GREEN.mp4"
+        },
+        {
+          "filename": "HD_rgstvr10.mp4",
+          "expiryHours": 24,
+          "swapFilename": "GTV12953_BUMPERCONNECT_GREEN.mp4"
+        }
+      ]
+    }
+  ]
+}

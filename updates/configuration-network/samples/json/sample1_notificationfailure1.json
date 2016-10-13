@@ -1,0 +1,8 @@
+{
+  "guid": "21EC2020-3AEA-4069-A2DD-08002B30309D",
+  "id": "3978012378945",
+  "notificationTimestamp": "2016-10-13 18:49:35.980",
+  "notificationType": "CONFIGURATION_VALIDATION",
+  "status": "failure",
+  "additionalInformation": "Shutdown Hours Incorrectly Formatted"
+}
