@@ -44,8 +44,6 @@
           - **start** -  Local site time in which the asset should start playing if daypart is present
           - **end** -  Local site time in which the asset should stop playing if daypart is present
 
-
-
 ## Ideal Path
 ### What GSTV Sends to Invenco
 ```javascript
@@ -53,19 +51,19 @@
  "playListUpdatedOn": String, // UTC datetime
  "playList": [
    {
-    "site": "FSD002",
+    "site": String,
     "banners": [
       {
         "filename": String,
         "start": String,
         "end": String,
-        "type": "prefueling"
+        "type": String
       },
       {
         "filename": String,
         "start": String,
         "end": String,
-        "type": "postfueling"
+        "type": String
       }
     ],
     "schedules": [
@@ -77,7 +75,7 @@
             "assets": [
               {
                 "filename": String,
-                "type": "BrandedMessaging",
+                "type": String,
                 "dayparts": [
                   {
                     "start": String,
@@ -91,7 +89,7 @@
               },
               {
                 "filename": String,
-                "type": "Programming",
+                "type": String,
                 "dayparts": [
                   {
                     "start": String,
@@ -101,7 +99,7 @@
               },
               {
                 "filename": String,
-                "type": "Programming",
+                "type": String,
                 "dayparts": [
                   {
                     "start": String,
@@ -111,7 +109,7 @@
               },
               {
                 "filename": String,
-                "type": "Advertising",
+                "type": String,
                 "start": String,
                 "end": String,
                 "ioNumber": Number,
@@ -119,12 +117,12 @@
               },
               {
                 "filename": String,
-                "type": "BrandedMessaging",
+                "type": String,
                 "dayparts": []
               },
               {
                 "filename": String,
-                "type": "RPA",
+                "type": String,
                 "start": String,
                 "end": String,
                 "ioNumber": Number,
@@ -132,7 +130,7 @@
               },
               {
                 "filename": String,
-                "type": "Programming",
+                "type": String,
                 "dayparts": []
               }
             ]
@@ -142,22 +140,22 @@
             "assets": [
               {
                 "filename": String,
-                "type": "BrandedMessaging",
+                "type": String,
                 "dayparts": []
               },
               {
                 "filename": String,
-                "type": "Programming",
+                "type": String,
                 "dayparts": []
               },
               {
                 "filename": String,
-                "type": "BrandedMessaging",
+                "type": String,
                 "dayparts": []
               },
               {
                 "filename": String,
-                "type": "Programming",
+                "type": String,
                 "dayparts": []
               }
             ]
@@ -167,22 +165,22 @@
             "assets": [
               {
                 "filename": String,
-                "type": "BrandedMessaging",
+                "type": String,
                 "dayparts": []
               },
               {
                 "filename": String,
-                "type": "Programming",
+                "type": String,
                 "dayparts": []
               },
               {
                 "filename": String,
-                "type": "BrandedMessaging",
+                "type": String,
                 "dayparts": []
               },
               {
                 "filename": String,
-                "type": "Programming",
+                "type": String,
                 "dayparts": []
               }
             ]
@@ -224,10 +222,10 @@ Follow [Playlist Error Handling](#playlist-error-handling).
 
 ```javascript
 {
-  "id": String,  // invenco generated per notification
+  "id": String,
   "siteId": String,
-  "guid": String,  // echo this value from the playlist if playlist change
-  "notificationType": String, // one of the defined notifications
+  "guid": String,
+  "notificationType": String,
   "status": "failure"
   "additionalInformation": "Playlist can't be parsed"
 }
@@ -237,10 +235,10 @@ Follow [Playlist Error Handling](#playlist-error-handling).
 
 ```javascript
 {
-  "id": String,  // invenco generated per notification
+  "id": String,
   "siteId": String,
-  "guid": String,  // echo this value from the playlist if playlist change
-  "notificationType": String, // one of the defined notifications
+  "guid": String,
+  "notificationType": String,
   "status": "failure"
   "additionalInformation": "Site does not exist"
 }
@@ -252,11 +250,11 @@ Follow [Playlist Error Handling](#playlist-error-handling).
 
 ```javascript
 {
-  "id": String,  // invenco generated per notification
+  "id": String,
   "siteId": String,
-  "guid": String,  // echo this value from the playlist if playlist change
+  "guid": String,
   "filename": String,
-  "notificationType": String, // one of the defined notifications
+  "notificationType": String,
   "status": "failure"
   "additionalInformation": "File not found in Invenco Library"
 }
