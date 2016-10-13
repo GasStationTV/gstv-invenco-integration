@@ -35,7 +35,7 @@ Message sent with the network wide configuration values including shutdown hours
       - **swapFilename** - Filename - including file extension - of video file to play if the expiryHours value has been exceeded. If blank, no video should play in the loop during the spot.
 
 ### Additional Fields in Invenco Responses
-- **notificationType** - A String indicating the the step in the update process to which this notification refers.  Valid values are:
+- **notificationType** - A String indicating the step in the update process to which this notification refers.  Valid values are:
   * CONFIGURATION_VALIDATION
   * MEDIA_CHECK
   * CONFIGURATION_PUSH_TO_PLAYERS

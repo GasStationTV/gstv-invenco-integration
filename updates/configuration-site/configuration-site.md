@@ -19,7 +19,7 @@ Messages sent with the site-specific configuration values including hours, speci
     - **level** - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
 
 ### Additional Fields in Invenco Responses
-- **notificationType** - A String indicating the the step in the update process to which this notification refers.  Valid values are:
+- **notificationType** - A String indicating the step in the update process to which this notification refers.  Valid values are:
   * CONFIGURATION_VALIDATION
   * MEDIA_CHECK
   * CONFIGURATION_PUSH_TO_PLAYERS
