@@ -175,6 +175,15 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Volume Start Time Incorrectly Formatted"
 ```
 
+##### What Invenco Sends if the blankoutVideo in the Site Configuration Update Notification does not Contain a File Extension
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Blankout Video Filename Missing Extension"
+```
+
 ### What Invenco Sends if the Site Configuration Update Notification Contains Unexpected Values
 Follows [Default Configuration Error Handling](#default-configuration-error-handling)
 
@@ -233,6 +242,20 @@ The additionalInformation field will contain a comma separated list of the keys 
   "status": "failure",
   "additionalInformation": ""
 }
+```
+
+#### Specific Examples
+##### What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist
+Follow [Default Error Handling](#default-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "GUID is Missing"
+```
+
+```javascript
+  "additionalInformation": "Updated On is Missing"
 ```
 
 ### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library
