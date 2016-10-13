@@ -56,8 +56,8 @@ Messages sent with the site-specific configuration values including hours, speci
   - Values
     - CONFIGURATION_VALIDATION
     - MEDIA_CHECK
-    - CONFIGURATION_PUSH_TO_PLAYERS
-    - CONFIGURATION_ACCEPTED_BY_PLAYERS
+    - CONFIGURATION_PUSH_TO_SITE
+    - CONFIGURATION_ACCEPTED_BY_SITE
 - **notificationTimestamp** - A UTC date and time that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
 - **status** - A string that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
@@ -160,7 +160,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
+  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
   "siteId": String,
   "status": "success"
 }
@@ -185,7 +185,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "success"
 }
@@ -292,7 +292,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
+  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
@@ -307,7 +307,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
@@ -332,6 +332,11 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - **Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Site](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-site ).**
   - **If failure**
     - **Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).**
+1. Apply site configurations to site.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-site).**
+  - **If failure**
+    - **Follow [What Invenco Sends if a Site Configuration Update Notification is Rejected by the Site](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).**
 
 ### Error Handling
 #### Default Error Handling
