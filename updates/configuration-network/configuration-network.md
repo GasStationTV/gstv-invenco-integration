@@ -101,7 +101,7 @@ Message sent with the network wide configuration values including shutdown hours
   "id": String,
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_VALIDATION",
-  "status": "success",
+  "status": "success"
 }
 ```
 
