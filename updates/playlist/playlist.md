@@ -375,7 +375,29 @@ If siteId is missing.
   "additionalInformation": "Site Identifier is Missing"
 ```
 
-If a banner array exists and any object in that array is missing the start, end filename, or type.
+If a banner array exists and any object in that array is missing the filename.
+
+```javascript
+  "additionalInformation": "Banner Missing Filename"
+```
+
+If a banner array exists and any object in that array is missing the type.
+
+```javascript
+  "additionalInformation": "Banner Type Missing for {filename}"
+```
+
+If a banner array exists and any object in that array is start or end.
+
+```javascript
+  "additionalInformation": "Banner Start Date Missing for {filename}"
+```
+
+```javascript
+  "additionalInformation": "Banner End Date Missing for {filename}"
+```
+
+If a banner array exists and any object in that array is missing the start, end or type and the filename.
 
 ```javascript
   "additionalInformation": "Banner Structure is Missing Information"
@@ -409,4 +431,64 @@ If loopNumber is missing.
 
 ```javascript
   "additionalInformation": "Loop Number is Missing"
+```
+
+If the asset array is missing or there is an empty asset object in the array.
+
+```javascript
+  "additionalInformation": "Asset Structure is Missing Information"
+```
+
+If assetId is missing.
+
+```javascript
+  "additionalInformation": "Asset {filename} Missing ID"
+```
+
+If an asset is missing the filename.
+
+```javascript
+  "additionalInformation": "Asset Missing Filename"
+```
+
+If an asset is missing the type.
+
+```javascript
+  "additionalInformation": "Asset {filename} Missing Type"
+```
+
+If an asset is missing the start date.
+
+```javascript
+  "additionalInformation": "Asset {filename} Missing Start Date"
+```
+
+If an asset is missing the end date.
+
+```javascript
+  "additionalInformation": "Asset {filename} Missing End Date"
+```
+
+If an asset is missing the assetId, type, start date or end date and the asset is missing a filename.
+
+```javascript
+  "additionalInformation": "Asset Missing Information"
+```
+
+If a daypart array exists and any object in that array is missing the start.
+
+```javascript
+  "additionalInformation": "Asset {filename} Missing Daypart Start Time"
+```
+
+If a daypart array exists and any object in that array is missing the end.
+
+```javascript
+  "additionalInformation": "Asset {filename} Missing Daypart End Time"
+```
+
+If a daypart array exists and any object in that array is missing the start or  end time and the asset is missing a filename.
+
+```javascript
+  "additionalInformation": "Asset Missing Daypart Information"
 ```
