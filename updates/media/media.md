@@ -19,7 +19,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 ### Fields from GSTV Messages
 - **filename** - _required_ - Filename - including file extension - of video to control.
 - **checksum** - _required_ - MD5 checksum for the video asset. This value should be used to ensure the correct and full video asset is being downloaded by Invenco.
-- **updatedOn** - _required_ - A UTC date and time that indicates when this update was created. This can be used to ensure updates are applied in the appropriate order. The format will be `year-month-day hours:mins:secs:millis` using 24 hour time.
+- **updatedOn** - _required_ - A UTC date and time that indicates when this update was created. This can be used to ensure updates are applied in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
 
 ### Additional Fields in Invenco Responses
 - **notificationType** - A string indicating the step in the update process to which this notification refers.
@@ -31,7 +31,7 @@ A message is sent when a file has been added to a playlist or a current file in 
     - MEDIA_PUSH_TO_PLAYERS
     - MEDIA_ACCEPTED_BY_PLAYERS
     - MEDIA_POP_FAILED
-- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:millis`. 24 hour time will be used.
+- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds`. 24 hour time will be used.
 - **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
     - success
