@@ -32,10 +32,153 @@
 ## Ideal Path
 ### What GSTV Sends to Invenco
 ```javascript
+{
+ "playListUpdatedOn": String, // UTC datetime
+ "playList": Play List Json
+}
+
+
+
+{
+  "site": "FSD002",
+  "banners": [
+    {
+      "filename": "BAN0123_BANNER.mp4",
+      "start": "2016-08-04",
+      "end": "2016-09-05",
+      "type": "prefueling"
+    },
+    {
+      "filename": "BAN014343_BANNER.mp4",
+      "start": "2016-08-04",
+      "end": "2016-09-05",
+      "type": "postfueling"
+    }
+  ],
+  "schedules": [
+    {
+      "date": "2016-08-05",
+      "loops": [
+        {
+          "loopNumber": 1,
+          "assets": [
+            {
+              "filename": "GTV12953_BUMPERCONNECT_GREEN.mp4",
+              "type": "BrandedMessaging",
+              "dayparts": [
+                {
+                  "start": "0400",
+                  "end": "1000"
+                },
+                {
+                  "start": "1500",
+                  "end": "2200"
+                }
+              ]
+            },
+            {
+              "filename": "ESN04791_ESPN.mp4",
+              "type": "Programming",
+              "dayparts": [
+                {
+                  "start": "0800",
+                  "end": "1200"
+                }
+              ]
+            },
+            {
+              "filename": "ESN04791_ESPN8THEOCHO.mp4",
+              "type": "Programming",
+              "dayparts": [
+                {
+                  "start": "1201",
+                  "end": "1700"
+                }
+              ]
+            },
+            {
+              "filename": "QUICKEN_LOANS.mp4",
+              "type": "Advertising",
+              "start": "2016-08-04",
+              "end": "2016-08-06",
+              "ioNumber": 123,
+              "dayparts": []
+            },
+            {
+              "filename": "GTV12953_BUMPERCONNECT_GREEN.mp4",
+              "dayparts": []
+            },
+            {
+              "filename": "FLYINGJ_RPA.mp4",
+              "type": "RPA",
+              "start": "2016-07-04",
+              "end": "2016-09-06",
+              "ioNumber": 456,
+              "dayparts": []
+            },
+            {
+              "filename": "BLB03827_BLOOMBERG.mp4",
+              "dayparts": []
+            }
+          ]
+        },
+        {
+          "loopNumber": 2,
+          "assets": [
+            {
+              "filename": "GTV12953_BUMPERCONNECT_GREEN.mp4",
+              "dayparts": []
+            },
+            {
+              "filename": "ESN04791_ESPN.mp4",
+              "dayparts": []
+            },
+            {
+              "filename": "GTV12953_BUMPERCONNECT_GREEN.mp4",
+              "dayparts": []
+            },
+            {
+              "filename": "BLB03827_BLOOMBERG.mp4",
+              "dayparts": []
+            }
+          ]
+        },
+        {
+          "loopNumber": 3,
+          "assets": [
+            {
+              "filename": "GTV12953_BUMPERCONNECT_GREEN.mp4",
+              "dayparts": []
+            },
+            {
+              "filename": "ESN04791_ESPN.mp4",
+              "dayparts": []
+            },
+            {
+              "filename": "GTV12953_BUMPERCONNECT_GREEN.mp4",
+              "dayparts": []
+            },
+            {
+              "filename": "CNT15609_CNET.mp4",
+              "dayparts": []
+            }
+          ]
+        }
+      ]
+    },
+
 ```
 
 ### What Invenco Sends to GSTV on Success
 ``` javascript
+{
+  "id": String,  // invenco generated per notification
+  "siteId": "FSD002",
+  "guid": String,  // echo this value from the playlist if playlist change
+  "notificationType": String, // one of the defined notifications
+  "status": "success",
+  "additionalInformation": String
+}
 ```
 
 ## Error Path
