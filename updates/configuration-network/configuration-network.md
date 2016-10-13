@@ -102,19 +102,64 @@ Message sent with the network wide configuration values including shutdown hours
 ```
 
 ## Error Path
+If any part of a message causes an error the entire update will be rejected.
+
 ### What Invenco Sends if the Network Configuration Update Can Not Be Parsed
-1. If previous network configuration exists, continue to operate with those settings.  
-1. If no network configuration exists, operate without network configuration values????????????
-1. Send a notification packet to GSTV signifying an error has occurred. GSTV will send another network configuration update.
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
-  "id": String, // invenco generated per notification
-  "notificationType": String, // one of the defined notifications
-  "status": "failure"
-  "additionalInformation": "Config can't be parsed"
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_NETWORK_MALFORMED_DATA",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
 }
 ```
+
+#### Specific Examples
+
+### What Invenco Sends if the Network Configuration Update Notification Contains Unexpected Values
+Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_NETWORK_UNEXPECTED_VALUE",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+#### Specific Examples
+
+### What Invenco Sends if the Site Configuration Update Notification is Missing Values
+Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+
+The additionalInformation field will contain a comma separated list of the keys without values.
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_SITE_MISSING_VALUE",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+
+
+
+
+
 
 ### What Invenco Sends if the Shutdown Hours are Missing from the Network Configuration Update
 1. If previous network configuration exists, continue to operate with those settings.  
