@@ -182,11 +182,11 @@ If the openAt or closeAt time is not formatted at HHMM follow [Default Configura
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Open At Time Incorrectly Formatted for {Day}"
+  "additionalInformation": "Open At Time Incorrectly Formatted for {day}"
 ```
 
 ```javascript
-  "additionalInformation": "Close At Time Incorrectly Formatted for {Day}"
+  "additionalInformation": "Close At Time Incorrectly Formatted for {day}"
 ```
 
 ##### What Invenco Sends if the level for a Volume Object in the Site Configuration Update Notification is not Formatted Correctly
@@ -231,7 +231,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Open At is Later than Close At for {Day}"
+  "additionalInformation": "Open At is Later than Close At for {day}"
 ```
 
 ##### What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist
