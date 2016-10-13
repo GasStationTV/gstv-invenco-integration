@@ -97,7 +97,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 }
 ```
 
-### What Invenco Sends to GSTV once a File has been Pushed to the Players
+### What Invenco Sends to GSTV once a File has been Pushed to the Site
 ```javascript
 {
   "guid": String,
@@ -110,24 +110,11 @@ A message is sent when a file has been added to a playlist or a current file in 
 }
 ```
 
-### What Invenco Sends to GSTV once a File has been Accepted by the Players
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
-  "siteId": String,
-  "status": "success",
-}
-```
-
 ## Error Path
 If any part of a message causes an error the entire update will be rejected.
 
 ### What Invenco Sends if the Media Update Notification has Validation Errors
-Follows [Default Configuration Error Handling](#default-configuration-error-handling).
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
@@ -172,7 +159,7 @@ Return above structure with this specific value for additionalInformation.
 ```
 
 ### What Invenco Sends if the Provided MD5 Checksum does not Match the Calculated MD5 Checksum for the Media File
-Follows [Default Configuration Error Handling](#default-configuration-error-handling).
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
@@ -187,7 +174,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 ```
 
 ### What Invenco Sends if the Media File is Unable to be Transcoded
-Follows [Default Configuration Error Handling](#default-configuration-error-handling).
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
@@ -201,7 +188,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 }
 ```
 
-### What Invenco Sends if they are Unable to Push Media Updates to a Player
+### What Invenco Sends if they are Unable to Push Media Updates to a Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -217,38 +204,40 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
-### What Invenco Sends if a Media Updates are Rejected by the Player
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": ""
-}
-```
-
-### What Invenco Sends if a Player Fails to Report POP
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_POP_FAILED",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": ""
-}
-```
-
 ## Standard Operating Procedure
 ### Applying Media Updates
+1. Poll for media update notification.
+1. Validate media update notification.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once Media Updates have been Validated](#what-invenco-sends-to-gstv-once-media-updates-have-been-validated).**
+  - **If failure**
+      - **Follow [What Invenco Sends if the Media Update Notification has Validation Errors](#what-invenco-sends-if-the-media-update-notification-has-validation-errors).**
+1. Download video asset from S3.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV when the File has been Successfully Downloaded from S3](#what-invenco-sends-to-gstv-when-the-file-has-been-successfully-downloaded-from-s3).**
+  - **If failure**
+      - **Retry download from S3 3 times.**
+        - **If success**
+          - **Follow [What Invenco Sends to GSTV when the File has been Successfully Downloaded from S3](#what-invenco-sends-to-gstv-when-the-file-has-been-successfully-downloaded-from-s3).**
+        - **If failure**
+          - **Follow [What Invenco Sends if the Media Update Notification has Validation Errors](#what-invenco-sends-if-the-media-update-notification-has-validation-errors).**
+1. Calculate MD5 checksum of downloaded media and compare with MD5 provided in media update.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV when the Provided MD5 Checksum and the Calculated MD5 Checksum Match](#what-invenco-sends-to-gstv-when-the-provided-md5-checksum-and-the-calculated-md5-checksum-match).**
+  - **If failure**
+    - **Follow [What Invenco Sends if the Provided MD5 Checksum does not Match the Calculated MD5 Checksum for the Media File](#what-invenco-sends-if-the-provided-md5-checksum-does-not-match-the-calculated-md5-checksum-for-the-media-file).**
+1. Complete transcoding of media.
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV when the File has Successfully been Transcoded](#what-invenco-sends-to-gstv-when-the-file-has-successfully-been-transcoded).**
+  - **If failure**
+    - **Follow [What Invenco Sends if the Media File is Unable to be Transcoded](#what-invenco-sends-if-the-media-file-is-unable-to-be-transcoded).**
+1. Send media to required sites.
+**For each site:**
+  - **If success**
+    - **Follow [What Invenco Sends to GSTV once a File has been Pushed to the Site](#what-invenco-sends-to-gstv-once-a-file-has-been-pushed-to-the-site).**
+  - **If failure**
+    - **Follow [What Invenco Sends if they are Unable to Push Media Updates to a Site](#what-invenco-sends-if-they-are-unable-to-push-media-updates-to-a-site).**
+
 
 ### Error Handling
 #### Media Error Handling
