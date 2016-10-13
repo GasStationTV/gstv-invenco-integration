@@ -79,143 +79,144 @@
     {
       "site": String,
       "banners": [
-      {
-        "filename": String,
-        "start": String,
-        "end": String,
-        "type": String
-      },
-      {
-        "filename": String,
-        "start": String,
-        "end": String,
-        "type": String
-      }
-    ],
-    "schedules": [
-      {
-        "date": String,
-        "loops": [
-          {
-            "segmentId": String,
-            "loopNumber": Number,
-            "assets": [
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": [
-                  {
-                    "start": String,
-                    "end": String
-                  },
-                  {
-                    "start": String,
-                    "end": String
-                  }
-                ]
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": [
-                  {
-                    "start": String,
-                    "end": String
-                  }
-                ]
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": [
-                  {
-                    "start": String,
-                    "end": String
-                  }
-                ]
-              },
-              {
-                "filename": String,
-                "type": String,
-                "start": String,
-                "end": String,
-                "tiNumber": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "start": String,
-                "end": String,
-                "tiNumber": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              }
-            ]
-          },
-          {
-            "segmentId": String,
-            "loopNumber": Number,
-            "assets": [
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              }
-            ]
-          },
-          {
-            "segmentId": String,
-            "loopNumber": Number,
-            "assets": [
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              },
-              {
-                "filename": String,
-                "type": String,
-                "dayparts": []
-              }
-            ]
-          }
-        ]
-      }
+        {
+          "filename": String,
+          "start": String,
+          "end": String,
+          "type": String
+        },
+        {
+          "filename": String,
+          "start": String,
+          "end": String,
+          "type": String
+        }
+      ],
+      "schedules": [
+        {
+          "date": String,
+          "loops": [
+            {
+              "segmentId": String,
+              "loopNumber": Number,
+              "assets": [
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": [
+                    {
+                      "start": String,
+                      "end": String
+                    },
+                    {
+                      "start": String,
+                      "end": String
+                    }
+                  ]
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": [
+                    {
+                      "start": String,
+                      "end": String
+                    }
+                  ]
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": [
+                    {
+                      "start": String,
+                      "end": String
+                    }
+                  ]
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "start": String,
+                  "end": String,
+                  "tiNumber": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "start": String,
+                  "end": String,
+                  "tiNumber": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                }
+              ]
+            },
+            {
+              "segmentId": String,
+              "loopNumber": Number,
+              "assets": [
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                }
+              ]
+            },
+            {
+              "segmentId": String,
+              "loopNumber": Number,
+              "assets": [
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                },
+                {
+                  "filename": String,
+                  "type": String,
+                  "dayparts": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
