@@ -271,103 +271,85 @@
 ```
 
 ## Error Path
-### What Invenco Sends If Playlist can't be parsed
-Follow [Playlist Error Handling](#playlist-error-handling).
+If any part of a message causes an error the entire update will be rejected.
 
-```javascript
-{
-  "id": String,
-  "siteId": String,
-  "guid": String,
-  "notificationType": String,
-  "status": "failure"
-  "additionalInformation": "Playlist can't be parsed",
-  "segmentIds": [String]
-}
-```
-### What Invenco Sends If Site in Playlist does not exist
-Follow [Playlist Error Handling](#playlist-error-handling).
-
-```javascript
-{
-  "id": String,
-  "siteId": String,
-  "guid": String,
-  "notificationType": String,
-  "status": "failure"
-  "additionalInformation": "Site does not exist",
-  "segmentIds": [String]
-}
-```
-
-### What Invenco Sends if a Video File in the Playlist Update Notification is not in the Invenco Library
-1. Invenco should retry downloading the file three times.
-1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling).
+### What Invenco Sends if the Playlist Update Notification has Validation Errors
+Follows [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
+  "notificationType": "PLAYLIST_VALIDATION",
   "siteId": String,
   "status": "failure",
-  "additionalInformation": "Video File is Missing - {filename}"
-  "segmentIds": [String]
+  "additionalInformation": ""
 }
 ```
 
-### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+#### Specific Examples
+##### What Invenco Sends if the updatedOn, filename Extension, date, loopNumber, start or end in the Playlist Update Notification is not Formatted Correctly
+If the updatedOn is not formatted as `YYYY-MM-DD HH:MM:SS:MS` follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": "Blankout Video File is Missing - {filename}",
-  "segmentIds": [String]
-}
+  "additionalInformation": "Updated On is Incorrectly Formatted"
 ```
 
+If the banner filename is missing an extension follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
-### What Invenco Sends if they are Unable to Push Playlist Update Notification to Player
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "PLAYLIST_PUSH_TO_PLAYERS",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": "",
-  "segmentIds": [String]
-}
+  "additionalInformation": "Banner Filename Missing Extension - {filename}"
 ```
 
-### What Invenco Sends if a Playlist Update Notification is Rejected by the Player
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+If the date for a schedule is not formatted as YYYY-MM-DD follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "PLAYLIST_ACCEPTED_BY_PLAYERS",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": "",
-  "segmentIds": [String]
-}
+  "additionalInformation": "Schedule Date is Incorrectly Formatted"
 ```
 
-### Error Handling
-#### Playlist Error Handling
-1. Send a notification message to GSTV alerting that an error has occurred.
-1. Playback does not stop.
-1. GSTV sends another notification update message.
+If loopNumber is not a number follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Loop Number is Incorrectly Formatted"
+```
+
+If an asset filename is missing an extension follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Asset Filename Missing Extension - {filename}"
+```
+
+If the start or end date is not formatted at YYYY-MM-DD follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Start Date is Incorrectly Formatted for {filename}"
+```
+
+```javascript
+  "additionalInformation": "End Date is Incorrectly Formatted for {filename}"
+```
+
+If the start or end time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Start Time is Incorrectly Formatted for {filename}"
+```
+
+```javascript
+  "additionalInformation": "End Time is Incorrectly Formatted for {filename}"
+```

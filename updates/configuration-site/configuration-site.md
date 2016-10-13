@@ -178,7 +178,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 
 #### Specific Examples
 ##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly
-If the openAt or closeAt time is not formatted at HHMM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+If the openAt or closeAt time is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
 
