@@ -305,5 +305,5 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 1. If a previous configuration exists
   1. Continue to operate using previous configuration until next update
 1. If no previous configuration exists
-  1. Use generic configuration until next update
+  1. Use default initialization configuration until next update
 1. GSTV sends another notification update message.
