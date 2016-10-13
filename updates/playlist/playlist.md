@@ -607,7 +607,8 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
-### Error Handling
+## Standard Operating Procedure
+### Applying Playlist Updates
 1. Poll for playlist update notification.
 1. Validate playlist update notification.
   - **If success**
@@ -643,6 +644,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - If schedule date is not current date
       - Do not play assets defined in that schedule object
 
+### Error Handling
 #### Playlist Error Handling
 1. Send a notification message to GSTV alerting that an error has occurred.
 1. Playback does not stop.
