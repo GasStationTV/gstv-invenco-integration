@@ -5,21 +5,21 @@ Message sent with the network wide configuration values including shutdown hours
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Network Configuration Updates](#network-configuration-updates)
-	- [Key/Value Glossary](#keyvalue-glossary)
-	- [Ideal Path](#ideal-path)
-		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
-		- [What Invenco Sends to GSTV on a Successful Download](#what-invenco-sends-to-gstv-on-a-successful-download)
-		- [What Invenco Sends to GSTV once Network Configuration Updates have been Applied](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-applied)
-	- [Error Path](#error-path)
-		- [What Invenco Sends if the Network Configuration Update Can Not Be Parsed](#what-invenco-sends-if-the-network-configuration-update-can-not-be-parsed)
-		- [What Invenco Sends if the Shutdown Hours are Missing from the Network Configuration Update](#what-invenco-sends-if-the-shutdown-hours-are-missing-from-the-network-configuration-update)
-		- [What Invenco Sends if the Filename in a Node is Missing from the Network Configuration Update](#what-invenco-sends-if-the-filename-in-a-node-is-missing-from-the-network-configuration-update)
-		- [What Invenco Sends if the expiryHours Key is Missing from the Network Configuration Update](#what-invenco-sends-if-the-expiryhours-key-is-missing-from-the-network-configuration-update)
-	- [Standard Operating Procedure](#standard-operating-procedure)
-		- [Applying Configuration Updates](#applying-configuration-updates)
-		- [Error Handling](#error-handling)
-			- [Default Error Handling](#default-error-handling)
-			- [Default Configuration Error Handling](#default-configuration-error-handling)
+  - [Key/Value Glossary](#keyvalue-glossary)
+  - [Ideal Path](#ideal-path)
+    - [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
+    - [What Invenco Sends to GSTV on a Successful Download](#what-invenco-sends-to-gstv-on-a-successful-download)
+    - [What Invenco Sends to GSTV once Network Configuration Updates have been Applied](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-applied)
+  - [Error Path](#error-path)
+    - [What Invenco Sends if the Network Configuration Update Can Not Be Parsed](#what-invenco-sends-if-the-network-configuration-update-can-not-be-parsed)
+    - [What Invenco Sends if the Shutdown Hours are Missing from the Network Configuration Update](#what-invenco-sends-if-the-shutdown-hours-are-missing-from-the-network-configuration-update)
+    - [What Invenco Sends if the Filename in a Node is Missing from the Network Configuration Update](#what-invenco-sends-if-the-filename-in-a-node-is-missing-from-the-network-configuration-update)
+    - [What Invenco Sends if the expiryHours Key is Missing from the Network Configuration Update](#what-invenco-sends-if-the-expiryhours-key-is-missing-from-the-network-configuration-update)
+  - [Standard Operating Procedure](#standard-operating-procedure)
+    - [Applying Configuration Updates](#applying-configuration-updates)
+    - [Error Handling](#error-handling)
+      - [Default Error Handling](#default-error-handling)
+      - [Default Configuration Error Handling](#default-configuration-error-handling)
 
 <!-- /TOC -->
 
@@ -28,11 +28,11 @@ Message sent with the network wide configuration values including shutdown hours
 - **guid** - TBD
 - **updatedOn** - TBD
 - **configuration** - TBD
-		- **shutdownHours** - Number of hours a site should continue to play without connectivity. If site goes beyond this number of hours without connectivity, playback should halt at the site.
-		- **evergreen** - Configuration to control swapping video files when updates to specific files are not received.
-			- **filename** - Filename - including file extension - of video to control.
-			- **expiryHours** - The number of hours a video can play before expiring and being swapped out or removed from playback. The timing starts from the time the site receives the video file.
-			- **swapFilename** - Filename - including file extension - of video file to play if the expiryHours value has been exceeded. If blank, no video should play in the loop during the spot.
+    - **shutdownHours** - Number of hours a site should continue to play without connectivity. If site goes beyond this number of hours without connectivity, playback should halt at the site.
+    - **evergreen** - Configuration to control swapping video files when updates to specific files are not received.
+      - **filename** - Filename - including file extension - of video to control.
+      - **expiryHours** - The number of hours a video can play before expiring and being swapped out or removed from playback. The timing starts from the time the site receives the video file.
+      - **swapFilename** - Filename - including file extension - of video file to play if the expiryHours value has been exceeded. If blank, no video should play in the loop during the spot.
 
 ### Additional Fields in Invenco Responses
 - **notificationType** - TBD
@@ -49,36 +49,36 @@ Message sent with the network wide configuration values including shutdown hours
   "updatedOn": String,
   "configuration": [
     {
-		  "shutdownHours": Number,
-		  "evergreen":[
-		    {
-		      "filename": String,
-		      "expiryHours": Number,
-		      "swapFilename": String
-		    },
-		    {
-		      "filename": String,
-		      "expiryHours": Number,
-		      "swapFilename": String
-		    },
-		    {
-		      "filename": String,
-		      "expiryHours": Number,
-		      "swapFilename": String
-		    },
-		    {
-		      "filename": String,
-		      "expiryHours": Number,
-		      "swapFilename": String
-		    },
-		    {
-		      "filename": String,
-		      "expiryHours": Number,
-		      "swapFilename": String
-		    }
-		   ]
-		}
-	]
+      "shutdownHours": Number,
+      "evergreen":[
+        {
+          "filename": String,
+          "expiryHours": Number,
+          "swapFilename": String
+        },
+        {
+          "filename": String,
+          "expiryHours": Number,
+          "swapFilename": String
+        },
+        {
+          "filename": String,
+          "expiryHours": Number,
+          "swapFilename": String
+        },
+        {
+          "filename": String,
+          "expiryHours": Number,
+          "swapFilename": String
+        },
+        {
+          "filename": String,
+          "expiryHours": Number,
+          "swapFilename": String
+        }
+       ]
+    }
+  ]
 }
 ```
 
@@ -125,6 +125,18 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 ```
 
 #### Specific Examples
+##### What Invenco Sends if the filename or swapFiename in the Network Configuration Update Notification does not Contain a File Extension
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Filename Missing Extension"
+```
+
+```javascript
+  "additionalInformation": "Swap Filename Missing Extension"
+```
 
 ### What Invenco Sends if the Network Configuration Update Notification Contains Unexpected Values
 Follows [Default Configuration Error Handling](#default-configuration-error-handling)
@@ -143,22 +155,32 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 
 #### Specific Examples
 
-### What Invenco Sends if the Site Configuration Update Notification is Missing Values
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
+### What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist
+Follow [Default Error Handling](#default-error-handling).
 
-The additionalInformation field will contain a comma separated list of the keys without values.
+Return above structure with this specific value for additionalInformation.
 
 ```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_SITE_MISSING_VALUE",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": ""
-}
+  "additionalInformation": "GUID is Missing"
 ```
+
+```javascript
+  "additionalInformation": "Updated On is Missing"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,13 +5,13 @@ A message is sent when a file has been added to a playlist or a current file in 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Media Updates](#media-updates)
-	- [Ideal Path](#ideal-path)
-		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
-		- [What Invenco Sends to GSTV on Success](#what-invenco-sends-to-gstv-on-success)
-	- [Error Path](#error-path)
-		- [What Invenco Sends if the File is Not Found in S3](#what-invenco-sends-if-the-file-is-not-found-in-s3)
-		- [What Invenco Sends if the MD5 Does Not Match After Download](#what-invenco-sends-if-the-md5-does-not-match-after-download)
-		- [What Invenco Sends if the File Download Does Not Complete](#what-invenco-sends-if-the-file-download-does-not-complete)
+  - [Ideal Path](#ideal-path)
+    - [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
+    - [What Invenco Sends to GSTV on Success](#what-invenco-sends-to-gstv-on-success)
+  - [Error Path](#error-path)
+    - [What Invenco Sends if the File is Not Found in S3](#what-invenco-sends-if-the-file-is-not-found-in-s3)
+    - [What Invenco Sends if the MD5 Does Not Match After Download](#what-invenco-sends-if-the-md5-does-not-match-after-download)
+    - [What Invenco Sends if the File Download Does Not Complete](#what-invenco-sends-if-the-file-download-does-not-complete)
 
 <!-- /TOC -->
 
