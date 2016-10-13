@@ -157,6 +157,19 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 ```
 
 #### Specific Examples
+##### What Invenco Sends if the shutdownHours or expiryHours for any File in the Network Configuration Update Notification is not Formatted Correctly
+If the shutdownHours or expiryHours is not a number with two or fewer decimal points follow [Default Configuration Error Handling](#default-configuration-error-handling). Additionally, decimals may only be .25, .5 and .75.
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Shutdown Hours Incorrectly Formatted"
+```
+
+```javascript
+  "additionalInformation": "Expiry Hours Incorrectly Formatted for {filename}"
+```
+
 ##### What Invenco Sends if the filename or swapFilename in the Site Configuration Update Notification does not Contain a File Extension
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
