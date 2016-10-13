@@ -262,6 +262,36 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
+### What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_PUSH_TO_PLAYERS",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
 ## Standard Operating Procedure
 ### Applying Configuration Updates
 
