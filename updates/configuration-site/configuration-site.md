@@ -248,7 +248,8 @@ Return above structure with this specific value for additionalInformation.
 ```
 
 ### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+1. Invenco should retry downloading the file three times.
+1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
