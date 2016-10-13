@@ -292,21 +292,69 @@ Follow [Playlist Error Handling](#playlist-error-handling).
 }
 ```
 
-### What Invenco Sends If Media File in Playlist Does Not Exist in Invenco Library
+### What Invenco Sends if a Video File in the Playlist Update Notification is not in the Invenco Library
 1. Invenco should retry downloading the file three times.
-1. If the download is still unsuccessful follow [Playlist Error Handling](#playlist-error-handling).
+1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
 {
-  "id": String,
-  "siteId": String,
   "guid": String,
-  "filename": String,
-  "notificationType": String,
-  "status": "failure"
-  "additionalInformation": "File not found in Invenco Library"
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_CHECK",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": "Video File is Missing - {filename}"
 }
 ```
+
+### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_CHECK",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": "Blankout Video File is Missing - {filename}"
+}
+```
+
+
+### What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "PLAYLIST_PUSH_TO_PLAYERS",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "PLAYLIST_ACCEPTED_BY_PLAYERS",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": ""
+}
+```
+
+
 
 ### Error Handling
 #### Playlist Error Handling
