@@ -343,3 +343,68 @@ If the start or end time is not formatted at HH:MM.
 ```javascript
   "additionalInformation": "End Time is Incorrectly Formatted for {filename}"
 ```
+
+##### What Invenco Sends if the guid, updatedOn, playlist, siteId, schedules, segmentId, date, loop, loopNumber, asset, assetId, filename, type, start, end, or tiNumber in the Playlist Updated Notification is Missing
+For any of these examples follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+If the guid is missing.
+
+```javascript
+  "additionalInformation": "GUID is Missing"
+```
+
+If updatedOn is missing.
+
+```javascript
+  "additionalInformation": "Updated On is Missing"
+```
+
+If the playlist array is missing or there is an empty playlist object in the array.
+
+```javascript
+  "additionalInformation": "The Playlist Structure is Missing Information"
+```
+
+If siteId is missing.
+
+```javascript
+  "additionalInformation": "Site Identifier is Missing"
+```
+
+If a banner array exists and any object in that array is missing the start, end filename, or type.
+
+```javascript
+  "additionalInformation": "Banner Structure is Missing Information"
+```
+
+If the schedules array is missing or there is an empty schedule object in the array.
+
+```javascript
+  "additionalInformation": "Schedule Structure is Missing Information"
+```
+
+If segmentId is missing.
+
+```javascript
+  "additionalInformation": "Segment ID is Missing"
+```
+
+If segment date is missing.
+
+```javascript
+  "additionalInformation": "Segment Date is Missing"
+```
+
+If the loop array is missing or there is an empty loop object in the array.
+
+```javascript
+  "additionalInformation": "Loop Structure is Missing Information"
+```
+
+If loopNumber is missing.
+
+```javascript
+  "additionalInformation": "Loop Number is Missing"
+```
