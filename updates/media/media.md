@@ -46,7 +46,7 @@ A message is sent when a file has been added to a playlist or a current file in 
   "guid": String,
   "updatedOn": String
   "filename": String,
-  "checksum": String,
+  "checksum": String
 }
 ```
 
@@ -57,7 +57,7 @@ A message is sent when a file has been added to a playlist or a current file in 
   "id": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_VALIDATION",
-  "status": "success",
+  "status": "success"
 }
 ```
 
@@ -106,7 +106,7 @@ A message is sent when a file has been added to a playlist or a current file in 
   "notificationTimestamp": String
   "notificationType": "MEDIA_PUSH_TO_PLAYERS",
   "siteId": String,
-  "status": "success",
+  "status": "success"
 }
 ```
 
@@ -119,7 +119,7 @@ A message is sent when a file has been added to a playlist or a current file in 
   "notificationTimestamp": String
   "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
   "siteId": String,
-  "status": "success",
+  "status": "success"
 }
 ```
 
