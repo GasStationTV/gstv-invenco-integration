@@ -16,34 +16,17 @@ A message is sent when a file has been added to a playlist or a current file in 
 <!-- /TOC -->
 
 ## Key/Value Glossary
-### filename
-Filename including file extension
-
-### checksum
-
-### fileUpdatedOn
-
-### id
-Invenco generated string unique per notification
-
-### notificationType
-@TODO List defined notification types for media notification
-
-### status
-Possible Values
-- success
-- failure
-
-### additionalInformation
-@TODO List additionalInformation values?
-
+### Field from GSTV Messages
+- **filename** - Filename - including file extension - of video to control.
+- **checksum** - MD5 checksum for the video asset. This value should be used to ensure the correct and full video asset is being downloaded by Invenco.
+- **fileUpdatedOn** - UTC datetime when the video asset was updated.
 
 ## Ideal Path
 ### What GSTV Sends to Invenco
 ```javascript
 {
-  "filename": "W_WSL14893_WASHINGTONLOTTERY2016.avi",
-  "checksum": "0C86798478BF382F1CF61860D301C1B4",
+  "filename": String,
+  "checksum": String,
   "fileUpdatedOn": "18:41"
 }
 ```
@@ -51,9 +34,9 @@ Possible Values
 ### What Invenco Sends to GSTV on Success
 ```javascript
 {
-  "id": String, // invenco generated per notification
-  "filename": "W_WSL14893_WASHINGTONLOTTERY2016.avi",
-  "notificationType": String, // one of the defined notifications
+  "id": String,
+  "filename": String,
+  "notificationType": String,
   "status": "success",
   "additionalInformation": String
 }
