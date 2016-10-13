@@ -100,7 +100,7 @@ Follow [Media Error Handling](#media-error-handling).
 
 ### Error Handling
 #### Media Error Handling
-1. Send a notification message to GSTV alerting that an error has occured.
+1. Send a notification message to GSTV alerting that an error has occurred.
 1. Playback does not stop.
 1. The affected file is skipped during playback.
 1. GSTV sends another notification update message.
