@@ -206,6 +206,33 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
+##### What Invenco Sends if the level for a Volume Object in the Network Configuration Update Notification is not Formatted Correctly
+If the volume level is not a number between 0 and 100 follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Volume Level Incorrectly Formatted"
+```
+
+##### What Invenco Sends if the startTime for a Volume Level in the Network Configuration Update Notification is not Formatted Correctly
+If the startTime is not formatted at HHMM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Volume Start Time Incorrectly Formatted"
+```
+
+##### What Invenco Sends if the blankoutVideo in the Network Configuration Update Notification does not Contain a File Extension
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Blankout Video Filename Missing Extension - {filename}"
+```
+
 ### What Invenco Sends if the File or Swap File in the Network Configuration Update Notification is not in the Invenco Library
 1. Invenco should retry downloading the file three times.
 1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling).
