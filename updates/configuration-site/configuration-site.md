@@ -182,11 +182,11 @@ If the openAt or closeAt time is not formatted at HHMM follow [Default Configura
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Open At Time Incorrectly Formatted"
+  "additionalInformation": "Open At Time Incorrectly Formatted for {Day}"
 ```
 
 ```javascript
-  "additionalInformation": "Close At Time Incorrectly Formatted"
+  "additionalInformation": "Close At Time Incorrectly Formatted for {Day}"
 ```
 
 ##### What Invenco Sends if the level for a Volume Object in the Site Configuration Update Notification is not Formatted Correctly
@@ -198,7 +198,7 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Volume Level Incorrectly Formatted"
 ```
 
-##### What Invenco Sends if the starTime for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
+##### What Invenco Sends if the startTime for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
 If the startTime is not formatted at HHMM follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
@@ -216,22 +216,6 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Blankout Video Filename Missing Extension"
 ```
 
-### What Invenco Sends if the Site Configuration Update Notification Contains Unexpected Values
-Follows [Default Configuration Error Handling](#default-configuration-error-handling)
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_SITE_UNEXPECTED_VALUE",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": ""
-}
-```
-
-#### Specific Examples
 ##### What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist
 Follow [Default Error Handling](#default-error-handling).
 
@@ -241,42 +225,15 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Site Identifier Does Not Exist"
 ```
 
-##### What Invenco Sends if the Open At in the Site Configuration Update Notification Are Later than the Close At
+##### What Invenco Sends if the Open At in the Site Configuration Update Notification Is Later than the Close At
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "" // TBD
+  "additionalInformation": "Open At is Later than Close At for {Day}"
 ```
 
-##### What Invenco Sends if the Duration Calculations in the Site Configuration Update Notification Are Incorrect
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
-
-```javascript
-  "additionalInformation": "" // TBD
-```
-
-### What Invenco Sends if the Site Configuration Update Notification is Missing Values
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-The additionalInformation field will contain a comma separated list of the keys without values.
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_SITE_MISSING_VALUE",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": ""
-}
-```
-
-#### Specific Examples
 ##### What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist
 Follow [Default Error Handling](#default-error-handling).
 
@@ -298,10 +255,10 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "", // TBD
+  "notificationType": "MEDIA_CHECK",
   "siteId": String,
   "status": "failure",
-  "additionalInformation": "Blankout Video File Missing"
+  "additionalInformation": "Blankout Video File is Missing - {filename}"
 }
 ```
 
