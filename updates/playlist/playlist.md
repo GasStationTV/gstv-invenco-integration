@@ -17,6 +17,14 @@
 			- [Specific Examples](#specific-examples)
 				- [What Invenco Sends if the updatedOn, filename Extension, date, loopNumber, start or end in the Playlist Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-updatedon-filename-extension-date-loopnumber-start-or-end-in-the-playlist-update-notification-is-not-formatted-correctly)
 				- [What Invenco Sends if the guid, updatedOn, playlist, siteId, schedules, segmentId, date, loop, loopNumber, asset, assetId, filename, type, start, end, or tiNumber in the Playlist Updated Notification is Missing](#what-invenco-sends-if-the-guid-updatedon-playlist-siteid-schedules-segmentid-date-loop-loopnumber-asset-assetid-filename-type-start-end-or-tinumber-in-the-playlist-updated-notification-is-missing)
+				- [What Invenco Sends if the Banner type in the Site Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-banner-type-in-the-site-playlist-update-notification-does-not-exist)
+				- [What Invenco Sends if the Asset type in the Site Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-asset-type-in-the-site-playlist-update-notification-does-not-exist)
+				- [What Invenco Sends if the siteId in the Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-siteid-in-the-playlist-update-notification-does-not-exist)
+		- [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-library)
+		- [What Invenco Sends if they are Unable to Push Playlist Update Notification to Player](#what-invenco-sends-if-they-are-unable-to-push-playlist-update-notification-to-player)
+		- [What Invenco Sends if a Playlist Update Notification is Rejected by the Player](#what-invenco-sends-if-a-playlist-update-notification-is-rejected-by-the-player)
+		- [Error Handling](#error-handling)
+			- [Playlist Error Handling](#playlist-error-handling)
 
 <!-- /TOC -->
 
@@ -492,3 +500,85 @@ If a daypart array exists and any object in that array is missing the start or  
 ```javascript
   "additionalInformation": "Asset Missing Daypart Information"
 ```
+
+##### What Invenco Sends if the Banner type in the Site Playlist Update Notification Does Not Exist
+Follow [Default Error Handling](#default-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Banner Type Does Not Exist"
+```
+
+##### What Invenco Sends if the Asset type in the Site Playlist Update Notification Does Not Exist
+Follow [Default Error Handling](#default-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Asset Type Does Not Exist"
+```
+
+##### What Invenco Sends if the siteId in the Playlist Update Notification Does Not Exist
+Follow [Default Error Handling](#default-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Site Identifier Does Not Exist"
+```
+
+### What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library
+1. Invenco should retry downloading the file three times.
+1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling)..
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_CHECK",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": "Video File is Missing - {filename}",
+  "segmentIds": [String]
+}
+```
+
+### What Invenco Sends if they are Unable to Push Playlist Update Notification to Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "PLAYLIST_PUSH_TO_PLAYERS",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": "",
+  "segmentIds": [String]
+}
+```
+
+### What Invenco Sends if a Playlist Update Notification is Rejected by the Player
+Follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "PLAYLIST_ACCEPTED_BY_PLAYERS",
+  "siteId": String,
+  "status": "failure",
+  "additionalInformation": "",
+  "segmentIds": [String]
+}
+```
+
+### Error Handling
+#### Playlist Error Handling
+1. Send a notification message to GSTV alerting that an error has occurred.
+1. Playback does not stop.
+1. GSTV sends another notification update message.
