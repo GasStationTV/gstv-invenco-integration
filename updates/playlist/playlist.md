@@ -73,8 +73,8 @@
   - Values
     - PLAYLIST_VALIDATION
     - MEDIA_CHECK
-    - PLAYLIST_PUSH_TO_PLAYERS
-    - PLAYLIST_ACCEPTED_BY_PLAYERS
+    - PLAYLIST_PUSH_TO_SITE
+    - PLAYLIST_ACCEPTED_BY_SITE
 - **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
 - **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
@@ -249,7 +249,7 @@
 }
 ```
 
-### What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site
+### What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified in the Invenco Cloud
 ```javascript
 {
   "guid": String,
@@ -267,7 +267,7 @@
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "PLAYLIST_PUSH_TO_PLAYERS",
+  "notificationType": "PLAYLIST_PUSH_TO_SITE",
   "siteId": String,
   "status": "success",
 }
@@ -279,7 +279,7 @@
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "PLAYLIST_ACCEPTED_BY_PLAYERS",
+  "notificationType": "PLAYLIST_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "success",
 }
@@ -570,14 +570,13 @@ Return above structure with this specific value for additionalInformation.
   "id": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
-  "siteId": String,
   "status": "failure",
   "additionalInformation": "Video File is Missing - {filename}",
   "segmentIds": [String]
 }
 ```
 
-### What Invenco Sends if they are Unable to Push Playlist Update Notification to Player
+### What Invenco Sends if they are Unable to Push Playlist Update Notification to Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -585,7 +584,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "PLAYLIST_PUSH_TO_PLAYERS",
+  "notificationType": "PLAYLIST_PUSH_TO_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": "",
@@ -593,7 +592,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
-### What Invenco Sends if a Playlist Update Notification is Rejected by the Player
+### What Invenco Sends if a Playlist Update Notification is Rejected by the Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -601,7 +600,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "PLAYLIST_ACCEPTED_BY_PLAYERS",
+  "notificationType": "PLAYLIST_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": "",
@@ -617,7 +616,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends to GSTV once Playlist Updates have been Validated](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-validated)
   - **If failure**
     - Follow [What Invenco Sends if the Playlist Update Notification has Validation Errors](#what-invenco-sends-if-the-playlist-update-notification-has-validation-errors)
-1. Verify media files associated with network configuration are present at site.
+1. Verify media files associated with network configuration are present in Invenco Cloud.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-at-the-site)
   - **If failure**

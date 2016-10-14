@@ -3,7 +3,6 @@
   "id": "12398791",
   "notificationTimestamp": "2016-10-13 21:22:17.799",
   "notificationType": "MEDIA_CHECK",
-  "siteId": "123456",
   "status": "failure",
   "additionalInformation": "Video File is Missing - CNN.mp4",
   "segmentIds": ["5800045ed69dc50e00097d7e"]
