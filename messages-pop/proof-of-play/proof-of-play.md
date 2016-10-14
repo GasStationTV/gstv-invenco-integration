@@ -2,16 +2,16 @@
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Proof of PLay Updates](#proofofplay-updates)
+- [Invenco Initiated Message - Proof of Play](#invenco-initiated-message-proof-of-play)
 	- [Key/Value Glossary](#keyvalue-glossary)
 		- [Field from Invenco Messages](#field-from-invenco-messages)
+		- [Additional Fields in Invenco Error Responses](#additional-fields-in-invenco-error-responses)
 	- [Ideal Path](#ideal-path)
 		- [What Invenco Sends to GSTV](#what-invenco-sends-to-gstv)
-	- [Error Path](#error-path)
-		- [What Invenco Sends if Post to GSTV Fails](#what-invenco-sends-if-post-to-gstv-fails)
+	- [Standard Operating Procedure](#standard-operating-procedure)
+		- [Applying Media Updates](#applying-media-updates)
 
 <!-- /TOC -->
-
 
 ## Key/Value Glossary
 ### Field from Invenco Messages
@@ -52,34 +52,14 @@
 }
 ```
 
-<<<<<<< HEAD
 ## Standard Operating Procedure
 ### Applying Media Updates
 1. Media is played on screen
 2. Player generates POP message
 3. POP message is sent to Invenco Cloud
   - **if failure**
-	  - **Retry until success - Invenco must retain POP messages until successfully sent to GSTV
-	- **if success**
-	  - **Invenco sends POP message to GSTV
-		  - **if failue**
-			  - **Retry until sucess - Invenco must retain POP messages until successfully sent to GSTV
-				- **If not successful after 3 retries, Follow [What Invenco Sends if Post to GSTV Fails](#what-invenco-sends-if-post-to-gstv-fails) 
-
-
-
-=======
->>>>>>> origin/master
-## Error Path
-### What Invenco Sends if Post to GSTV Fails
-
-```javascript
-
-{
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_POP_FAILED",
-  "siteId": String,
-  "status": "failure",
-  "terminalId": String
-}
+	  - Retry until success - Invenco must retain POP messages until successfully sent to GSTV
+4. Invenco sends POP message to GSTV
+  - **if failue**
+    - Retry until sucess - Invenco must retain POP messages until successfully sent to GSTV
+    - If not successful after three retries, follow [What Invenco Sends if Post to GSTV Fails](#what-invenco-sends-if-post-to-gstv-fails)
