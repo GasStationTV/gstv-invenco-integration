@@ -154,19 +154,7 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-### What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
-  "siteId": String,
-  "status": "success"
-}
-```
-
-### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Site
+### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified in the Invenco Cloud
 ```javascript
 {
   "guid": String,
@@ -174,6 +162,18 @@ Messages sent with the site-specific configuration values including hours, speci
   "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
+  "siteId": String,
+  "status": "success"
+}
+```
+
+### What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
   "siteId": String,
   "status": "success"
 }

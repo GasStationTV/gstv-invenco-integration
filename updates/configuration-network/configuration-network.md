@@ -113,6 +113,18 @@ Message sent with the network wide configuration values including shutdown hours
 }
 ```
 
+### What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified in the Invenco Cloud
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "filename": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_CHECK",
+  "status": "success"
+}
+```
+
 ### What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Site
 ```javascript
 {
@@ -121,18 +133,6 @@ Message sent with the network wide configuration values including shutdown hours
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_PUSH_TO_SITE",
   "siteId": String,
-  "status": "success"
-}
-```
-
-### What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified at the Site
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
   "status": "success"
 }
 ```
