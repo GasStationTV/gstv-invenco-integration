@@ -56,7 +56,7 @@ Messages sent with the site-specific configuration values including hours, speci
   - Values
     - CONFIGURATION_VALIDATION
     - MEDIA_CHECK
-    - CONFIGURATION_PUSH_TO_TERMINAL
+    - CONFIGURATION_PULLED_BY_TERMINAL
     - CONFIGURATION_ACCEPTED_BY_TERMINAL
 - **notificationTimestamp** - A UTC date and time that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
 - **status** - A string that will indicate if the step in the update process for which this notification was generated succeeded or failed.
@@ -161,7 +161,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
+  "notificationType": "CONFIGURATION_PULLED_BY_TERMINAL",
   "siteId": String,
   "status": "success",
   "terminalId": String
@@ -188,7 +188,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_TERMINAL",
   "siteId": String,
   "status": "success",
   "terminalId": String
@@ -310,7 +310,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
+  "notificationType": "CONFIGURATION_PULLED_BY_TERMINAL",
   "siteId": String,
   "status": "failure",
   "terminalId": String,
@@ -326,7 +326,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "guid": String,
   "id": String,
   "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_TERMINAL",
   "siteId": String,
   "status": "failure",
   "terminalId": String,

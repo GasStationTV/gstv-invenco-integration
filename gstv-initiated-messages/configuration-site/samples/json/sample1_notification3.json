@@ -2,7 +2,8 @@
   "guid": "5e76122f-f9d8-445f-b85f-c207269b0720",
   "id": "2341y23y9739",
   "notificationTimestamp": "2016-10-13 18:50:00.475",
-  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
+  "notificationType": "CONFIGURATION_PULLED_BY_TERMINAL",
   "siteId": "123456",
-  "status": "success"
+  "status": "success",
+  "terminalId": "1"
 }
