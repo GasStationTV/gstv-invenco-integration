@@ -113,27 +113,27 @@ A message is sent when a file has been added to a playlist or a current file in 
 }
 ```
 
-### What Invenco Sends to GSTV once a File has been Pushed to the Players
+### What Invenco Sends to GSTV once a File has been Pushed to the Site
 ```javascript
 {
   "guid": String,
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": "MEDIA_PUSH_TO_PLAYERS",
+  "notificationType": "MEDIA_PUSH_TO_SITE",
   "siteId": String,
   "status": "success"
 }
 ```
 
-### What Invenco Sends to GSTV once a File has been Accepted by the Players
+### What Invenco Sends to GSTV once a File has been Accepted by the Site
 ```javascript
 {
   "guid": String,
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
+  "notificationType": "MEDIA_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "success"
 }
@@ -217,7 +217,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 }
 ```
 
-### What Invenco Sends if they are Unable to Push Media Updates to a Player
+### What Invenco Sends if they are Unable to Push Media Updates to a Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -226,14 +226,14 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": "MEDIA_PUSH_TO_PLAYERS",
+  "notificationType": "MEDIA_PUSH_TO_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
 }
 ```
 
-### What Invenco Sends if a Media Updates are Rejected by the Player
+### What Invenco Sends if a Media Updates are Rejected by the Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -242,7 +242,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "id": String,
   "filename": String,
   "notificationTimestamp": String
-  "notificationType": "MEDIA_ACCEPTED_BY_PLAYERS",
+  "notificationType": "MEDIA_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "failure",
   "additionalInformation": ""
