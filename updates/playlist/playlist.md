@@ -259,7 +259,7 @@
 }
 ```
 
-### What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players
+### What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Site
 ```javascript
 {
   "guid": String,
@@ -271,7 +271,7 @@
 }
 ```
 
-### What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players
+### What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Site
 ```javascript
 {
   "guid": String,
@@ -612,10 +612,20 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 1. Poll for playlist update notification.
 1. Validate playlist update notification.
   - **If success**
+    - Follow [What Invenco Sends to GSTV once Playlist Updates have been Validated](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-validated)
+  - **If failure**
+    - Follow [What Invenco Sends if the Playlist Update Notification has Validation Errors](#what-invenco-sends-if-the-playlist-update-notification-has-validation-errors)
+1. Verify media files associated with network configuration are present at site.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-at-the-site)
+  - **If failure**
+    - Follow [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-library)
+1. Push playlist to site.
+  - **If success**
     - Follow
   - **If failure**
     - Follow
-1. Send playlist to site
+1. Apply playlist to site.
   - **If success**
     - Follow
   - **If failure**

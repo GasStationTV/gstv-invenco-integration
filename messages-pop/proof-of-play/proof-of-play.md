@@ -17,7 +17,7 @@
 ### Field from Invenco Messages
 - **filename** -	Name of the video asset that has been displayed on a screen at a site.
 - **assetId** -	Number assigned to the media asset by GSTV.  This number should be carried over from the playlist update notification.
-- **ioNumber** -	The insertion order number that the asset was purchased as part of.  This value is carried over from the playlist update notification.
+- **tiNumber** -	The insertion order number that the asset was purchased as part of.  This value is carried over from the playlist update notification.
 - **startTimestamp** -	The time in which the video asset started to play in yyyy-mm-dd HH:MM:SS format.
 - **endTimestamp** - The time in which the video asset stopped playing in yyyy-mm-dd HH:MM:SS format.
 - **screenState** -	For the 12", what state was the screen in during playback.  
@@ -34,9 +34,9 @@
   "ioNumber": String   
   "startTimestamp": String (yyyy-mm-dd HH:MM:SS),
   "endTimestamp": String (yyyy-mm-dd HH:MM:SS),
-  "screenState": String, 
+  "screenState": String,
   "siteId": String,
-  "screenId": String 
+  "screenId": String
 }
 ```
 ## Error Path
@@ -50,6 +50,6 @@
 {
   "id": String,  
   "notificationType": String, // TBD
-  "status": "failure", 
+  "status": "failure",
   "additionalInformation": "Failed to post POP"
 }
