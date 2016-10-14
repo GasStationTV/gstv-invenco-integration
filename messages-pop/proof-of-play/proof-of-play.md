@@ -20,18 +20,18 @@
 - **tiNumber** -	The insertion order number that the asset was purchased as part of.  This value is carried over from the playlist update notification.
 - **startTimestamp** -	The time in which the video asset started to play in yyyy-mm-dd HH:MM:SS format.
 - **endTimestamp** - The time in which the video asset stopped playing in yyyy-mm-dd HH:MM:SS format.
-- **screenState** -	For the 12", what state was the screen in during playback.  
+- **screenState** -	For the 12", what state was the screen in during playback.
   - **Values** : "Full", "Partial"
 - **siteId** - The Invenco name of the site.
-- **screenId** - The id of the screen at the site.
+- **screenId** - The id of the screen at the site YES.
 
 ## Ideal Path
 ### What Invenco Sends to GSTV
 ```javascript
 {
   "filename": String,
-  "assetId": String,  
-  "ioNumber": String   
+  "assetId": String,
+  "ioNumber": String
   "startTimestamp": String (yyyy-mm-dd HH:MM:SS),
   "endTimestamp": String (yyyy-mm-dd HH:MM:SS),
   "screenState": String,
@@ -48,7 +48,7 @@
 ```javascript
 
 {
-  "id": String,  
+  "id": String,
   "notificationType": String, // TBD
   "status": "failure",
   "additionalInformation": "Failed to post POP"
