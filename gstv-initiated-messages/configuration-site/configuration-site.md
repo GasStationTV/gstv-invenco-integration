@@ -1,19 +1,17 @@
 # GSTV Initiated Message - Site Configuration Updates
 
-Messages sent with the site-specific configuration values including hours, specifying the blankout video file, and volume settings.
-
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Site Configuration Updates](#site-configuration-updates)
+- [GSTV Initiated Message - Site Configuration Updates](#gstv-initiated-message-site-configuration-updates)
 	- [Key/Value Glossary](#keyvalue-glossary)
 		- [Fields from GSTV Messages](#fields-from-gstv-messages)
 		- [Additional Fields in Invenco Responses](#additional-fields-in-invenco-responses)
 	- [Ideal Path](#ideal-path)
 		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
 		- [What Invenco Sends to GSTV once Site Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-validated)
-		- [What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pushed-to-the-site)
-		- [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Site](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-site)
-		- [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-site)
+		- [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pulled-by-the-terminal)
+		- [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal)
+		- [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-terminal)
 	- [Error Path](#error-path)
 		- [What Invenco Sends if the Site Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-site-configuration-update-notification-has-validation-errors)
 			- [Specific Examples](#specific-examples)
@@ -25,8 +23,8 @@ Messages sent with the site-specific configuration values including hours, speci
 				- [What Invenco Sends if the Open At in the Site Configuration Update Notification Is Later than the Close At](#what-invenco-sends-if-the-open-at-in-the-site-configuration-update-notification-is-later-than-the-close-at)
 				- [What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist](#what-invenco-sends-if-the-guid-or-updatedon-in-the-site-configuration-update-notification-does-not-exist)
 		- [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-blankout-video-in-the-site-configuration-update-notification-is-not-in-the-invenco-cloud)
-		- [What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Site](#what-invenco-sends-if-they-are-unable-to-push-site-configuration-update-notification-to-site)
-		- [What Invenco Sends if a Site Configuration Update Notification is Rejected by the Site](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site)
+		- [What Invenco Sends if they are Unable to Pull Site Configuration Update Notification to Terminal](#what-invenco-sends-if-they-are-unable-to-pull-site-configuration-update-notification-to-terminal)
+		- [What Invenco Sends if a Site Configuration Update Notification is Rejected by the Terminal](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-terminal)
 	- [Standard Operating Procedure](#standard-operating-procedure)
 		- [Applying Configuration Updates](#applying-configuration-updates)
 		- [Error Handling](#error-handling)
@@ -34,6 +32,8 @@ Messages sent with the site-specific configuration values including hours, speci
 			- [Default Configuration Error Handling](#default-configuration-error-handling)
 
 <!-- /TOC -->
+
+Messages sent with the site-specific configuration values including hours, specifying the blankout video file, and volume settings.
 
 ## Key/Value Glossary
 ### Fields from GSTV Messages
@@ -56,14 +56,15 @@ Messages sent with the site-specific configuration values including hours, speci
   - Values
     - CONFIGURATION_VALIDATION
     - MEDIA_CHECK
-    - CONFIGURATION_PUSH_TO_SITE
-    - CONFIGURATION_ACCEPTED_BY_SITE
+    - CONFIGURATION_PUSH_TO_TERMINAL
+    - CONFIGURATION_ACCEPTED_BY_TERMINAL
 - **notificationTimestamp** - A UTC date and time that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
 - **status** - A string that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
     - success
     - failure
 - **id** - A unique identifier for this notification, generated by Invenco, that will be used to refer to the notification in human communication.
+- **terminalId** - The id of the terminal at the site.
 - **additionalInformation** - A free-form string that can be a message or other details about the notification. This should be human-readable.
 
 ## Ideal Path
@@ -154,7 +155,20 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified in the Invenco Cloud
+### What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
+  "siteId": String,
+  "status": "success",
+  "terminalId": String
+}
+```
+
+### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal
 ```javascript
 {
   "guid": String,
@@ -163,23 +177,12 @@ Messages sent with the site-specific configuration values including hours, speci
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
   "siteId": String,
-  "status": "success"
+  "status": "success",
+  "terminalId": String
 }
 ```
 
-### What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PUSH_TO_SITE",
-  "siteId": String,
-  "status": "success"
-}
-```
-
-### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Site
+### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal
 ```javascript
 {
   "guid": String,
@@ -187,7 +190,8 @@ Messages sent with the site-specific configuration values including hours, speci
   "notificationTimestamp": String
   "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
   "siteId": String,
-  "status": "success"
+  "status": "success",
+  "terminalId": String
 }
 ```
 
@@ -298,7 +302,7 @@ Follow [Default Site Missing File Error Handling](#default-site-missing-error-ha
 }
 ```
 
-### What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Site
+### What Invenco Sends if they are Unable to Pull Site Configuration Update Notification to Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -309,11 +313,12 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "notificationType": "CONFIGURATION_PUSH_TO_SITE",
   "siteId": String,
   "status": "failure",
+  "terminalId": String,
   "additionalInformation": ""
 }
 ```
 
-### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Site
+### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
 ```javascript
@@ -324,6 +329,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
   "siteId": String,
   "status": "failure",
+  "terminalId": String,
   "additionalInformation": ""
 }
 ```
@@ -336,21 +342,21 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-validated).
   - **If failure**
       - Follow [What Invenco Sends if the Site Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-site-configuration-update-notification-has-validation-errors).
-1. Verify blankout video associated with site configuration is present in Invenco cloud.
-  - **If success**
-    - Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Site](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-site ).
-  - **If failure**
-    - Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).
 1. Send site configuration to site.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pushed-to-the-site).
+    - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pulled-by-the-terminal).
   - **If failure**
-    - Follow [What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Site](#what-invenco-sends-if-they-are-unable-to-push-site-configuration-update-notification-to-site).
-1. Apply site configurations to site.
+    - Follow [What Invenco Sends if they are Unable to Pull Site Configuration Update Notification to Terminal](#what-invenco-sends-if-they-are-unable-to-pull-site-configuration-update-notification-to-terminal).
+1. Verify blankout video associated with site configuration is present in Invenco cloud.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-site).
+    - Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal ).
   - **If failure**
-    - Follow [What Invenco Sends if a Site Configuration Update Notification is Rejected by the Site](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).
+    - Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).
+1. Apply site configurations to terminal.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-site).
+  - **If failure**
+    - Follow [What Invenco Sends if a Site Configuration Update Notification is Rejected by the Terminal](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-terminal).
 
 ### Error Handling
 #### Default Error Handling
