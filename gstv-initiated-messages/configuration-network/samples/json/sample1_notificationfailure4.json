@@ -2,7 +2,8 @@
   "guid": "21EC2020-3AEA-4069-A2DD-08002B30309D",
   "id": "7649879906r78",
   "notificationTimestamp": "2016-10-13 18:50:05.765",
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_TERMINAL",
   "siteId": "123456",
-  "status": "failure"
+  "status": "failure",
+  "terminalId": "1"
 }

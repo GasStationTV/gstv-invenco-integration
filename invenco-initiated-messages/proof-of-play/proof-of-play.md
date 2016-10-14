@@ -35,7 +35,7 @@
   - Values
     - MEDIA_POP_FAILED
 - **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
-- **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
+- **status** - A string that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
     - failure
 
@@ -77,5 +77,5 @@
 	  - Retry until success - Invenco must retain POP messages until successfully sent to GSTV
 4. Invenco sends POP message to GSTV
   - **if failue**
-    - Retry until sucess - Invenco must retain POP messages until successfully sent to GSTV
+    - Retry until success - Invenco must retain POP messages until successfully sent to GSTV
     - If not successful after three retries, follow [What Invenco Sends if Post to GSTV Fails](#what-invenco-sends-if-post-to-gstv-fails)

@@ -3,7 +3,8 @@
   "id": "38y7y099879345",
   "filename": "BL123_3453BLOOMBERG.mp4",
   "notificationTimestamp": "2016-10-13 20:28:45.647",
-  "notificationType": "MEDIA_PUSH_TO_SITE",
+  "notificationType": "MEDIA_PULLED_BY_TERMINAL",
   "siteId": "123456",
-  "status": "failure"
+  "status": "failure",
+  "terminalId": "1"
 }
