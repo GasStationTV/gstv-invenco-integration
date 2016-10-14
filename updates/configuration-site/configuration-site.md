@@ -293,7 +293,6 @@ Follow [Default Site Missing File Error Handling](#default-site-missing-error-ha
   "filename": String,
   "notificationTimestamp": String,
   "notificationType": "MEDIA_CHECK",
-  "siteId": String,
   "status": "failure",
   "additionalInformation": "Video File is Missing - {filename}"
 }
