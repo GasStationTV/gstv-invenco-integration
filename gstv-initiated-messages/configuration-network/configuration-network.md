@@ -1,4 +1,4 @@
-# Network Configuration Updates
+# GSTV Initiated Message - Network Configuration Updates
 
 Message sent with the network wide configuration values including shutdown hours and evergreen video settings
 
