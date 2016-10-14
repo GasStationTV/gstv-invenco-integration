@@ -1,0 +1,10 @@
+{
+  "guid": "5e76122f-f9d8-445f-b85f-c207269b0720",
+  "id": "3834897423597843589",
+  "filename": "123456_blank_video.mp4",
+  "notificationTimestamp": "2016-10-13 18:49:50.467",
+  "notificationType": "MEDIA_CHECK",
+  "siteId": "123456",
+  "status": "failure",
+  "additionalInformation": "Video File is Missing - 123456_blank_video.mp4"
+}

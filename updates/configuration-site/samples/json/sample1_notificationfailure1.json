@@ -1,0 +1,8 @@
+{
+  "guid": "5e76122f-f9d8-445f-b85f-c207269b0720",
+  "id": "3978012378945",
+  "notificationTimestamp": "2016-10-13 18:49:35.980",
+  "notificationType": "CONFIGURATION_VALIDATION",
+  "status": "failure",
+  "additionalInformation": "Monday Open Hours Incorrectly Formatted"
+}

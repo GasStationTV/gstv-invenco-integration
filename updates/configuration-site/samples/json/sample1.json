@@ -1,0 +1,64 @@
+{
+  "guid": "5e76122f-f9d8-445f-b85f-c207269b0720",
+  "updatedOn": "2016-10-13 19:52:51.458",
+  "configuration": [
+    {
+      "siteId": "123456",
+      "hours": {
+        "sun": [
+          {
+            "openAt": "00:00",
+            "closeAt": "24:00",
+            "duration": 86400000.0
+          }
+        ],
+        "mon": [
+          {
+            "openAt": "00:00",
+            "closeAt": "26:00",
+            "duration": 93600000.0
+          }
+        ],
+        "wed": [
+          {
+            "openAt": "00:00",
+            "closeAt": "24:00",
+            "duration": 86400000.0
+          }
+        ],
+        "thu": [
+          {
+            "openAt": "00:00",
+            "closeAt": "24:00",
+            "duration": 86400000.0
+          }
+        ],
+        "fri":[
+          {
+            "openAt": "00:00",
+            "closeAt": "24:00",
+            "duration": 86400000.0
+          }
+        ],
+        "sat":[
+          {
+            "openAt": "00:00",
+            "closeAt": "24:00",
+            "duration": 86400000.0
+          }
+        ]
+      },
+      "blankoutVideo": "123456_blank_video.mp4",
+      "volume": [
+        {
+          "startTime": "07:30",
+          "level": 50
+        },
+        {
+          "startTime": "12:00",
+          "level": 75
+        }
+      ]
+    }
+  ]
+}
