@@ -14,8 +14,8 @@ A message is sent when a file has been added to a playlist or a current file in 
 		- [What Invenco Sends to GSTV when the File has been Successfully Downloaded from S3](#what-invenco-sends-to-gstv-when-the-file-has-been-successfully-downloaded-from-s3)
 		- [What Invenco Sends to GSTV when the Provided MD5 Checksum and the Calculated MD5 Checksum Match](#what-invenco-sends-to-gstv-when-the-provided-md5-checksum-and-the-calculated-md5-checksum-match)
 		- [What Invenco Sends to GSTV when the File has Successfully been Transcoded](#what-invenco-sends-to-gstv-when-the-file-has-successfully-been-transcoded)
-		- [What Invenco Sends to GSTV once a File has been Pushed to the Players](#what-invenco-sends-to-gstv-once-a-file-has-been-pushed-to-the-players)
-		- [What Invenco Sends to GSTV once a File has been Accepted by the Players](#what-invenco-sends-to-gstv-once-a-file-has-been-accepted-by-the-players)
+		- [What Invenco Sends to GSTV once a File has been Pushed to the Site](#what-invenco-sends-to-gstv-once-a-file-has-been-pushed-to-the-site)
+		- [What Invenco Sends to GSTV once a File has been Accepted by the Site](#what-invenco-sends-to-gstv-once-a-file-has-been-accepted-by-the-site)
 	- [Error Path](#error-path)
 		- [What Invenco Sends if the Media Update Notification has Validation Errors](#what-invenco-sends-if-the-media-update-notification-has-validation-errors)
 			- [Specific Examples](#specific-examples)
@@ -23,8 +23,8 @@ A message is sent when a file has been added to a playlist or a current file in 
 		- [What Invenco Sends if the Video File in the Media Update can not be Downloaded](#what-invenco-sends-if-the-video-file-in-the-media-update-can-not-be-downloaded)
 		- [What Invenco Sends if the Provided MD5 Checksum does not Match the Calculated MD5 Checksum for the Media File](#what-invenco-sends-if-the-provided-md5-checksum-does-not-match-the-calculated-md5-checksum-for-the-media-file)
 		- [What Invenco Sends if the Media File is Unable to be Transcoded](#what-invenco-sends-if-the-media-file-is-unable-to-be-transcoded)
-		- [What Invenco Sends if they are Unable to Push Media Updates to a Player](#what-invenco-sends-if-they-are-unable-to-push-media-updates-to-a-player)
-		- [What Invenco Sends if a Media Updates are Rejected by the Player](#what-invenco-sends-if-a-media-updates-are-rejected-by-the-player)
+		- [What Invenco Sends if they are Unable to Push Media Updates to a Site](#what-invenco-sends-if-they-are-unable-to-push-media-updates-to-a-site)
+		- [What Invenco Sends if a Media Updates are Rejected by the Site](#what-invenco-sends-if-a-media-updates-are-rejected-by-the-site)
 	- [Standard Operating Procedure](#standard-operating-procedure)
 		- [Applying Media Updates](#applying-media-updates)
 		- [Error Handling](#error-handling)
@@ -45,8 +45,8 @@ A message is sent when a file has been added to a playlist or a current file in 
     - MEDIA_DOWNLOAD
     - MEDIA_CHECKSUM_VALIDATION
     - MEDIA_TRANSCODED
-    - MEDIA_PUSH_TO_PLAYERS
-    - MEDIA_ACCEPTED_BY_PLAYERS
+    - MEDIA_PUSH_TO_SITE
+    - MEDIA_ACCEPTED_BY_SITE
 - **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds`. 24 hour time will be used.
 - **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
@@ -255,6 +255,36 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 
 ## Standard Operating Procedure
 ### Applying Media Updates
+1. Poll for media update notification.
+1. Validate media update notification.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV once Media Updates have been Validated](#what-invenco-sends-to-gstv-once-media-updates-have-been-validated).
+  - **If failure**
+      - Follow [What Invenco Sends if the Media Update Notification has Validation Errors](#what-invenco-sends-if-the-media-update-notification-has-validation-errors).
+1. Download video asset from S3.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV when the File has been Successfully Downloaded from S3](#what-invenco-sends-to-gstv-when-the-file-has-been-successfully-downloaded-from-s3).
+  - **If failure**
+      - Retry download from S3 three times.
+        - **If success**
+          - Follow [What Invenco Sends to GSTV when the File has been Successfully Downloaded from S3](#what-invenco-sends-to-gstv-when-the-file-has-been-successfully-downloaded-from-s3).
+        - **If failure**
+          - Follow [What Invenco Sends if the Media Update Notification has Validation Errors](#what-invenco-sends-if-the-media-update-notification-has-validation-errors).
+1. Calculate MD5 checksum of downloaded media and compare with MD5 provided in media update.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV when the Provided MD5 Checksum and the Calculated MD5 Checksum Match](#what-invenco-sends-to-gstv-when-the-provided-md5-checksum-and-the-calculated-md5-checksum-match).
+  - **If failure**
+    - Follow [What Invenco Sends if the Provided MD5 Checksum does not Match the Calculated MD5 Checksum for the Media File](#what-invenco-sends-if-the-provided-md5-checksum-does-not-match-the-calculated-md5-checksum-for-the-media-file).
+1. Complete transcoding of media.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV when the File has Successfully been Transcoded](#what-invenco-sends-to-gstv-when-the-file-has-successfully-been-transcoded).
+  - **If failure**
+    - Follow [What Invenco Sends if the Media File is Unable to be Transcoded](#what-invenco-sends-if-the-media-file-is-unable-to-be-transcoded).
+1. Send media to required sites.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV once a File has been Pushed to the Site](#what-invenco-sends-to-gstv-once-a-file-has-been-pushed-to-the-site).
+  - **If failure**
+    - Follow [What Invenco Sends if they are Unable to Push Media Updates to a Site](#what-invenco-sends-if-they-are-unable-to-push-media-updates-to-a-site).
 
 ### Error Handling
 #### Media Error Handling
