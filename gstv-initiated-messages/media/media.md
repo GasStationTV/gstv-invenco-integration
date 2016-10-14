@@ -2,35 +2,6 @@
 
 A message is sent when a file has been added to a playlist or a current file in a playlist has been updated.
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Media Updates](#media-updates)
-	- [Key/Value Glossary](#keyvalue-glossary)
-		- [Fields from GSTV Messages](#fields-from-gstv-messages)
-		- [Additional Fields in Invenco Responses](#additional-fields-in-invenco-responses)
-	- [Ideal Path](#ideal-path)
-		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
-		- [What Invenco Sends to GSTV once Media Updates have been Validated](#what-invenco-sends-to-gstv-once-media-updates-have-been-validated)
-		- [What Invenco Sends to GSTV when the File has been Successfully Downloaded from S3](#what-invenco-sends-to-gstv-when-the-file-has-been-successfully-downloaded-from-s3)
-		- [What Invenco Sends to GSTV when the Provided MD5 Checksum and the Calculated MD5 Checksum Match](#what-invenco-sends-to-gstv-when-the-provided-md5-checksum-and-the-calculated-md5-checksum-match)
-		- [What Invenco Sends to GSTV when the File has Successfully been Transcoded](#what-invenco-sends-to-gstv-when-the-file-has-successfully-been-transcoded)
-		- [What Invenco Sends to GSTV once a File has been Pushed to the Site](#what-invenco-sends-to-gstv-once-a-file-has-been-pushed-to-the-site)
-		- [What Invenco Sends to GSTV once a File has been Accepted by the Site](#what-invenco-sends-to-gstv-once-a-file-has-been-accepted-by-the-site)
-	- [Error Path](#error-path)
-		- [What Invenco Sends if the Media Update Notification has Validation Errors](#what-invenco-sends-if-the-media-update-notification-has-validation-errors)
-			- [Specific Examples](#specific-examples)
-				- [What Invenco Sends if the GUID or updatedOn in the Media Update Notification Does Not Exist](#what-invenco-sends-if-the-guid-or-updatedon-in-the-media-update-notification-does-not-exist)
-		- [What Invenco Sends if the Video File in the Media Update can not be Downloaded](#what-invenco-sends-if-the-video-file-in-the-media-update-can-not-be-downloaded)
-		- [What Invenco Sends if the Provided MD5 Checksum does not Match the Calculated MD5 Checksum for the Media File](#what-invenco-sends-if-the-provided-md5-checksum-does-not-match-the-calculated-md5-checksum-for-the-media-file)
-		- [What Invenco Sends if the Media File is Unable to be Transcoded](#what-invenco-sends-if-the-media-file-is-unable-to-be-transcoded)
-		- [What Invenco Sends if they are Unable to Push Media Updates to a Site](#what-invenco-sends-if-they-are-unable-to-push-media-updates-to-a-site)
-		- [What Invenco Sends if a Media Updates are Rejected by the Site](#what-invenco-sends-if-a-media-updates-are-rejected-by-the-site)
-	- [Standard Operating Procedure](#standard-operating-procedure)
-		- [Applying Media Updates](#applying-media-updates)
-		- [Error Handling](#error-handling)
-			- [Media Error Handling](#media-error-handling)
-
-<!-- /TOC -->
 
 ## Key/Value Glossary
 ### Fields from GSTV Messages
