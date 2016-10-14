@@ -24,7 +24,7 @@ Messages sent with the site-specific configuration values including hours, speci
 				- [What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist](#what-invenco-sends-if-the-siteid-in-the-site-configuration-update-notification-does-not-exist)
 				- [What Invenco Sends if the Open At in the Site Configuration Update Notification Is Later than the Close At](#what-invenco-sends-if-the-open-at-in-the-site-configuration-update-notification-is-later-than-the-close-at)
 				- [What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist](#what-invenco-sends-if-the-guid-or-updatedon-in-the-site-configuration-update-notification-does-not-exist)
-		- [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-blankout-video-in-the-site-configuration-update-notification-is-not-in-the-invenco-library)
+		- [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-blankout-video-in-the-site-configuration-update-notification-is-not-in-the-invenco-cloud)
 		- [What Invenco Sends if they are Unable to Push Site Configuration Update Notification to Site](#what-invenco-sends-if-they-are-unable-to-push-site-configuration-update-notification-to-site)
 		- [What Invenco Sends if a Site Configuration Update Notification is Rejected by the Site](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site)
 	- [Standard Operating Procedure](#standard-operating-procedure)
@@ -283,7 +283,7 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library
+### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud
 Follow [Default Site Missing File Error Handling](#default-site-missing-error-handling).
 
 ```javascript
@@ -340,7 +340,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   - **If success**
     - Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Site](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-site ).
   - **If failure**
-    - Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Library](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).
+    - Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-site).
 1. Send site configuration to site.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pushed-to-the-site).

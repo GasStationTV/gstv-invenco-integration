@@ -206,7 +206,7 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-### What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Library
+### What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Cloud
 Follow [Default Site Missing File Error Handling](#default-site-missing-file-error-handling).
 
 ```javascript
@@ -263,7 +263,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   - **If success**
     - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-in-the-invenco-cloud).
   - **If failure**
-    - Follow [What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Library](#what-invenco-sends-if-the-swap-files-in-the-network-configuration-update-notification-are-not-in-the-invenco-library).
+    - Follow [What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Cloud](#what-invenco-sends-if-the-swap-files-in-the-network-configuration-update-notification-are-not-in-the-invenco-cloud).
 1. Send network configuration to site.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-pushed-to-the-site).

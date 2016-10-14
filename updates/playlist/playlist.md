@@ -23,7 +23,7 @@
 				- [What Invenco Sends if the Banner type in the Site Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-banner-type-in-the-site-playlist-update-notification-does-not-exist)
 				- [What Invenco Sends if the Asset type in the Site Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-asset-type-in-the-site-playlist-update-notification-does-not-exist)
 				- [What Invenco Sends if the siteId in the Playlist Update Notification Does Not Exist](#what-invenco-sends-if-the-siteid-in-the-playlist-update-notification-does-not-exist)
-		- [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-library)
+		- [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-cloud)
 		- [What Invenco Sends if they are Unable to Push Playlist Update Notification to Player](#what-invenco-sends-if-they-are-unable-to-push-playlist-update-notification-to-player)
 		- [What Invenco Sends if a Playlist Update Notification is Rejected by the Player](#what-invenco-sends-if-a-playlist-update-notification-is-rejected-by-the-player)
 	- [Standard Operating Procedure](#standard-operating-procedure)
@@ -560,7 +560,7 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Site Identifier Does Not Exist"
 ```
 
-### What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library
+### What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Cloud
 1. Invenco should retry downloading the file three times.
 1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling)..
 
@@ -620,7 +620,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   - **If success**
     - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-at-the-site)
   - **If failure**
-    - Follow [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-library)
+    - Follow [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-cloud)
 1. Push playlist to site.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pushed-to-the-site)
