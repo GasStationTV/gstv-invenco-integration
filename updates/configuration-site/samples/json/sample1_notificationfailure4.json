@@ -2,7 +2,7 @@
   "guid": "5e76122f-f9d8-445f-b85f-c207269b0720",
   "id": "7649879906r78",
   "notificationTimestamp": "2016-10-13 18:50:05.765",
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_PLAYERS",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_SITE",
   "siteId": "123456",
   "status": "failure"
 }
