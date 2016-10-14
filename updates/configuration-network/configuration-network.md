@@ -244,27 +244,24 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 1. Poll for network configuration update notification.
 1. Validate network configuration update notification.
   - **If success**
-    - **Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-validated).**
+    - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-validated).
   - **If failure**
-      - **Follow [What Invenco Sends if the Network Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-network-configuration-update-notification-has-validation-errors).**
+      - Follow [What Invenco Sends if the Network Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-network-configuration-update-notification-has-validation-errors).
 1. Send network configuration to site.
   - **If success**
-    - **Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-pushed-to-the-site).**
+    - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-pushed-to-the-site).
   - **If failure**
-    - **Follow [What Invenco Sends if they are Unable to Push Network Configuration Update Notification to Site](#what-invenco-sends-if-they-are-unable-to-push-network-configuration-update-notification-to-site).**
+    - Follow [What Invenco Sends if they are Unable to Push Network Configuration Update Notification to Site](#what-invenco-sends-if-they-are-unable-to-push-network-configuration-update-notification-to-site).
 1. Verify media files associated with network configuration are present at site.
   - **If success**
-    - **Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-at-the-site).**
+    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-at-the-site).
   - **If failure**
-    - **Follow [What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Library](#what-invenco-sends-if-the-swap-files-in-the-network-configuration-update-notification-are-not-in-the-invenco-library).**
+    - Follow [What Invenco Sends if the Swap Files in the Network Configuration Update Notification are not in the Invenco Library](#what-invenco-sends-if-the-swap-files-in-the-network-configuration-update-notification-are-not-in-the-invenco-library).
 1. Apply network configurations to site.
   - **If success**
-    - **Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-accepted-by-the-site).**
+    - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-accepted-by-the-site).
   - **If failure**
-    - **Follow [What Invenco Sends if a Network Configuration Update Notification is Rejected by the Site](#what-invenco-sends-if-a-network-configuration-update-notification-is-rejected-by-the-site).**
-
-
-
+    - Follow [What Invenco Sends if a Network Configuration Update Notification is Rejected by the Site](#what-invenco-sends-if-a-network-configuration-update-notification-is-rejected-by-the-site).
 
 ### Error Handling
 #### Default Error Handling
