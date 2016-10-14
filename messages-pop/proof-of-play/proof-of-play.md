@@ -39,11 +39,24 @@
   "screenId": String
 }
 ```
+
+## Standard Operating Procedure
+### Applying Media Updates
+1. Media is played on screen
+2. Player generates POP message
+3. POP message is sent to Invenco Cloud
+  - **if failure**
+	  - **Retry until success - Invenco must retain POP messages until successfully sent to GSTV
+	- **if success**
+	  - **Invenco sends POP message to GSTV
+		  - **if failue**
+			  - **Retry until sucess - Invenco must retain POP messages until successfully sent to GSTV
+				- **If not successful after 3 retries, Follow [What Invenco Sends if Post to GSTV Fails](#what-invenco-sends-if-post-to-gstv-fails) 
+
+
+
 ## Error Path
 ### What Invenco Sends if Post to GSTV Fails
-1. Invenco should retry sending the update three times.
-1. If the update still can't be posted, Invenco should retain the POP update to re-process later
-1. Send a notification message to GSTV alerting that an error has occurred.
 
 ```javascript
 
