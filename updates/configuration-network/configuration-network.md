@@ -219,6 +219,7 @@ Follow [Default Site Missing File Error Handling](#default-site-missing-file-err
   "status": "failure",
   "additionalInformation": "Video File is Missing - {filename}"
 }
+```
 
 ### What Invenco Sends if they are Unable to Push Network Configuration Update Notification to Site
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
