@@ -10,8 +10,8 @@
 		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
 		- [What Invenco Sends to GSTV once Playlist Updates have been Validated](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-validated)
 		- [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-at-the-site)
-		- [What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pushed-to-the-players)
-		- [What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Players](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pushed-to-the-players)
+		- [What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pushed-to-the-site)
+		- [What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-accepted-by-the-site)
 	- [Error Path](#error-path)
 		- [What Invenco Sends if the Playlist Update Notification has Validation Errors](#what-invenco-sends-if-the-playlist-update-notification-has-validation-errors)
 			- [Specific Examples](#specific-examples)
@@ -26,6 +26,8 @@
 		- [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-library)
 		- [What Invenco Sends if they are Unable to Push Playlist Update Notification to Player](#what-invenco-sends-if-they-are-unable-to-push-playlist-update-notification-to-player)
 		- [What Invenco Sends if a Playlist Update Notification is Rejected by the Player](#what-invenco-sends-if-a-playlist-update-notification-is-rejected-by-the-player)
+	- [Standard Operating Procedure](#standard-operating-procedure)
+		- [Applying Playlist Updates](#applying-playlist-updates)
 		- [Error Handling](#error-handling)
 			- [Playlist Error Handling](#playlist-error-handling)
 
@@ -622,14 +624,14 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Library](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-library)
 1. Push playlist to site.
   - **If success**
-    - Follow
+    - Follow [What Invenco Sends to GSTV once Playlist Updates have been Pushed to the Site](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pushed-to-the-site)
   - **If failure**
-    - Follow
+    - Follow [What Invenco Sends if they are Unable to Push Playlist Update Notification to Player](#what-invenco-sends-if-they-are-unable-to-push-playlist-update-notification-to-player)
 1. Apply playlist to site.
   - **If success**
-    - Follow
+    - Follow [What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Site](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-accepted-by-the-site)
   - **If failure**
-    - Follow
+    - Follow [What Invenco Sends if a Playlist Update Notification is Rejected by the Player](#what-invenco-sends-if-a-playlist-update-notification-is-rejected-by-the-player)
 1. Commence video playback
   - If a banner is present in the playlist
     - If the current date is within the dates defined by the start and end dates
