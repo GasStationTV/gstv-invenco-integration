@@ -1,0 +1,9 @@
+{
+  "guid": "742c606d-024a-406c-935b-bfc2418b20ee",
+  "id": "1239871q235",
+  "notificationTimestamp": "2016-10-13 21:21:10.354",
+  "notificationType": "PLAYLIST_VALIDATION",
+  "siteId": "123456",
+  "status": "failure",
+  "additionalInformation": "Site Identifier Does Not Exist"
+}
