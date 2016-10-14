@@ -1,4 +1,4 @@
-# Playlist Updates
+# GSTV Initiated Message - Playlist Updates
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -69,7 +69,7 @@
           - **end** - _if daypart array exists this is required_ - The local time represented in HH:MM using 24 hour time that asset should stop playing if a daypart is present.
 
 ### Additional Fields in Invenco Responses
-- **notificationType** - A String indicating the step in the update process to which this notification refers.
+- **notificationType** - A string indicating the step in the update process to which this notification refers.
   - Values
     - PLAYLIST_VALIDATION
     - MEDIA_CHECK

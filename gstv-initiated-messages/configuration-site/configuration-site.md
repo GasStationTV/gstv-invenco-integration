@@ -1,4 +1,4 @@
-# Site Configuration Updates
+# GSTV Initiated Message - Site Configuration Updates
 
 Messages sent with the site-specific configuration values including hours, specifying the blankout video file, and volume settings.
 

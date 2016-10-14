@@ -1,4 +1,4 @@
-# Media Updates
+# GSTV Initiated Message - Media Updates
 
 A message is sent when a file has been added to a playlist or a current file in a playlist has been updated.
 
