@@ -158,13 +158,17 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 ```
 
 #### Specific Examples
-##### What Invenco Sends if the GUID or updatedOn in the Media Update Notification Does Not Exist
+##### What Invenco Sends if the GUID, checksum or updatedOn in the Media Update Notification Does Not Exist
 Follow [Default Error Handling](#default-error-handling).
 
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
   "additionalInformation": "GUID is Missing"
+```
+
+```javascript
+  "additionalInformation": "Checksum is Missing"
 ```
 
 ```javascript
