@@ -8,6 +8,8 @@
 		- [Additional Fields in Invenco Error Responses](#additional-fields-in-invenco-error-responses)
 	- [Ideal Path](#ideal-path)
 		- [What Invenco Sends to GSTV](#what-invenco-sends-to-gstv)
+	- [Error Path](#error-path)
+		- [What Invenco Sends if Post to GSTV Fails](#what-invenco-sends-if-post-to-gstv-fails)
 	- [Standard Operating Procedure](#standard-operating-procedure)
 		- [Applying Media Updates](#applying-media-updates)
 
@@ -48,6 +50,20 @@
   "endTimestamp": String,
   "screenState": String,
   "siteId": String,
+  "terminalId": String
+}
+```
+
+## Error Path
+### What Invenco Sends if Post to GSTV Fails
+```javascript
+
+{
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_POP_FAILED",
+  "siteId": String,
+  "status": "failure",
   "terminalId": String
 }
 ```
