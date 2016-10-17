@@ -93,7 +93,7 @@ Message sent with the network wide configuration values including shutdown hours
 }
 ```
 
-### What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified in the Invenco Cloud
+### What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified in the Invenco Cloud
 ```javascript
 {
   "guid": String,
@@ -118,7 +118,7 @@ Message sent with the network wide configuration values including shutdown hours
 }
 ```
 
-### What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates has been Verified at the Terminal
+### What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified at the Terminal
 ```javascript
 {
   "guid": String,
@@ -201,8 +201,8 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-### What Invenco Sends if the Media Files in the Network Configuration Update Notification are not in the Invenco Cloud
-Follow [Default Site Missing File Error Handling](#default-site-missing-file-error-handling).
+### What Invenco Sends if the Media Files in the Network Configuration are not in the Invenco Cloud
+Follow [Default Error Handling](#default-error-handling).
 
 ```javascript
 {
@@ -229,6 +229,14 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "status": "failure",
   "terminalId": String,
   "additionalInformation": ""
+}
+```
+### What Invenco Sends if the Media Files in the Site Configuration are not at a terminal
+Follow [Default File Missing at Terminal](#default-file-missing-at-terminal)
+
+```javascript
+{
+	"LINK TO GLOBAL PROCESS HERE"
 }
 ```
 
@@ -258,19 +266,19 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
       - Follow [What Invenco Sends if the Network Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-network-configuration-update-notification-has-validation-errors).
 1. Verify media files associated with network configuration are present Invenco Cloud.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-in-the-invenco-cloud).
+    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-in-the-invenco-cloud).
   - **If failure**
-    - Follow !?!?!?!?!?!?!?!?!?!?
-1. Send network configuration to terminal.
+    - Follow [What Invenco Sends if the Media Files in the Network Configuration are not in the Invenco Cloud](#what-invenco-sends-if-the-media-files-in-the-network-configuration-are-not-in-the-invenco-cloud).
+1. Pull network configuration to terminal.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Downloaded to the Terminal](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-downloaded-to-the-terminal).
+    - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Pulled to the Terminal](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-pulled-to-the-terminal).
   - **If failure**
-    - Follow [What Invenco Sends if they are Unable to Download Network Configuration Update Notification to Terminal](#what-invenco-sends-if-they-are-unable-to-download-network-configuration-update-notification-to-terminal).
+    - Follow [What Invenco Sends if they are Unable to Pull Network Configuration Update Notification to Terminal](#what-invenco-sends-if-they-are-unable-to-pull-network-configuration-update-notification-to-terminal).
 1. Verify media files associated with network configuration are present at terminal.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration Updates have been Verified in the Invenco Terminal](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-in-the-invenco-terminal).
+    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified in the Invenco Terminal](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-in-the-invenco-terminal).
   - **If failure**
-    - Follow ?!?!?!?!?!?!?!?!?!?
+    - Follow [What Invenco Sends if the Media Files in the Site Configuration are not at a terminal](#what-invenco-sends-if-the-media-files-in-the-site-configuration-are-not-at-a-terminal).
 1. Apply network configurations to terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-accepted-by-the-terminal).
