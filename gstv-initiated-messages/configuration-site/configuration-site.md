@@ -301,7 +301,7 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud
+### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud and Can Not Be Downloaded from S3
 Follow [Default Error Handling](#default-error-handling).
 
 ```javascript
@@ -316,13 +316,7 @@ Follow [Default Error Handling](#default-error-handling).
 }
 ```
 ### What Invenco Sends if the Blankout Video in the Site Configuration Update is not at a terminal
-Follow [Default File Missing at Terminal](#default-file-missing-at-terminal)
-
-```javascript
-{
-	"LINK TO GLOBAL PROCESS HERE"
-}
-```
+Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 
 ### What Invenco Sends if they are Unable to Pull Site Configuration Update to Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
