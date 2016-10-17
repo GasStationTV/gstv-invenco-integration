@@ -157,7 +157,7 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification1.json)
+[What Invenco Sends to GSTV once Site Configuration Updates have been Validated - Example Data](samples/json/sample1_notification1.json)
 
 ### What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified in Invenco Cloud
 ```javascript
@@ -171,7 +171,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "status": "success"
 }
 ```
-[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification2.json)
+[What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified in Invenco Cloud - Example Data](samples/json/sample1_notification2.json)
 
 ### What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal
 ```javascript
@@ -186,7 +186,7 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification3.json)
+[What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal - Example Data](samples/json/sample1_notification3.json)
 
 ### What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal
 ```javascript
@@ -202,7 +202,7 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification4.json)
+[What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal - Example Data](samples/json/sample1_notification4.json)
 
 ### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal
 ```javascript
@@ -217,7 +217,7 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification5.json)
+[What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal - Example Data](samples/json/sample1_notification5.json)
 
 ## Error Path
 If any part of a message causes an error the entire update will be rejected.
@@ -237,7 +237,7 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
 }
 ```
 
-[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure1.json)
+[What Invenco Sends if the Site Configuration Update Notification has Validation Errors - Example Data](samples/json/sample1_notificationfailure1.json)
 
 #### Specific Examples
 ##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly
@@ -329,7 +329,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
-[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure3.json)
+[What Invenco Sends if they are Unable to Pull Site Configuration Update to Terminal - Example Data](samples/json/sample1_notificationfailure3.json)
 
 ### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
@@ -347,7 +347,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
-[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure4.json)
+[What Invenco Sends if a Site Configuration Update Notification is Rejected by the Terminal - Example Data](samples/json/sample1_notificationfailure4.json)
 
 ## Standard Operating Procedure
 ### Applying Configuration Updates
