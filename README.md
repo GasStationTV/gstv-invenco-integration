@@ -24,7 +24,7 @@
 
 #### What Invenco Sends if Media File is not in Invenco Cloud
 1. Invenco should retry downloading the file three times.
-1. If the download is still unsuccessful, send notification to GSTV 
+1. If the download is still unsuccessful, send notification to GSTV
 
 ```javascript
 {
@@ -37,10 +37,12 @@
   "additionalInformation": "Video File is Missing - {filename}"
 }
 ```
-  - If update message is playlist, add additional field to notification
-    - **"segmentIds": [String]**
+If update message is playlist, add additional field to notification
+```javascript
+  "segmentIds": [String]
+```
 
-[What Invenco Sends to GSTV - Example Data](/configuration-site/samples/json/sample1_notificationfailure2.json)
+[What Invenco Sends if Media File is not in Invenco Cloud - Example Data](/gstv-initiated-messages/configuration-site/samples/json/sample1_notificationfailure2.json)
 
 #### What Invenco Sends if a Media File Can Not Be Downloaded to a Terminal and is not in the Invenco Cloud
 ```javascript
