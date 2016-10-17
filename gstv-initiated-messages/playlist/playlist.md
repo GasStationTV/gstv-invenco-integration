@@ -205,6 +205,8 @@
 }
 ```
 
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1.json)
+
 ### What Invenco Sends to GSTV once Playlist Updates have been Validated
 ```javascript
 {
@@ -217,17 +219,22 @@
 }
 ```
 
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification1.json)
+
 ### What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified in the Invenco Cloud
 ```javascript
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
   "siteId": String,
   "status": "success",
 }
 ```
+
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification2.json)
 
 ### What Invenco Sends to GSTV once Playlist Updates have been Pulled by the Terminal
 ```javascript
@@ -242,6 +249,8 @@
 }
 ```
 
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification3.json)
+
 ### What Invenco Sends to GSTV once Media Files Associated with the Playlist have been Verified in the Invenco Terminal
 ```javascript
 {
@@ -255,11 +264,14 @@
 }
 ```
 
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification4.json)
+
 ### What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Terminal
 ```javascript
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "PLAYLIST_ACCEPTED_BY_TERMINAL",
   "siteId": String,
@@ -267,6 +279,8 @@
 	"terminalId": String
 }
 ```
+
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification5.json)
 
 ## Error Path
 If any part of a message causes an error the entire update will be rejected.
@@ -285,6 +299,8 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
   "additionalInformation": ""
 }
 ```
+
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure1.json)
 
 #### Specific Examples
 ##### What Invenco Sends if the updatedOn, filename Extension, date, loopNumber, start or end in the Playlist Update Notification is not Formatted Correctly
@@ -551,6 +567,7 @@ Return above structure with this specific value for additionalInformation.
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
   "status": "failure",
@@ -558,6 +575,8 @@ Return above structure with this specific value for additionalInformation.
   "segmentIds": [String]
 }
 ```
+
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure2.json)
 
 ### What Invenco Sends if they are Unable to Pull Playlist Update Notification at the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
@@ -576,14 +595,10 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
-### What Invenco Sends if the Media Files in the Playlist are not in a terminal
-Follow [Default File Missing at Terminal](#default-file-missing-at-terminal)
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure3.json)
 
-```javascript
-{
-	"LINK TO GLOBAL PROCESS HERE"
-}
-```
+### What Invenco Sends if the Media Files in the Playlist are not in a terminal
+Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 
 ### What Invenco Sends if a Playlist Update Notification is Rejected by the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
@@ -601,6 +616,8 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 	"terminalId": String
 }
 ```
+
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure4.json)
 
 ## Standard Operating Procedure
 ### Applying Playlist Updates

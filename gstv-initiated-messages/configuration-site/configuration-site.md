@@ -156,6 +156,9 @@ Messages sent with the site-specific configuration values including hours, speci
   "status": "success",
 }
 ```
+
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification1.json)
+
 ### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified in Invenco Cloud
 ```javascript
 {
@@ -168,6 +171,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "status": "success"
 }
 ```
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification2.json)
 
 ### What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal
 ```javascript
@@ -181,6 +185,8 @@ Messages sent with the site-specific configuration values including hours, speci
   "terminalId": String
 }
 ```
+
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification3.json)
 
 ### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal
 ```javascript
@@ -196,6 +202,8 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification4.json)
+
 ### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal
 ```javascript
 {
@@ -208,6 +216,8 @@ Messages sent with the site-specific configuration values including hours, speci
   "terminalId": String
 }
 ```
+
+[What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification5.json)
 
 ## Error Path
 If any part of a message causes an error the entire update will be rejected.
@@ -226,6 +236,8 @@ Follows [Default Configuration Error Handling](#default-configuration-error-hand
   "additionalInformation": ""
 }
 ```
+
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure1.json)
 
 #### Specific Examples
 ##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly
@@ -315,6 +327,9 @@ Follow [Default Error Handling](#default-error-handling).
   "additionalInformation": "Video File is Missing - {filename}"
 }
 ```
+
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure2.json)
+
 ### What Invenco Sends if the Blankout Video in the Site Configuration Update is not at a terminal
 Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 
@@ -334,6 +349,8 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure3.json)
+
 ### What Invenco Sends if a Site Configuration Update Notification is Rejected by the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
@@ -349,6 +366,8 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "additionalInformation": ""
 }
 ```
+
+[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure4.json)
 
 ## Standard Operating Procedure
 ### Applying Configuration Updates
