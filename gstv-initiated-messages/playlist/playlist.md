@@ -242,7 +242,20 @@
 }
 ```
 
-### What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Site
+### What Invenco Sends to GSTV once Media Files Associated with the Playlist have been Verified in the Invenco Terminal
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "MEDIA_CHECK",
+  "siteId": String,
+  "status": "success",
+  "terminalId": String
+}
+```
+
+### What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Terminal
 ```javascript
 {
   "guid": String,
@@ -563,6 +576,15 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 }
 ```
 
+### What Invenco Sends if the Media Files in the Playlist are not in a terminal
+Follow [Default File Missing at Terminal](#default-file-missing-at-terminal)
+
+```javascript
+{
+	"LINK TO GLOBAL PROCESS HERE"
+}
+```
+
 ### What Invenco Sends if a Playlist Update Notification is Rejected by the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
@@ -588,9 +610,9 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends to GSTV once Playlist Updates have been Validated](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-validated)
   - **If failure**
     - Follow [What Invenco Sends if the Playlist Update Notification has Validation Errors](#what-invenco-sends-if-the-playlist-update-notification-has-validation-errors)
-1. Verify media files associated with network configuration are present in Invenco Cloud.
+1. Verify media files associated with playlist are present in Invenco Cloud.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified at the Site](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-at-the-site)
+    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified in Invenco Cloud](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-in-invenco-cloud)
   - **If failure**
     - Follow [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-cloud)
 1. Terminal pulls playlist.
@@ -598,7 +620,12 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends to GSTV once Playlist Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pulled-by-the-terminal)
   - **If failure**
     - Follow [What Invenco Sends if they are Unable to Pull Playlist Update Notification at the Terminal](#what-invenco-sends-if-they-are-unable-to-pull-playlist-update-notification-at-the-terminal)
-1. Apply playlist to site.
+1. Verify media files associated with playlist are present at terminal.
+  - **If success**
+    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist have been Verified in the Invenco Terminal](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-have-been-verified-in-the-invenco-terminal).
+  - **If failure**
+    - Follow [What Invenco Sends if the Media Files in the Playlist are not in a terminal](#what-invenco-sends-if-the-media-files-in-the-playlist-are-not-in-a-terminal).
+1. Apply playlist to terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-accepted-by-the-terminal)
   - **If failure**
@@ -606,21 +633,21 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 1. Commence video playback
   - If a banner is present in the playlist
     - If the current date is within the dates defined by the start and end dates
-      - If the site has the asset
+      - If the terminal has the asset
         - Display during fueling lifecycle defined by type
-      - If the site does not have the asset
+      - If the terminal does not have the asset
         - Do not display
     - If the current date is outside the dates defined by the start and end dates
       - Do not display
   - Using schedule date
     - If schedule date is current date
       - Play loops in order
-        - If a media file is not present at the site skip it during playback and continue
+        - If a media file is not present at the terminal skip it during playback and continue
         - If a daypart is present for an asset
           - If the current time is within the times defined by the start and end times
-            - If the site has the asset
+            - If the terminal has the asset
               - Play the asset
-            - If the sites does not have the asset
+            - If the terminal does not have the asset
               - Do not play the asset
           - If the current time is outside the times defined by the start and end times
             - Do not play the asset
