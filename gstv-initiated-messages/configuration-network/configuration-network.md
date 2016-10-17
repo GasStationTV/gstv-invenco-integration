@@ -231,7 +231,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   "additionalInformation": ""
 }
 ```
-### What Invenco Sends if the Media Files in the Site Configuration are not at a terminal
+### What Invenco Sends if the Media Files in the Network Configuration are not in a terminal
 Follow [Default File Missing at Terminal](#default-file-missing-at-terminal)
 
 ```javascript
@@ -276,9 +276,9 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends if they are Unable to Pull Network Configuration Update Notification to Terminal](#what-invenco-sends-if-they-are-unable-to-pull-network-configuration-update-notification-to-terminal).
 1. Verify media files associated with network configuration are present at terminal.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified in the Invenco Terminal](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-in-the-invenco-terminal).
+    - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified in the Invenco Terminal](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-have-been-verified-in-the-invenco-terminal).
   - **If failure**
-    - Follow [What Invenco Sends if the Media Files in the Site Configuration are not at a terminal](#what-invenco-sends-if-the-media-files-in-the-site-configuration-are-not-at-a-terminal).
+    - Follow [What Invenco Sends if the Media Files in the Network Configuration are not in a terminal](#what-invenco-sends-if-the-media-files-in-the-network-configuration-are-not-in-a-terminal).
 1. Apply network configurations to terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-accepted-by-the-terminal).
