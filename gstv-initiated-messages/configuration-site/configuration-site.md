@@ -313,9 +313,6 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-### What Invenco Sends if the Blankout Video in the Site Configuration Update is not at a terminal
-Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
-
 ### What Invenco Sends if they are Unable to Pull Site Configuration Update to Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
@@ -374,7 +371,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 	- **If success**
 		- Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal).
 	- **If failure**
-		- Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update is not at a terminal](#what-invenco-sends-if-the-blankout-video-in-the-site-configuration-update-is-not-at-a-terminal).
+		- Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 1. Apply site configurations to the terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-site).

@@ -234,9 +234,6 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 
 [What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure3.json)
 
-### What Invenco Sends if the Media Files in the Network Configuration are not in a terminal
-Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
-
 ### What Invenco Sends if a Network Configuration Update Notification is Rejected by the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
@@ -277,7 +274,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   - **If success**
     - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified in the Invenco Terminal](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-have-been-verified-in-the-invenco-terminal).
   - **If failure**
-    - Follow [What Invenco Sends if the Media Files in the Network Configuration are not in a terminal](#what-invenco-sends-if-the-media-files-in-the-network-configuration-are-not-in-a-terminal).
+    - Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 1. Apply network configurations to terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-accepted-by-the-terminal).
