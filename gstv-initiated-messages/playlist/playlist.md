@@ -256,6 +256,7 @@
 {
   "guid": String,
   "id": String,
+  "filename": String,
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
   "siteId": String,
