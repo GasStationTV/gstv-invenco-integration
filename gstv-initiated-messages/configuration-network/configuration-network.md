@@ -216,23 +216,6 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-### What Invenco Sends if the Media Files in the Network Configuration are not in the Invenco Cloud
-Follow [Default Error Handling](#default-error-handling).
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String,
-  "notificationType": "MEDIA_CHECK",
-  "status": "failure",
-  "additionalInformation": "Video File is Missing - {filename}"
-}
-```
-
-[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure2.json)
-
 ### What Invenco Sends if they are Unable to Pull Network Configuration Update Notification to Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
@@ -284,7 +267,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   - **If success**
     - Follow [What Invenco Sends to GSTV once Media Files Associated with the Network Configuration have been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-network-configuration-updates-have-been-verified-in-the-invenco-cloud).
   - **If failure**
-    - Follow [What Invenco Sends if the Media Files in the Network Configuration are not in the Invenco Cloud](#what-invenco-sends-if-the-media-files-in-the-network-configuration-are-not-in-the-invenco-cloud).
+    - Follow [What Invenco Sends if Media File is not in Invenco Cloud](../../README.md#what-invenco-sends-if-media-file-is-not-in-invenco-cloud).
 1. Pull network configuration to terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Network Configuration Updates have been Pulled to the Terminal](#what-invenco-sends-to-gstv-once-network-configuration-updates-have-been-pulled-to-the-terminal).

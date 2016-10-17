@@ -560,25 +560,6 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Site Identifier Does Not Exist"
 ```
 
-### What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Cloud
-1. Invenco should retry downloading the file three times.
-1. If the download is still unsuccessful follow [Default Configuration Error Handling](#default-configuration-error-handling)..
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
-  "status": "failure",
-  "additionalInformation": "Video File is Missing - {filename}",
-  "segmentIds": [String]
-}
-```
-
-[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure2.json)
-
 ### What Invenco Sends if they are Unable to Pull Playlist Update Notification at the Terminal
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
 
@@ -631,8 +612,8 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 1. Verify media files associated with playlist are present in Invenco Cloud.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist Updates have been Verified in Invenco Cloud](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-updates-have-been-verified-in-invenco-cloud)
-  - **If failure**
-    - Follow [What Invenco Sends if the Video File in the Playlist Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-video-file-in-the-playlist-update-notification-is-not-in-the-invenco-cloud)
+    - **If failure**
+      - Follow [What Invenco Sends if Media File is not in Invenco Cloud](../../README.md#what-invenco-sends-if-media-file-is-not-in-invenco-cloud)
 1. Terminal pulls playlist.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Playlist Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-pulled-by-the-terminal)
@@ -642,7 +623,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   - **If success**
     - Follow [What Invenco Sends to GSTV once Media Files Associated with the Playlist have been Verified in the Invenco Terminal](#what-invenco-sends-to-gstv-once-media-files-associated-with-the-playlist-have-been-verified-in-the-invenco-terminal).
   - **If failure**
-    - Follow [What Invenco Sends if the Media Files in the Playlist are not in a terminal](#what-invenco-sends-if-the-media-files-in-the-playlist-are-not-in-a-terminal).
+    - Follow [What Invenco Sends if the Media Files in the Playlist are not in a terminal](#what-invenco-sends-if-the-media-files-in-the-playlist-are-not-in-a-terminal)
 1. Apply playlist to terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Playlist Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-playlist-updates-have-been-accepted-by-the-terminal)

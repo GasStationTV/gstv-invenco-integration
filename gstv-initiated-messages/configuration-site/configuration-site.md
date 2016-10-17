@@ -313,23 +313,6 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Updated On is Missing"
 ```
 
-### What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud and Can Not Be Downloaded from S3
-Follow [Default Error Handling](#default-error-handling).
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String,
-  "notificationType": "MEDIA_CHECK",
-  "status": "failure",
-  "additionalInformation": "Video File is Missing - {filename}"
-}
-```
-
-[What Invenco Sends to GSTV - Example Data](samples/json/sample1_notificationfailure2.json)
-
 ### What Invenco Sends if the Blankout Video in the Site Configuration Update is not at a terminal
 Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 
@@ -381,7 +364,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
   - **If success**
     - Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-in-the-invenco-cloud).
   - **If failure**
-    - Follow [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-blankout-video-in-the-site-configuration-update-notification-is-not-in-the-invenco-cloud).
+    - Follow [What Invenco Sends if Media File is not in Invenco Cloud](../../README.md#what-invenco-sends-if-media-file-is-not-in-invenco-cloud).
 1. Pull site configuration to terminal
   - **If success**
 	  -  Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pulled-by-the-terminal).
