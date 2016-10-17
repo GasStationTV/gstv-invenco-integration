@@ -143,6 +143,8 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
+[Example Data](samples/json/sample1_notification1.json)
+
 ### What Invenco Sends to GSTV once Site Configuration Updates have been Validated
 ```javascript
 {
