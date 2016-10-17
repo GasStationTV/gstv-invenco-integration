@@ -1,5 +1,19 @@
+## GSTV - Invenco Integration
+## User Experience
+- The video and audio will be playing at the dispenser in a continuous manner.
+- The video and audio will be synchronized across all screens at a given site.
+- Video and audio will be interrupted during the fueling transaction only during payment prompts as required for PCI compliance.
+  - After prompts video and audio will resume synchronized with the other terminals.
+- The size of the media window will accommodate interactive prompts that drive the fuel purchase transaction.
+
+## Overview
+- GSTV will provide a unique playlist for every site every day.
+- At any time the Invenco system will accept multiple updates to the playlists, assets, and metadata for a site without playback interruptions.
+- The video window will be divided into multiple zones
+  - Video playback will exist within a single zone
+
 ## Global Processing
-### File Missing at Terminal 
+### File Missing at Terminal
   - Terminal will check Invenco cloud for required media
     - **If success**
       - Download required media to terminal
@@ -21,7 +35,6 @@
   "additionalInformation": "Video File is Missing - {filename}"
 }
 ```
-
 
 ### Update Notification Processing Order
 - Media update notifications should be processed before playlist update notifications
