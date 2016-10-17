@@ -3,7 +3,7 @@
 The video playback system will allow for the following conditions:
 
 1. Playback will be at 30FPS
-1. Two channels will exist: widescreen for the 12” display and standard for the 5” display. Media will be formatted differently for each channel.
+1. One channel will exist. Assets for both the 5" and 12" model will be formatted as widescreen assets.
 1. When downloading an asset, the player will ensure that the asset has been successfully transferred in full  
 1. An asset may not play in every single rotation of the loop
   1. There will be up to 24 variations to a loop
