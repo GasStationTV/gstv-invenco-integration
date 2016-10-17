@@ -163,8 +163,7 @@ Messages sent with the site-specific configuration values including hours, speci
   "notificationTimestamp": String
   "notificationType": "MEDIA_CHECK",
   "siteId": String,
-  "status": "success",
-  "terminalId": String
+  "status": "success"
 }
 ```
 
