@@ -10,7 +10,7 @@
 		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
 		- [What Invenco Sends to GSTV once Site Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-validated)
 		- [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pulled-by-the-terminal)
-		- [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal)
+		- [What Invenco Sends to GSTV once Media File Video Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-media-file-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal)
 		- [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-terminal)
 	- [Error Path](#error-path)
 		- [What Invenco Sends if the Site Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-site-configuration-update-notification-has-validation-errors)
@@ -159,7 +159,7 @@ Messages sent with the site-specific configuration values including hours, speci
 
 [What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification1.json)
 
-### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified in Invenco Cloud
+### What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified in Invenco Cloud
 ```javascript
 {
   "guid": String,
@@ -188,7 +188,7 @@ Messages sent with the site-specific configuration values including hours, speci
 
 [What GSTV Sends to Invenco - Example Data](samples/json/sample1_notification3.json)
 
-### What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal
+### What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal
 ```javascript
 {
   "guid": String,
@@ -357,9 +357,9 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-validated).
   - **If failure**
       - Follow [What Invenco Sends if the Site Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-site-configuration-update-notification-has-validation-errors).
-1. Verify blankout video associated with site configuration is present in Invenco cloud.
+1. Verify media file associated with site configuration is present in Invenco cloud.
   - **If success**
-    - Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-in-the-invenco-cloud).
+    - Follow [What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-media-file-associated-with-the-site-configuration-updates-has-been-verified-in-the-invenco-cloud).
   - **If failure**
     - Follow [What Invenco Sends if Media File is not in Invenco Cloud](../../README.md#what-invenco-sends-if-media-file-is-not-in-invenco-cloud).
 1. Pull site configuration to terminal
@@ -367,9 +367,9 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 	  -  Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pulled-by-the-terminal).
 	- **If failure**
 	  - Follow [What Invenco Sends if they are Unable to Pull Site Configuration Update to Terminal](#what-invenco-sends-if-they-are-unable-to-pull-site-configuration-update-to-terminal).
-1. Verify blankout video associated with site configuration is present at terminal
+1. Verify media file associated with site configuration is present at terminal
 	- **If success**
-		- Follow [What Invenco Sends to GSTV once Blankout Video Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-blankout-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal).
+		- Follow [What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-media-file-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal).
 	- **If failure**
 		- Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 1. Apply site configurations to the terminal.
