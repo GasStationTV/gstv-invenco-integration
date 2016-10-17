@@ -1,6 +1,7 @@
 # Functional Requirements - Video Playback
 
 The video playback system will allow for the following conditions:
+
 1. Playback will be at 30FPS
 1. Two channels will exist: widescreen for the 12” display and standard for the 5” display. Media will be formatted differently for each channel.
 1. When downloading an asset, the player will ensure that the asset has been successfully transferred in full  
