@@ -1,0 +1,9 @@
+{
+  "guid": "5e76122f-f9d8-445f-b85f-c207269b0720",
+  "id": "123478asdf987a97",
+  "notificationTimestamp": "2016-10-13 18:50:05.764",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_TERMINAL",
+  "siteId": "123456",
+  "status": "success",
+  "terminalId": "1"
+}

@@ -1,0 +1,9 @@
+{
+  "guid": "5e76122f-f9d8-445f-b85f-c207269b0720",
+  "id": "398398fhg393998",
+  "notificationTimestamp": "2016-10-13 18:50:00.788",
+  "notificationType": "CONFIGURATION_PULLED_BY_TERMINAL",
+  "siteId": "123456",
+  "status": "failure",
+  "terminalId": "1"
+}

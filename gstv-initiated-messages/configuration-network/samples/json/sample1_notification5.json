@@ -1,0 +1,9 @@
+{
+  "guid": "21EC2020-3AEA-4069-A2DD-08002B30309D",
+  "id": "123478asdf987a97",
+  "notificationTimestamp": "2016-10-13 18:50:05.764",
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_TERMINAL",
+  "siteId": "123456",
+  "status": "success",
+  "terminalId": "1"
+}

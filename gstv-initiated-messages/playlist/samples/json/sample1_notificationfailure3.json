@@ -1,0 +1,10 @@
+{
+  "guid": "742c606d-024a-406c-935b-bfc2418b20ee",
+  "id": "q293w471294387",
+  "notificationTimestamp": "2016-10-13 22:31:23.123",
+  "notificationType": "PLAYLIST_PULLED_BY_TERMINAL",
+  "segmentIds": ["5800045ed69dc50e00097d7e"],
+  "siteId": "123456",
+  "status": "failure",
+  "terminalId": "1"
+}
