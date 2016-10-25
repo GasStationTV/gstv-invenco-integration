@@ -77,10 +77,10 @@
       ],
       "schedules": [
         {
+          "segmentId": String,
           "date": String,
           "loops": [
             {
-              "segmentId": String,
               "loopNumber": Number,
               "assets": [
                 {
@@ -146,7 +146,6 @@
               ]
             },
             {
-              "segmentId": String,
               "loopNumber": Number,
               "assets": [
                 {
@@ -172,7 +171,6 @@
               ]
             },
             {
-              "segmentId": String,
               "loopNumber": Number,
               "assets": [
                 {
