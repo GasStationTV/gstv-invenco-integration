@@ -43,6 +43,7 @@
 ### What Invenco Sends to GSTV
 ```javascript
 {
+  "id": String,
   "filename": String,
   "assetId": String,
   "tiNumber": String
