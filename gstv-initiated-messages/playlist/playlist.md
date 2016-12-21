@@ -60,7 +60,7 @@
   "updatedOn": String,
   "playlist": [
     {
-      "site": String,
+      "siteId": String,
       "banners": [
         {
           "filename": String,
