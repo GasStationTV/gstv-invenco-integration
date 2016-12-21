@@ -3,7 +3,7 @@
   "updatedOn": "2016-10-13 20:55:10.354",
   "playlist": [
     {
-      "site": "123456",
+      "siteId": "123456",
       "banners": [
         {
           "filename": "prefueling_image.png",
