@@ -426,7 +426,7 @@ If segmentId is missing.
   "additionalInformation": "Segment ID is Missing"
 ```
 
-If segment date is missing.
+If schedule date is missing.
 
 ```javascript
   "additionalInformation": "Segment Date is Missing"
