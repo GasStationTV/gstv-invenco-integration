@@ -246,11 +246,11 @@ If the openAt or closeAt time is not formatted at HH:MM follow [Default Configur
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Open At Time Incorrectly Formatted for {day}"
+  "additionalInformation": "Open At Time is Incorrectly Formatted for {day}"
 ```
 
 ```javascript
-  "additionalInformation": "Close At Time Incorrectly Formatted for {day}"
+  "additionalInformation": "Close At Time is Incorrectly Formatted for {day}"
 ```
 
 ##### What Invenco Sends if the level for a Volume Object in the Site Configuration Update Notification is not Formatted Correctly
@@ -259,7 +259,7 @@ If the volume level is not a number between 0 and 100 follow [Default Configurat
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Volume Level Incorrectly Formatted"
+  "additionalInformation": "Volume Level is Incorrectly Formatted"
 ```
 
 ##### What Invenco Sends if the startTime for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
@@ -268,7 +268,7 @@ If the startTime is not formatted at HH:MM follow [Default Configuration Error H
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Volume Start Time Incorrectly Formatted"
+  "additionalInformation": "Volume Start Time is Incorrectly Formatted"
 ```
 
 ##### What Invenco Sends if the blankoutVideo in the Site Configuration Update Notification does not Contain a File Extension
@@ -277,7 +277,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Blankout Video Filename Missing Extension - {filename}"
+  "additionalInformation": "Blankout Video Filename is Missing Extension - {filename}"
 ```
 
 ##### What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist
@@ -288,7 +288,7 @@ The incorrect siteID should also be included.
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Site Identifier Does Not Exist"
+  "additionalInformation": "Site ID Does Not Exist"
 ```
 
 ##### What Invenco Sends if the Open At in the Site Configuration Update Notification Is Later than the Close At
@@ -297,7 +297,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Open At is Later than Close At for {day}"
+  "additionalInformation": "Open At is After Close At for {day}"
 ```
 
 ##### What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist

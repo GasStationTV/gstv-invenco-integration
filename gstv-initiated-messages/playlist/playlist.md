@@ -316,7 +316,7 @@ If the updatedOn is not formatted as `YYYY-MM-DD HH:MM:SS:MS`.
 If the banner filename is missing an extension.
 
 ```javascript
-  "additionalInformation": "Banner Filename Missing Extension - {filename}"
+  "additionalInformation": "Banner Filename is Missing Extension - {filename}"
 ```
 
 If the date for a schedule is not formatted as YYYY-MM-DD.
@@ -334,7 +334,7 @@ If loopNumber is not a number.
 If an asset filename is missing an extension.
 
 ```javascript
-  "additionalInformation": "Asset Filename Missing Extension - {filename}"
+  "additionalInformation": "Asset Filename is Missing Extension - {filename}"
 ```
 
 If the start or end date is not formatted at YYYY-MM-DD.
@@ -389,23 +389,23 @@ If siteId is missing.
 If a banner array exists and any object in that array is missing the filename.
 
 ```javascript
-  "additionalInformation": "Banner Missing Filename"
+  "additionalInformation": "Banner Filename is Missing"
 ```
 
 If a banner array exists and any object in that array is missing the type.
 
 ```javascript
-  "additionalInformation": "Banner Type Missing for {filename}"
+  "additionalInformation": "Banner Type is Missing for {filename}"
 ```
 
 If a banner array exists and any object in that array is start or end.
 
 ```javascript
-  "additionalInformation": "Banner Start Date Missing for {filename}"
+  "additionalInformation": "Banner Start Date is Missing for {filename}"
 ```
 
 ```javascript
-  "additionalInformation": "Banner End Date Missing for {filename}"
+  "additionalInformation": "Banner End Date is Missing for {filename}"
 ```
 
 If a banner array exists and any object in that array is missing the start, end or type and the filename.
@@ -453,55 +453,55 @@ If the asset array is missing or there is an empty asset object in the array.
 If assetId is missing.
 
 ```javascript
-  "additionalInformation": "Asset {filename} Missing ID"
+  "additionalInformation": "Asset ID is Missing for {filename}"
 ```
 
 If an asset is missing the filename.
 
 ```javascript
-  "additionalInformation": "Asset Missing Filename"
+  "additionalInformation": "Asset Filename is Missing"
 ```
 
 If an asset is missing the type.
 
 ```javascript
-  "additionalInformation": "Asset {filename} Missing Type"
+  "additionalInformation": "Asset Type is Missing for {filename}"
 ```
 
 If an asset is missing the start date.
 
 ```javascript
-  "additionalInformation": "Asset {filename} Missing Start Date"
+  "additionalInformation": "Asset Start Date is Missing for {filename}"
 ```
 
 If an asset is missing the end date.
 
 ```javascript
-  "additionalInformation": "Asset {filename} Missing End Date"
+  "additionalInformation": "Asset End Date is Missing for {filename}"
 ```
 
 If an asset is missing the assetId, type, start date or end date and the asset is missing a filename.
 
 ```javascript
-  "additionalInformation": "Asset Missing Information"
+  "additionalInformation": "Asset Information is Missing"
 ```
 
 If a daypart array exists and any object in that array is missing the start.
 
 ```javascript
-  "additionalInformation": "Asset {filename} Missing Daypart Start Time"
+  "additionalInformation": "Asset Daypart Start Time is Missing for {filename}"
 ```
 
 If a daypart array exists and any object in that array is missing the end.
 
 ```javascript
-  "additionalInformation": "Asset {filename} Missing Daypart End Time"
+  "additionalInformation": "Asset Daypart End Time is Missing for {filename}"
 ```
 
 If a daypart array exists and any object in that array is missing the start or  end time and the asset is missing a filename.
 
 ```javascript
-  "additionalInformation": "Asset Missing Daypart Information"
+  "additionalInformation": "Asset Daypart Information is Missing"
 ```
 
 ##### What Invenco Sends if there is a Banner and a Start Date for an Banner Object in the Playlist Update Notification Is After the End Date
@@ -510,7 +510,7 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Start Date is After End Date for Banner - {filename}"
+  "additionalInformation": "Banner Start Date is After End Date for {filename}"
 ```
 
 ##### What Invenco Sends if the Start Date for an Asset in the Playlist Update Notification Is After the End Date
@@ -555,7 +555,7 @@ Follow [Default Error Handling](#default-error-handling).
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Site Identifier Does Not Exist"
+  "additionalInformation": "Site ID Does Not Exist"
 ```
 
 ### What Invenco Sends if they are Unable to Pull Playlist Update Notification at the Terminal

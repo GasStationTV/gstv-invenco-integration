@@ -183,11 +183,11 @@ If the shutdownHours or expiryHours is not a number with two or fewer decimal po
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Shutdown Hours Incorrectly Formatted"
+  "additionalInformation": "Shutdown Hours is Incorrectly Formatted"
 ```
 
 ```javascript
-  "additionalInformation": "Expiry Hours Incorrectly Formatted for {filename}"
+  "additionalInformation": "Expiry Hours is Incorrectly Formatted for {filename}"
 ```
 
 ##### What Invenco Sends if the filename or swapFilename in the Network Configuration Update Notification does not Contain a File Extension
@@ -196,11 +196,11 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
 Return above structure with this specific value for additionalInformation.
 
 ```javascript
-  "additionalInformation": "Filename Missing Extension - {filename}"
+  "additionalInformation": "Filename is Missing Extension - {filename}"
 ```
 
 ```javascript
-  "additionalInformation": "Swap Filename Missing Extension - {filename}"
+  "additionalInformation": "Swap Filename is Missing Extension - {filename}"
 ```
 
 ##### What Invenco Sends if the GUID or updatedOn in the Network Configuration Update Notification Does Not Exist
