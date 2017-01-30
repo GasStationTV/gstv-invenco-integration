@@ -8,9 +8,9 @@
   - **siteId** - _required_ - Speedway identifier for the site.
   - **banners** - An array containing the information about playing banner static images. If this information is not present, no banners should be displayed.
     - **filename** - _If banners array exists this is required_ - Filename, including file extension, of the image to be displayed.
-    - **start** - Date the banner image should begin displaying. The format will be `YYYY-MM-DD`.
-    - **end** - Date the banner image should end displaying. The format will be `YYYY-MM-DD`.
-    - **type** -  Specifies in which part of the fueling transaction the image should display.
+    - **start** - _If banners array exists this is required_ - Date the banner image should begin displaying. The format will be `YYYY-MM-DD`.
+    - **end** - _If banners array exists this is required_ - Date the banner image should end displaying. The format will be `YYYY-MM-DD`.
+    - **type** - _If banners array exists this is required_ - Specifies in which part of the fueling transaction the image should display.
       - Values
         - prefueling
         - postfueling
