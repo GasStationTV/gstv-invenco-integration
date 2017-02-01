@@ -7,7 +7,7 @@ A message is sent when a file has been added to a playlist or a current file in 
 ### Fields from GSTV Messages
 - **filename** - _required_ - Filename - including file extension - of video to control.
 - **checksum** - _required_ - MD5 checksum for the video asset. This value should be used to ensure the correct and full video asset is being downloaded by Invenco.
-- **updatedOn** - _required_ - A UTC date and time that indicates when this update was created. This can be used to ensure updates are applied in the appropriate order. The format will be `YYYY-MM-DD HH:MM:SS:MS` using 24 hour time.
+- **updatedOn** - _required_ - A UTC date and time that indicates when this update was created. This can be used to ensure updates are applied in the appropriate order. The format will be `YYYY-MM-DD HH:MM:SS.MS` using 24 hour time.
 
 ### Additional Fields in Invenco Responses
 - **notificationType** - A string indicating the step in the update process to which this notification refers.
