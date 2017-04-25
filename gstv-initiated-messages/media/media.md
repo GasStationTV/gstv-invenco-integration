@@ -18,7 +18,7 @@ A message is sent when a file has been added to a playlist or a current file in 
     - MEDIA_TRANSCODED
     - MEDIA_PULLED_BY_TERMINAL
     - MEDIA_ACCEPTED_BY_TERMINAL
-- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds`. 24 hour time will be used.
+- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs.milliseconds`. 24 hour time will be used.
 - **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
     - success
