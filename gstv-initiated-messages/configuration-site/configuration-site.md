@@ -58,7 +58,7 @@ Messages sent with the site-specific configuration values including hours, speci
     - MEDIA_CHECK
     - CONFIGURATION_PULLED_BY_TERMINAL
     - CONFIGURATION_ACCEPTED_BY_TERMINAL
-- **notificationTimestamp** - A UTC date and time that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
+- **notificationTimestamp** - A UTC date and time that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs.milliseconds` using 24 hour time.
 - **status** - A string that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
     - success
