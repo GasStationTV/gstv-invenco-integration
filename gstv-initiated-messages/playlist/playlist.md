@@ -42,7 +42,7 @@
     - MEDIA_CHECK
     - PLAYLIST_PULLED_BY_TERMINAL
     - PLAYLIST_ACCEPTED_BY_TERMINAL
-- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs:milliseconds` using 24 hour time.
+- **notificationTimestamp** - A date and time (in UTC) that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs.milliseconds` using 24 hour time.
 - **status** - A String that will indicate if the step in the update process for which this notification was generated succeeded or failed.
   - Values
     - success
