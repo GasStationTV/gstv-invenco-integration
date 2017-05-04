@@ -21,8 +21,8 @@
 - **filename** - _required_ - Filename of the media that was played.
 - **assetId** - _required_ - A string assigned to the media asset by GSTV. This identifier should be included in the ProofofPlay packet coming from Invenco to GSTV. This value is carried over from the playlist update notification.
 - **tiNumber** - This value is internal to GSTV. This value needs to be passed back to GSTV on the ProofofPlayPacket. This value is carried over from the playlist update notification.
-- **startTimestamp** - _required_ - A date and time (in UTC) that indicates when the video asset started to play. The format will be `year-month-day hours:mins:secs.milliseconds` using 24 hour time.
-- **endTimestamp** - _required_ - A date and time (in UTC) that indicates when the video asset stopped playing. The format will be `year-month-day hours:mins:secs.milliseconds` using 24 hour time.
+- **startTimestamp** - _required_ - A date and time (in Local time) that indicates when the video asset started to play. The format will be `year-month-day hours:mins:secs.milliseconds` using 24 hour time.
+- **endTimestamp** - _required_ - A date and time (in Local time) that indicates when the video asset stopped playing. The format will be `year-month-day hours:mins:secs.milliseconds` using 24 hour time.
 - **screenState** - The state of the screen at the start of playback for the 12" model.
   - Values
     - full
