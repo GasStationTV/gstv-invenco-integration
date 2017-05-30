@@ -46,7 +46,6 @@ Messages sent with the site-specific configuration values including hours, speci
       - **openAt** - _if day of the week array exists this is required_ - The local time the site opens represented as HH:MM using 24 hour time.
       - **closeAt** - _if day of the week array exists this is required_ - The local time the site closes represented as HH:MM using 24 hour time. Times after 24:00 indicates a closing time on the next day. For example, 26:00 should be interpreted as closing at 2:00 AM the following day.
       - **duration** - Length in milliseconds the site is open.
-  - **blankoutvideo** - Video file - including file extension - to play continuously when the site is closed. This will override the value configured for the network.
   - **volume** - Array of volume level settings. These will override the values configured for the network.
     - **startTime** - _if volume array exists this is required_ - The local time represented in HH:MM using 24 hour time that the volume setting will take effect.
     - **level** - _if volume array exists this is required_ - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
@@ -127,7 +126,6 @@ Messages sent with the site-specific configuration values including hours, speci
           }
         ]
       },
-      "blankoutVideo": String,
       "volume": [
         {
           "startTime": String,
@@ -157,35 +155,6 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
-[What Invenco Sends to GSTV once Site Configuration Updates have been Validated - Example Data](samples/json/sample1_notification1.json)
-
-### What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified in Invenco Cloud
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
-  "siteId": String,
-  "status": "success"
-}
-```
-[What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified in Invenco Cloud - Example Data](samples/json/sample1_notification2.json)
-
-### What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_PULLED_BY_TERMINAL",
-  "siteId": String,
-  "status": "success",
-  "terminalId": String
-}
-```
-
 [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal - Example Data](samples/json/sample1_notification3.json)
 
 ### What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal
@@ -199,41 +168,6 @@ Messages sent with the site-specific configuration values including hours, speci
   "siteId": String,
   "status": "success",
   "terminalId": String
-}
-```
-
-[What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal - Example Data](samples/json/sample1_notification4.json)
-
-### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_ACCEPTED_BY_TERMINAL",
-  "siteId": String,
-  "status": "success",
-  "terminalId": String
-}
-```
-
-[What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal - Example Data](samples/json/sample1_notification5.json)
-
-## Error Path
-If any part of a message causes an error the entire update will be rejected.
-
-### What Invenco Sends if the Site Configuration Update Notification has Validation Errors
-Follows [Default Configuration Error Handling](#default-configuration-error-handling).
-
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "notificationTimestamp": String
-  "notificationType": "CONFIGURATION_VALIDATION",
-  "siteId": String,
-  "status": "failure",
-  "additionalInformation": ""
 }
 ```
 
@@ -269,15 +203,6 @@ Return above structure with this specific value for additionalInformation.
 
 ```javascript
   "additionalInformation": "Volume Start Time is Incorrectly Formatted"
-```
-
-##### What Invenco Sends if the blankoutVideo in the Site Configuration Update Notification does not Contain a File Extension
-Follow [Default Configuration Error Handling](#default-configuration-error-handling).
-
-Return above structure with this specific value for additionalInformation.
-
-```javascript
-  "additionalInformation": "Blankout Video Filename is Missing Extension - {filename}"
 ```
 
 ##### What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist
@@ -357,21 +282,11 @@ Follow [Default Configuration Error Handling](#default-configuration-error-handl
     - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-validated).
   - **If failure**
       - Follow [What Invenco Sends if the Site Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-site-configuration-update-notification-has-validation-errors).
-1. Verify media file associated with site configuration is present in Invenco cloud.
-  - **If success**
-    - Follow [What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified in the Invenco Cloud](#what-invenco-sends-to-gstv-once-media-file-associated-with-the-site-configuration-updates-has-been-verified-in-the-invenco-cloud).
-  - **If failure**
-    - Follow [What Invenco Sends if Media File is not in Invenco Cloud](../../README.md#what-invenco-sends-if-media-file-is-not-in-invenco-cloud).
 1. Pull site configuration to terminal
   - **If success**
 	  -  Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pulled-by-the-terminal).
 	- **If failure**
 	  - Follow [What Invenco Sends if they are Unable to Pull Site Configuration Update to Terminal](#what-invenco-sends-if-they-are-unable-to-pull-site-configuration-update-to-terminal).
-1. Verify media file associated with site configuration is present at terminal
-	- **If success**
-		- Follow [What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-media-file-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal).
-	- **If failure**
-		- Follow [File Missing at Terminal](../../README.md#file-missing-at-terminal)
 1. Apply site configurations to the terminal.
   - **If success**
     - Follow [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-site).
