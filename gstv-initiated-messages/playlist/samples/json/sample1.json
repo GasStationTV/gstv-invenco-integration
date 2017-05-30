@@ -27,7 +27,7 @@
               "loopNumber": 1,
               "assets": [
                 {
-                  "filename": "intro.mp4",
+                  "filename": "intro.webm",
                   "type": "brandedMessaging",
                   "dayparts": [
                     {
@@ -41,7 +41,7 @@
                   ]
                 },
                 {
-                  "filename": "CNN.mp4",
+                  "filename": "CNN.webm",
                   "type": "programming",
                   "dayparts": [
                     {
@@ -51,7 +51,7 @@
                   ]
                 },
                 {
-                  "filename": "CNN2.mp4",
+                  "filename": "CNN2.webm",
                   "type": "programming",
                   "dayparts": [
                     {
@@ -61,25 +61,25 @@
                   ]
                 },
                 {
-                  "filename": "ad1.mp4",
+                  "filename": "ad1.webm",
                   "type": "advertising",
                   "start": "2016-10-14",
                   "end": "2016-10-20",
                   "tiNumber": "124"
                 },
                 {
-                  "filename": "bumper1.mp4",
+                  "filename": "bumper1.webm",
                   "type": "brandedMessaging"
                 },
                 {
-                  "filename": "rpa1.mp4",
+                  "filename": "rpa1.webm",
                   "type": "rpa",
                   "start": "2016-10-14",
                   "end": "2016-10-21",
                   "tiNumber": "432"
                 },
                 {
-                  "filename": "bumper1.mp4",
+                  "filename": "bumper1.webm",
                   "type": "brandedMessaging"
                 }
               ]
@@ -88,19 +88,19 @@
               "loopNumber": 2,
               "assets": [
                 {
-                  "filename": "seasonal_intro.mp4",
+                  "filename": "seasonal_intro.webm",
                   "type": "brandedMessaging"
                 },
                 {
-                  "filename": "BLOOMBERG.mp4",
+                  "filename": "BLOOMBERG.webm",
                   "type": "programming"
                 },
                 {
-                  "filename": "Accuweather.mp4",
+                  "filename": "Accuweather.webm",
                   "type": "programming"
                 },
                 {
-                  "filename": "CNET.mp4",
+                  "filename": "CNET.webm",
                   "type": "programming"
                 }
               ]
@@ -109,19 +109,19 @@
               "loopNumber": 3,
               "assets": [
                 {
-                  "filename": "seasonal_intro.mp4",
+                  "filename": "seasonal_intro.webm",
                   "type": "brandedMessaging"
                 },
                 {
-                  "filename": "BLOOMBERG.mp4",
+                  "filename": "BLOOMBERG.webm",
                   "type": "programming"
                 },
                 {
-                  "filename": "Accuweather.mp4",
+                  "filename": "Accuweather.webm",
                   "type": "programming"
                 },
                 {
-                  "filename": "CNET.mp4",
+                  "filename": "CNET.webm",
                   "type": "programming"
                 }
               ]
