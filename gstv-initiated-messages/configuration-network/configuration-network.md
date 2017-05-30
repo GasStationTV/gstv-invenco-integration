@@ -12,7 +12,6 @@ Message sent with the network wide configuration values including shutdown hours
       - **filename** - _required_ - Filename - including file extension - of video to control.
       - **expiryHours** - _required_ - The number of hours a video can play before expiring and being swapped out or removed from playback. The timing starts from the time the site receives the video file.
       - **swapFilename** - Filename - including file extension - of video file to play if the expiryHours value has been exceeded. If blank, no video should play in the loop during the spot.
-  - **blankoutvideo** - Video file - including file extension - to play continuously when a Site is closed.
   - **volume** - Array of volume level settings.
     - **startTime** - _if volume array exists this is required_ - The local time represented in HH:MM using 24 hour time that the volume setting will take effect.
     - **level** - _if volume array exists this is required_ - The volume level to be set at the site represented as a number between 0 (no audio) and 100 (highest volume setting).
@@ -42,7 +41,6 @@ Message sent with the network wide configuration values including shutdown hours
   "configuration": [
     {
       "shutdownHours": Number,
-      "blankoutvideo": String,
       "volume": [
         {
           "startTime": String,
