@@ -54,7 +54,6 @@ Messages sent with the site-specific configuration values including hours, speci
 - **notificationType** - A string indicating the step in the update process to which this notification refers.
   - Values
     - CONFIGURATION_VALIDATION
-    - MEDIA_CHECK
     - CONFIGURATION_PULLED_BY_TERMINAL
     - CONFIGURATION_ACCEPTED_BY_TERMINAL
 - **notificationTimestamp** - A UTC date and time that indicates when this notification was created. This can be used to ensure notifications are read in the appropriate order. The format will be `year-month-day hours:mins:secs.milliseconds` using 24 hour time.
@@ -156,22 +155,6 @@ Messages sent with the site-specific configuration values including hours, speci
 ```
 
 [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal - Example Data](samples/json/sample1_notification3.json)
-
-### What Invenco Sends to GSTV once Media File Associated with the Site Configuration Updates has been Verified at the Terminal
-```javascript
-{
-  "guid": String,
-  "id": String,
-  "filename": String,
-  "notificationTimestamp": String
-  "notificationType": "MEDIA_CHECK",
-  "siteId": String,
-  "status": "success",
-  "terminalId": String
-}
-```
-
-[What Invenco Sends if the Site Configuration Update Notification has Validation Errors - Example Data](samples/json/sample1_notificationfailure1.json)
 
 #### Specific Examples
 ##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly
