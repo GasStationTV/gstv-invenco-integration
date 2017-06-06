@@ -1,38 +1,5 @@
 # GSTV Initiated Message - Site Configuration Updates
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [GSTV Initiated Message - Site Configuration Updates](#gstv-initiated-message-site-configuration-updates)
-	- [Key/Value Glossary](#keyvalue-glossary)
-		- [Fields from GSTV Messages](#fields-from-gstv-messages)
-		- [Additional Fields in Invenco Responses](#additional-fields-in-invenco-responses)
-	- [Ideal Path](#ideal-path)
-		- [What GSTV Sends to Invenco](#what-gstv-sends-to-invenco)
-		- [What Invenco Sends to GSTV once Site Configuration Updates have been Validated](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-validated)
-		- [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-pulled-by-the-terminal)
-		- [What Invenco Sends to GSTV once Media File Video Associated with the Site Configuration Updates has been Verified at the Terminal](#what-invenco-sends-to-gstv-once-media-file-video-associated-with-the-site-configuration-updates-has-been-verified-at-the-terminal)
-		- [What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal](#what-invenco-sends-to-gstv-once-site-configuration-updates-have-been-accepted-by-the-terminal)
-	- [Error Path](#error-path)
-		- [What Invenco Sends if the Site Configuration Update Notification has Validation Errors](#what-invenco-sends-if-the-site-configuration-update-notification-has-validation-errors)
-			- [Specific Examples](#specific-examples)
-				- [What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-openat-or-closeat-time-for-any-day-in-the-site-configuration-update-notification-is-not-formatted-correctly)
-				- [What Invenco Sends if the level for a Volume Object in the Site Configuration Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-level-for-a-volume-object-in-the-site-configuration-update-notification-is-not-formatted-correctly)
-				- [What Invenco Sends if the startTime for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly](#what-invenco-sends-if-the-starttime-for-a-volume-level-in-the-site-configuration-update-notification-is-not-formatted-correctly)
-				- [What Invenco Sends if the blankoutVideo in the Site Configuration Update Notification does not Contain a File Extension](#what-invenco-sends-if-the-blankoutvideo-in-the-site-configuration-update-notification-does-not-contain-a-file-extension)
-				- [What Invenco Sends if the siteId in the Site Configuration Update Notification Does Not Exist](#what-invenco-sends-if-the-siteid-in-the-site-configuration-update-notification-does-not-exist)
-				- [What Invenco Sends if the Open At in the Site Configuration Update Notification Is Later than the Close At](#what-invenco-sends-if-the-open-at-in-the-site-configuration-update-notification-is-later-than-the-close-at)
-				- [What Invenco Sends if the GUID or updatedOn in the Site Configuration Update Notification Does Not Exist](#what-invenco-sends-if-the-guid-or-updatedon-in-the-site-configuration-update-notification-does-not-exist)
-		- [What Invenco Sends if the Blankout Video in the Site Configuration Update Notification is not in the Invenco Cloud](#what-invenco-sends-if-the-blankout-video-in-the-site-configuration-update-notification-is-not-in-the-invenco-cloud)
-		- [What Invenco Sends if they are Unable to Pull Site Configuration Update Notification to Terminal](#what-invenco-sends-if-they-are-unable-to-pull-site-configuration-update-notification-to-terminal)
-		- [What Invenco Sends if a Site Configuration Update Notification is Rejected by the Terminal](#what-invenco-sends-if-a-site-configuration-update-notification-is-rejected-by-the-terminal)
-	- [Standard Operating Procedure](#standard-operating-procedure)
-		- [Applying Configuration Updates](#applying-configuration-updates)
-		- [Error Handling](#error-handling)
-			- [Default Error Handling](#default-error-handling)
-			- [Default Configuration Error Handling](#default-configuration-error-handling)
-
-<!-- /TOC -->
-
 Messages sent with the site-specific configuration values including hours, specifying the blankout video file, and volume settings.
 
 ## Key/Value Glossary
@@ -154,7 +121,35 @@ Messages sent with the site-specific configuration values including hours, speci
 }
 ```
 
+### What Invenco Sends to GSTV once Media Files Associated with the Site Configuration have been Verified at the Terminal
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_PULLED_BY_TERMINAL",
+  "siteId": String,
+  "status": "success",
+  "terminalId": String
+}
+```
+
 [What Invenco Sends to GSTV once Site Configuration Updates have been Pulled by the Terminal - Example Data](samples/json/sample1_notification3.json)
+
+### What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal
+```javascript
+{
+  "guid": String,
+  "id": String,
+  "notificationTimestamp": String
+  "notificationType": "CONFIGURATION_ACCEPTED_BY_TERMINAL",
+  "siteId": String,
+  "status": "success",
+  "terminalId": String
+}
+```
+
+[What Invenco Sends to GSTV once Site Configuration Updates have been Accepted by the Terminal - Example Data](samples/json/sample1_notification5.json)
 
 #### Specific Examples
 ##### What Invenco Sends if the openAt or closeAt Time for any Day in the Site Configuration Update Notification is not Formatted Correctly

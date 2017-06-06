@@ -201,6 +201,24 @@ Return above structure with this specific value for additionalInformation.
   "additionalInformation": "Swap Filename is Missing Extension - {filename}"
 ```
 
+##### What Invenco Sends if the level for a Volume Object in the Site Configuration Update Notification is not Formatted Correctly
+If the volume level is not a number between 0 and 100 follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Volume Level is Incorrectly Formatted"
+```
+
+##### What Invenco Sends if the startTime for a Volume Level in the Site Configuration Update Notification is not Formatted Correctly
+If the startTime is not formatted at HH:MM follow [Default Configuration Error Handling](#default-configuration-error-handling).
+
+Return above structure with this specific value for additionalInformation.
+
+```javascript
+  "additionalInformation": "Volume Start Time is Incorrectly Formatted"
+```
+
 ##### What Invenco Sends if the GUID or updatedOn in the Network Configuration Update Notification Does Not Exist
 Follow [Default Error Handling](#default-error-handling).
 

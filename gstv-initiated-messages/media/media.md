@@ -2,7 +2,6 @@
 
 A message is sent when a file has been added to a playlist or a current file in a playlist has been updated.
 
-
 ## Key/Value Glossary
 ### Fields from GSTV Messages
 - **filename** - _required_ - Filename - including file extension - of video to control.
