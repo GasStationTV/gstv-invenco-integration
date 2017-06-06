@@ -18,8 +18,7 @@
 | 116 | Configuration - Network - Update - Notifications - Shutdown hours - With Characters | CONFIGURATION_VALIDATION failure message delivered to GSTV queue |  |
 | 117 | Configuration - Network - Update - Notifications - Missing required field |  |  |
 | 118 | Configuration - Network - Update - Notifications - Evergreen - Filename - Not specified | CONFIGURATION_VALIDATION failure message delivered to GSTV queue |  |
-| 119 | Configuration - Network - Update - Notifications - Evergreen - Filename - Incorrect | Received a MEDIA_CHECK failure for the file that had the incorrect name.
-The CONFIGURATION_VALIDATION message contains a success status. |  |
+| 119 | Configuration - Network - Update - Notifications - Evergreen - Filename - Incorrect | Received a MEDIA_CHECK failure for the file that had the incorrect name. The CONFIGURATION_VALIDATION message contains a success status. |  |
 | 120 | Configuration - Network - Update - Notifications - Evergreen - Filename - Different video format than supported |  |  |
 | 121 | Configuration - Network - Update - Notifications - Evergreen - Expiry - Negative | CONFIGURATION_VALIDATION failure message delivered to GSTV queue |  |
 | 122 | Configuration - Network - Update - Notifications - Evergreen - Expiry - With Characters | CONFIGURATION_VALIDATION failure message delivered to GSTV queue |  |
