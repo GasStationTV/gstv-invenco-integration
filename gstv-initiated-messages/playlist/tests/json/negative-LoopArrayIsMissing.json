@@ -1,0 +1,25 @@
+{
+  "playlist": [{
+    "schedules": [{
+      "date": "2017-06-08",
+      "segmentId": "3ac851b0-84ac-4bfd-b02d-529edcbaeecd"
+    }],
+    "banners": [
+      {
+        "start": "2017-01-01",
+        "end": "2017-12-31",
+        "type": "prefueling",
+        "filename": "TESTING_Prefueling.jpg"
+      },
+      {
+      "start": "2017-01-01",
+      "end": "2017-12-31",
+        "type": "postfueling",
+        "filename": "TESTING_Postfueling.jpg"
+      }
+    ],
+    "siteId": "5360"
+  }],
+  "updatedOn": "2017-06-11 08:16:19.693",
+  "guid": "f064eddd-5764-46ed-9763-633d0ae148a9"
+}

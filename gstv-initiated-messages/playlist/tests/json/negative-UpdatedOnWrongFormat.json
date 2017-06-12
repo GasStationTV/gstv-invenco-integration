@@ -1,0 +1,71 @@
+{
+  "playlist": [{
+    "schedules": [{
+      "loops": [{
+        "assets": [{
+          "end": "2017-12-12",
+          "start": "2016-02-01",
+          "type": "advertising",
+          "tiNumber": "Intro1",
+          "filename": "HD_SPD00810_INTROID.webm",
+          "assetId": "a813a09c-742f-48e6-ad43-f0fce05812b7"
+        }, {
+          "end": "2017-12-18",
+          "start": "2017-05-18",
+          "type": "advertising",
+          "tiNumber": "Ad1",
+          "assetId": "HD_SLJ15989_SLIMJIMREALESTATEWITHTAG",
+          "filename": "HD_SLJ15989_SLIMJIMREALESTATEWITHTAG.webm"
+        }, {
+          "end": "2017-12-12",
+          "start": "2016-02-01",
+          "type": "advertising",
+          "tiNumber": "Intro1",
+          "filename": "SPD21460_SPEEDYREW3_DEC.webm",
+          "assetId": "a813a09c-742f-48e6-ad43-f0fce05812b7"
+        }, {
+          "end": "2017-12-18",
+          "start": "2017-05-18",
+          "type": "advertising",
+          "tiNumber": "Ad1",
+          "assetId": "a813a09c-742f-48e6-ad43-f0fce05812b8",
+          "filename": "HD_GTV16504_BUMPERHAPPYTRAILS2017.webm"
+        }, {
+          "end": "2017-12-12",
+          "start": "2016-02-01",
+          "type": "advertising",
+          "tiNumber": "Intro1",
+          "filename": "HD_ESN04791_GSTVESPN.webm",
+          "assetId": "a813a09c-742f-48e6-ad43-f0fce05812b7"
+        }, {
+          "end": "2017-12-18",
+          "start": "2017-05-18",
+          "type": "advertising",
+          "tiNumber": "Ad1",
+          "assetId": "a813a09c-742f-48e6-ad43-f0fce05812b8",
+          "filename": "HD_CHE16746_JEEPTHEARTOFIT.webm"
+        }],
+        "loopNumber": 1
+      }],
+      "date": "2017-06-08",
+      "segmentId": "3ac851b0-84ac-4bfd-b02d-529edcbaeecd"
+    }],
+    "banners": [
+      {
+        "start": "2017-01-01",
+        "end": "2017-12-31",
+        "type": "prefueling",
+        "filename": "TESTING_Prefueling.jpg"
+      },
+      {
+      "start": "2017-01-01",
+      "end": "2017-12-31",
+        "type": "postfueling",
+        "filename": "TESTING_Postfueling.jpg"
+      }
+    ],
+    "siteId": "5360"
+  }],
+  "updatedOn": "ABCD-06-11 08:16:19.693",
+  "guid": "f064eddd-5764-46ed-9763-633d0ae148a9"
+}

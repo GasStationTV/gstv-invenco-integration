@@ -1,0 +1,35 @@
+{
+  "playlist": [
+    {
+      "schedules": [
+        {
+          "loops": [
+            {
+              "assets": [
+                {}
+              ],
+              "loopNumber": 1
+            },
+            {
+              "assets": [
+                {
+                  "endDate": "2017-01-16",
+                  "startDate": "2017-01-16",
+                  "type": "advertising",
+                  "filename": "HD_GTV16151_CELEBRATING10YEARSBUMPER.webm",
+                  "assetId": "e22a3cd9-de3b-47c3-927d-0cfbe058949d"
+                }
+              ],
+              "loopNumber": 2
+            }
+          ],
+          "date": "2017-01-17",
+          "segmentId": "4a11d02b-2d3a-4db8-ad81-40f39b2599e5"
+        }
+      ],
+      "siteId": "8728"
+    }
+  ],
+  "updatedOn": "2017-01-25 17:22:38.682",
+  "guid": "a1c6276f-a8e7-4ad2-b8fc-2970a1bc1af3"
+}
