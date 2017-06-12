@@ -1,0 +1,29 @@
+{
+  "configuration": [
+    {
+      "volume": [
+        {
+          "id": "586fd7b6de89225646533df5",
+          "level": 60,
+          "startTime": "08:00"
+        },
+        {
+          "id": "586fd7b6de89225646533df4",
+          "level": 45,
+          "startTime": "20:00"
+        }
+      ],
+      "evergreen": [
+        {
+          "id": "586fd7b6de89225646533df3",
+          "swapFilename": "CNN04031_HLNSWAP.webm",
+          "expiryHours": 25,
+          "filename": "CNN04028_HLNSAT.webm"
+        }
+      ],
+      "shutdownHours": 120
+    }
+  ],
+  "updatedOn": "2017-01-25 17:01:12.448",
+  "guid": "c5831ffa-0c84-469e-bee1-7f28656d8d82"
+}

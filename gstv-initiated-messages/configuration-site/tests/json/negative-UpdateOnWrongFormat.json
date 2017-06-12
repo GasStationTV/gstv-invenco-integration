@@ -1,0 +1,79 @@
+{
+  "configuration": [
+    {
+      "siteId": "6621",
+      "volume": [
+        {
+          "startTime": "08:00",
+          "level": 60,
+          "id": "586fda147b41563e47fc84b8"
+        },
+        {
+          "startTime": "20:00",
+          "level": 45,
+          "id": "586fda147b41563e47fc84b7"
+        }
+      ],
+      "hours": {
+        "sat": [
+          {
+            "openAt": "08:00",
+            "closeAt": "24:00",
+            "duration": 64800000,
+            "id": "586fda147b41563e47fc84b9"
+          }
+        ],
+        "fri": [
+          {
+            "openAt": "08:00",
+            "closeAt": "24:00",
+            "duration": 64800000,
+            "id": "586fda147b41563e47fc84ba"
+          }
+        ],
+        "thu": [
+          {
+            "openAt": "08:00",
+            "closeAt": "24:00",
+            "duration": 64800000,
+            "id": "586fda147b41563e47fc84bb"
+          }
+        ],
+        "wed": [
+          {
+            "openAt": "08:00",
+            "closeAt": "24:00",
+            "duration": 64800000,
+            "id": "586fda147b41563e47fc84bc"
+          }
+        ],
+        "tue": [
+          {
+            "openAt": "08:00",
+            "closeAt": "24:00",
+            "duration": 64800000,
+            "id": "586fda147b41563e47fc84bd"
+          }
+        ],
+        "mon": [
+          {
+            "openAt": "08:00",
+            "closeAt": "24:00",
+            "duration": 64800000,
+            "id": "586fda147b41563e47fc84be"
+          }
+        ],
+        "sun": [
+          {
+            "openAt": "08:00",
+            "closeAt": "24:00",
+            "duration": 64800000,
+            "id": "586fda147b41563e47fc84bf"
+          }
+        ]
+      }
+    }
+  ],
+  "guid": "7a30700d-a571-4ff8-ba98-46f701a8e8ce",
+  "updatedOn": "2017-01-25 16:59:58.541"
+}
