@@ -16,9 +16,15 @@
       "evergreen": [
         {
           "id": "586fd7b6de89225646533df3",
-          "swapFilename": "HD_RAL16580_RAMANTHEMLONGLIVE30.webm",
-          "expiryHours": 100,
-          "filename": "HD_CHE16746_JEEPTHEARTOFIT.webm"
+          "swapFilename": "Programming_GSTVESPNSWAP.webm",
+          "expiryHours": 25,
+          "filename": "Programming-GSTVESPN.webm"
+        },
+        {
+          "id": "586fd7b6de89225646533df2",
+          "swapFilename": "Programming-HLN_Weekday.webm",
+          "expiryHours": 25,
+          "filename": "Programming_HLNSWAP.webm"
         }
       ],
       "shutdownHours": 120

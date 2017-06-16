@@ -16,9 +16,15 @@
       "evergreen": [
         {
           "id": "586fd7b6de89225646533df3",
-          "swapFilename": "CNN04031_HLNSWAPasd.webm",
+          "swapFilename": "Programming_GSTVESPNSWAP_NOT_IN_S3.webm",
           "expiryHours": 25,
-          "filename": "CNN04028_HLNSATasd.webm"
+          "filename": "Programming-GSTVESPN.webm"
+        },
+        {
+          "id": "586fd7b6de89225646533df2",
+          "swapFilename": "Programming-HLN_Weekday.webm",
+          "expiryHours": 25,
+          "filename": "Programming_HLNSWAP.webm"
         }
       ],
       "shutdownHours": 120
