@@ -13,8 +13,8 @@
             {
               "assets": [
                 {
-                  "endDate": "2017-01-16",
-                  "startDate": "2017-01-16",
+                  "end": "2017-01-16",
+                  "start": "2017-01-16",
                   "type": "advertising",
                   "filename": "HD_GTV16151_CELEBRATING10YEARSBUMPER.webm",
                   "assetId": "e22a3cd9-de3b-47c3-927d-0cfbe058949d"
