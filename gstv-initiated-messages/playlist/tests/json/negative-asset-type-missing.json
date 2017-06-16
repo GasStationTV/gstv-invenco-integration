@@ -164,13 +164,13 @@
             "segmentId": "3ac851b0-84ac-4bfd-b02d-529edcbaeecd"
         }],
         "banners": [{
-            "end": "2017-06-16",
             "start": "2017-06-16",
+            "end": "2017-06-16",
             "type": "prefueling",
             "filename": "Banner-Prefueling_Friday.jpg"
         }, {
-            "end": "2017-06-16",
             "start": "2017-06-16",
+            "end": "2017-06-16",
             "type": "postfueling",
             "filename": "Banner-Postfueling_Friday"
         }],

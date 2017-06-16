@@ -46,15 +46,15 @@
       "segmentId": "3ac851b0-84ac-4bfd-b02d-529edcbaeecd"
     }],
     "banners": [{
-      "start": "2017-01-01",
-      "end": "2017-12-31",
-      "type": "prefueling",
-      "filename": "TESTING_Prefueling.jpg"
+        "start": "2017-06-16",
+        "end": "2017-06-16",
+        "type": "prefueling",
+        "filename": "Banner-Prefueling_Friday.jpg"
     }, {
-      "start": "2017-01-01",
-      "end": "2017-12-31",
-      "type": "postfueling",
-      "filename": "TESTING_Postfueling.jpg"
+        "start": "2017-06-16",
+        "end": "2017-06-16",
+        "type": "postfueling",
+        "filename": "Banner-Postfueling_Friday"
     }],
     "siteId": "5360"
   }],
