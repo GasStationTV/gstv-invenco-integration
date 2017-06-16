@@ -1,22 +1,22 @@
 {
-  "playlist": [{
-    "schedules": [{
-      "date": "2017-06-08",
-      "segmentId": "3ac851b0-84ac-4bfd-b02d-529edcbaeecd"
+    "playlist": [{
+        "schedules": [{
+            "date": "2017-06-16",
+            "segmentId": "3ac851b0-84ac-4bfd-b02d-529edcbaeecd"
+        }],
+        "banners": [{
+            "start": "2017-06-16",
+            "end": "2017-06-16",
+            "type": "prefueling",
+            "filename": "Banner-Prefueling_Friday.jpg"
+        }, {
+            "start": "2017-06-16",
+            "end": "2017-06-16",
+            "type": "postfueling",
+            "filename": "Banner-Postfueling_Friday"
+        }],
+        "siteId": "1202"
     }],
-    "banners": [{
-        "start": "2017-06-16",
-        "end": "2017-06-16",
-        "type": "prefueling",
-        "filename": "Banner-Prefueling_Friday.jpg"
-    }, {
-        "start": "2017-06-16",
-        "end": "2017-06-16",
-        "type": "postfueling",
-        "filename": "Banner-Postfueling_Friday"
-    }],
-    "siteId": "5360"
-  }],
-  "updatedOn": "2017-06-11 08:16:19.693",
-  "guid": "f064eddd-5764-46ed-9763-633d0ae148a9"
+    "updatedOn": "2017-06-14 13:45:52.897",
+    "guid": "0834834e-f6a5-4e20-8ad7-e4f8f84d1d4f"
 }
