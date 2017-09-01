@@ -1,0 +1,30 @@
+{
+  "configuration": [{
+    "volume": [{
+      "startTime": "08:00",
+      "level": 80
+    }, {
+      "startTime": "20:00",
+      "level": 40
+    }],
+    "evergreen": [{
+      "expiryHours": 38,
+      "swapFilename": "CNN04032_SHOWBIZSWAP.webm"
+    },{
+      "filename": "CNN04104_HLNWEEKDAY.webm",
+      "expiryHours": 25,
+      "swapFilename": "CNN04031_HLNSWAP.webm"
+    },{
+      "filename": "CNN04028_HLNSAT.webm",
+      "expiryHours": 25,
+      "swapFilename": "CNN04031_HLNSWAP.webm"
+    },{
+      "filename": "CNN04029_HLNSUN.webm",
+      "expiryHours": 25,
+      "swapFilename": "CNN04031_HLNSWAP.webm"
+    }],
+    "shutdownHours": 121
+  }],
+  "updatedOn": "2017-05-25 22:11:53.863",
+  "guid": "5b4d5e82-b7db-4228-a49c-108367ebd6de"
+}
