@@ -34,6 +34,12 @@
         - **dayparts** - An array that specifies specific times of the day that a video should play. If no daypart is present, the video should play without regard to time.
           - **start** - _if daypart array exists this is required_ - The local time represented in HH:MM using 24 hour time that asset should start playing if a daypart is present.
           - **end** - _if daypart array exists this is required_ - The local time represented in HH:MM using 24 hour time that asset should stop playing if a daypart is present.
+        - **coupons** - _optional_ - An array that specifies the coupon metadata. If no coupons are present the coupon functionality should be disabled.
+          - **title** - _required_ - String - Coupon promotion title ex. "300 Bonus Points"
+          - **detail** - _required_ - String - Coupon description ex. "with Speedy Choice Tube Nuts purchase"
+          - **barcode** - _required_ - String - Coupon barcode number in UPC format (12 digit numeric)
+          - **restriction** - _required_ - String - Coupon restriction ex. "Limit One Per Customer"
+          - **validFrom** - _required_ - String - Coupon validity ex. "Today Only"
 
 ### Additional Fields in Invenco Responses
 - **notificationType** - A string indicating the step in the update process to which this notification refers.
@@ -94,6 +100,15 @@
                     {
                       "start": String,
                       "end": String
+                    }
+                  ],
+                  "coupons": [
+                    {
+                      "title": String,
+                      "detail": String,
+                      "barcode": String,
+                      "restriction": String,
+                      "validFrom": String
                     }
                   ]
                 },
@@ -498,11 +513,41 @@ If a daypart array exists and any object in that array is missing the end.
   "additionalInformation": "Asset Daypart End Time is Missing for {filename}"
 ```
 
-If a daypart array exists and any object in that array is missing the start or  end time and the asset is missing a filename.
+If a daypart array exists and any object in that array is missing the start or end time and the asset is missing a filename.
 
 ```javascript
   "additionalInformation": "Asset Daypart Information is Missing"
 ```
+
+If a coupon array exists and any object in that array is missing the title.
+
+````javascript
+  "additionalInformation": "Coupon Title is Missing"
+````
+
+If a coupon array exists and any object in that array is missing the detail.
+
+````javascript
+  "additionalInformation": "Coupon Detail is Missing"
+````
+
+If a coupon array exists and any object in that array is missing the barcode.
+
+````javascript
+  "additionalInformation": "Coupon Barcode is Missing"
+````
+
+If a coupon array exists and any object in that array is missing the restriction.
+
+````javascript
+  "additionalInformation": "Coupon Restriction is Missing"
+````
+
+If a coupon array exists and any object in that array is missing the validFrom.
+
+````javascript
+  "additionalInformation": "Coupon Valid From is Missing"
+````
 
 ##### What Invenco Sends if there is a Banner and a Start Date for an Banner Object in the Playlist Update Notification Is After the End Date
 Follow [Default Configuration Error Handling](#default-configuration-error-handling).
